@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Marck Script:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Nested and Variable Loops We already saw that, within the body of a loop (which is a block of code), we can put other things that have their own blocks. If you look at the number-guessing program, yo">
+<meta name="keywords" content="python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 learning 09">
+<meta property="og:url" content="https://changemyheart.github.io/2017/09/21/python3-learning-09/index.html">
+<meta property="og:site_name" content="Memories">
+<meta property="og:description" content="Nested and Variable Loops We already saw that, within the body of a loop (which is a block of code), we can put other things that have their own blocks. If you look at the number-guessing program, yo">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/nested%20loop.png?raw=true">
+<meta property="og:image" content="https://raw.githubusercontent.com/changemyheart/Pictures/master/decision%20tree.png">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/Hot%20dog%20combinations.png?raw=true">
+<meta property="og:updated_time" content="2017-09-25T12:19:32.161Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3 learning 09">
+<meta name="twitter:description" content="Nested and Variable Loops We already saw that, within the body of a loop (which is a block of code), we can put other things that have their own blocks. If you look at the number-guessing program, yo">
+<meta name="twitter:image" content="https://github.com/changemyheart/Pictures/blob/master/nested%20loop.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('Please input password','') !== ''){
+        alert('Wrong');
+        history.back();
+      }
+    }
+  })();
+</script>
+  <title>python3 learning 09 | Memories</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Memories</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">love</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://changemyheart.github.io/2017/09/21/python3-learning-09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Memories">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python3 learning 09</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-21T19:26:52+08:00">
+                2017-09-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2017-09-25T20:19:32+08:00">
+                2017-09-25
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="nested-and-variable-loops">Nested and Variable Loops</h2>
+<p>We already saw that, within the body of a loop (which is a block of code), we can put other things that have their own blocks. If you look at the number-guessing program, you’ll see this: <img src="https://github.com/changemyheart/Pictures/blob/master/nested%20loop.png?raw=true" alt="While loop blocks"> The outer, light gray block is a <code>while</code> loop block, and the dark gray blocks are <code>if</code> and <code>elif</code> blocks within that <code>while</code> loop block.</p>
+<p>You can also put a loop within another loop. These loops are called nested loops.</p>
+<h3 id="nested-loops">Nested loops</h3>
+<p>What if we wanted to print three multiplication tables at once? That’s the kind of thing a nested loop is perfect for. A nested loop is one loop inside another loop. For each iteration of the outer loop, the inner loop goes through all of its iterations.</p>
+<p>To print three multiplication tables, we’d just enclose the original loop (which prints a single multiplication table) in an outer loop (which runs three times). This makes the program print three tables instead of one. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> multiplier <span class="keyword">in</span> range (<span class="number">5</span>, <span class="number">8</span>):                                                  | This outer</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">1</span>, <span class="number">11</span>):                             | This inner loop        | loop runs <span class="number">3</span> </div><div class="line">        <span class="keyword">print</span> (i, <span class="string">"x"</span>, multiplier, <span class="string">"="</span>, i * multiplier) | prints a single table  | iterations, </div><div class="line">    print()                                                                      | <span class="keyword">with</span> values <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span></div></pre></td></tr></table></figure></p>
+<p>Notice that we had to indent the inner loop and the print statement an extra four spaces from the beginning of the outer for loop. This program will print the 5 times, 6 times, and 7 times tables, up to 10 for each table: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>==================== RESTART ===================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line"><span class="number">1</span> x <span class="number">5</span> = <span class="number">5</span></div><div class="line"><span class="number">2</span> x <span class="number">5</span> = <span class="number">10</span></div><div class="line"><span class="number">3</span> x <span class="number">5</span> = <span class="number">15</span></div><div class="line"><span class="number">4</span> x <span class="number">5</span> = <span class="number">20</span></div><div class="line"><span class="number">5</span> x <span class="number">5</span> = <span class="number">25</span></div><div class="line"><span class="number">6</span> x <span class="number">5</span> = <span class="number">30</span></div><div class="line"><span class="number">7</span> x <span class="number">5</span> = <span class="number">35</span></div><div class="line"><span class="number">8</span> x <span class="number">5</span> = <span class="number">40</span></div><div class="line"><span class="number">9</span> x <span class="number">5</span> = <span class="number">45</span></div><div class="line"><span class="number">10</span> x <span class="number">5</span> = <span class="number">50</span></div><div class="line"></div><div class="line"><span class="number">1</span> x <span class="number">6</span> = <span class="number">6</span></div><div class="line"><span class="number">2</span> x <span class="number">6</span> = <span class="number">12</span></div><div class="line"><span class="number">3</span> x <span class="number">6</span> = <span class="number">18</span></div><div class="line"><span class="number">4</span> x <span class="number">6</span> = <span class="number">24</span></div><div class="line"><span class="number">5</span> x <span class="number">6</span> = <span class="number">30</span></div><div class="line"><span class="number">6</span> x <span class="number">6</span> = <span class="number">36</span></div><div class="line"><span class="number">7</span> x <span class="number">6</span> = <span class="number">42</span></div><div class="line"><span class="number">8</span> x <span class="number">6</span> = <span class="number">48</span></div><div class="line"><span class="number">9</span> x <span class="number">6</span> = <span class="number">54</span></div><div class="line"><span class="number">10</span> x <span class="number">6</span> = <span class="number">60</span></div><div class="line"></div><div class="line"><span class="number">1</span> x <span class="number">7</span> = <span class="number">7</span></div><div class="line"><span class="number">2</span> x <span class="number">7</span> = <span class="number">14</span></div><div class="line"><span class="number">3</span> x <span class="number">7</span> = <span class="number">21</span></div><div class="line"><span class="number">4</span> x <span class="number">7</span> = <span class="number">28</span></div><div class="line"><span class="number">5</span> x <span class="number">7</span> = <span class="number">35</span></div><div class="line"><span class="number">6</span> x <span class="number">7</span> = <span class="number">42</span></div><div class="line"><span class="number">7</span> x <span class="number">7</span> = <span class="number">49</span></div><div class="line"><span class="number">8</span> x <span class="number">7</span> = <span class="number">56</span></div><div class="line"><span class="number">9</span> x <span class="number">7</span> = <span class="number">63</span></div><div class="line"><span class="number">10</span> x <span class="number">7</span> = <span class="number">70</span></div></pre></td></tr></table></figure></p>
+<p>Although you might think it’s pretty boring, a good way to see what’s going on with nested loops is to just print some stars to the screen and count them. We’ll do that in the next section.</p>
+<h3 id="variable-loops">Variable loops</h3>
+<p>Fixed numbers, like the ones we’ve used in the <code>range()</code> function, are also called constants. If you use constants in the <code>range()</code> function of a <code>for</code> loop, the loop will run the same number of times whenever the program is run. In that case, we say the number of loops is hard-coded, because it’s defined in your code and it never changes. That’s not always what we want.</p>
+<p>Sometimes we want the number of loops to be determined by the user, or by another part of the program. For that, we need a variable.</p>
+<p>For example, let’s say you were making a space-shooter game. You’d have to keep redrawing the screen as aliens get wiped out. You’d have some sort of counter to keep track of how many aliens were left, and whenever the screen was updated, you’d need to loop through the remaining aliens and draw their images on the screen. The number of aliens would change every time the player wiped out another one.</p>
+<p>Because we haven’t learned how to draw aliens on the screen yet, here’s a simple example program that uses a variable loop: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">numStars = int(input (<span class="string">"How many stars do you want? "</span>))</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, numStars):</div><div class="line">    <span class="keyword">print</span> (<span class="string">'*'</span>),</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>====================== RESTART ======================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">How many stars do you want? 5</div><div class="line">* * * *</div></pre></td></tr></table></figure>
+<p>The program asked the user how many stars he wanted, and then it used a variable loop to print that many. Well, almost! We asked for five stars and only got four! Oops, we forgot that the <code>for</code> loop stops one short of the second number in the <code>range</code>. So we need to add 1 to the user’s input. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">numStars = int(input(<span class="string">"How many stars do you want? "</span>))</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, numStars + <span class="number">1</span>):</div><div class="line">     <span class="keyword">print</span> (<span class="string">'*'</span>, end=<span class="string">''</span>)</div></pre></td></tr></table></figure></p>
+<p>Here’s how that would look: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>====================== RESTART =====================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">How many stars do you want? 5</div><div class="line">* * * * *</div></pre></td></tr></table></figure></p>
+<h3 id="variable-nested-loops">Variable nested loops</h3>
+<p>Now let’s try a variable nested loop. That’s just a nested loop where one or more of the loops uses a variable in the <code>range()</code> function. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">numLines = int(input(<span class="string">'How many lines of stars do you want? '</span>))</div><div class="line">numStars = int(input(<span class="string">'How many stars per line? '</span>))</div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> range(<span class="number">0</span>, numLines):</div><div class="line">    <span class="keyword">for</span> star <span class="keyword">in</span> range(<span class="number">0</span>, numStars): </div><div class="line">        <span class="keyword">print</span> (<span class="string">'*'</span>, end=<span class="string">''</span>)</div><div class="line">    print()</div></pre></td></tr></table></figure></p>
+<p>Try running this program to see if it makes sense. You should see something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>============================ RESTART ============================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">How many lines of stars do you want?  3</div><div class="line">How many stars per line?  5</div><div class="line">*****</div><div class="line">*****</div><div class="line">*****</div></pre></td></tr></table></figure></p>
+<p>The first two lines ask the user how many lines she wants and how many stars per line. It remembers the answers using the variables <code>numLines</code> and <code>numStars</code>. Then we have the two loops:<br>
+  ■ The inner loop (for star in range (0, numStars):) prints each star, and runs once for each star on a line.<br>
+  ■ The outer loop (for line in range (0, numLines):) runs once for each line of stars.</p>
+<p>The second print command is needed to start a new line of stars. If we didn’t have that, all the stars would print on one line, because of the comma in the first print statement.</p>
+<p>We can even have nested-nested loops (or double-nested loops). <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">numBlocks = int(input(<span class="string">'How many blocks of stars do you want? '</span>))</div><div class="line">numLines = int(input(<span class="string">'How many lines in each block? '</span>))</div><div class="line">numStars = int(input(<span class="string">'How many stars per line? '</span>))</div><div class="line"><span class="keyword">for</span> block <span class="keyword">in</span> range(<span class="number">0</span>, numBlocks):</div><div class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> range(<span class="number">0</span>, numLines):</div><div class="line">        <span class="keyword">for</span> star <span class="keyword">in</span> range(<span class="number">0</span>, numStars): </div><div class="line">            <span class="keyword">print</span> (<span class="string">'*'</span>, end=<span class="string">''</span>)</div><div class="line">        print()</div><div class="line">    print()</div></pre></td></tr></table></figure></p>
+<p>Here’s the output: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>======================= RESTART =======================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">How many blocks of stars do you want? 3</div><div class="line">How many lines of stars in each block? 4</div><div class="line">How many stars per line? 8</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div><div class="line">* * * * * * * *</div></pre></td></tr></table></figure></p>
+<p>We say the loop is nested “three deep.”</p>
+<h3 id="even-more-variable-nested-loops">Even more variable nested loops</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">numBlocks = int(input(<span class="string">'How many blocks of stars do you want? '</span>))</div><div class="line"><span class="keyword">for</span> block <span class="keyword">in</span> range(<span class="number">1</span>, numBlocks + <span class="number">1</span>):</div><div class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> range(<span class="number">1</span>, block * <span class="number">2</span> ):              |Formulas <span class="keyword">for</span> number </div><div class="line">        <span class="keyword">for</span> star <span class="keyword">in</span> range(<span class="number">1</span>, (block + line) * <span class="number">2</span>):  |of lines <span class="keyword">and</span> stars</div><div class="line">            <span class="keyword">print</span> (<span class="string">'*'</span>, end=<span class="string">''</span>)</div><div class="line">        print()</div><div class="line">    print()</div></pre></td></tr></table></figure>
+<p>Here’s the output: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>======================= RESTART =======================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">How many blocks of stars do you want? 3</div><div class="line">* * *</div><div class="line">* * * * *</div><div class="line">* * * * * * *</div><div class="line">* * * * * * * * *</div><div class="line">* * * * * * *</div><div class="line">* * * * * * * * *</div><div class="line">* * * * * * * * * * *</div><div class="line">* * * * * * * * * * * * *</div><div class="line">* * * * * * * * * * * * * * *</div></pre></td></tr></table></figure></p>
+<p>In above example, the loop variables of the outer loops are used to set the ranges for the inner loops. So instead of each block having the same number of lines and each line having the same number of stars, they’re different each time through the loop.</p>
+<p>You can nest loops as deep as you want. It can get a bit hairy keeping track of what’s going on, so it sometimes helps to print out the values of the loop variables, as in following <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">numBlocks = int(input(<span class="string">'How many blocks of stars do you want? '</span>))</div><div class="line"><span class="keyword">for</span> block <span class="keyword">in</span> range(<span class="number">1</span>, numBlocks + <span class="number">1</span>):</div><div class="line">    <span class="keyword">print</span> (<span class="string">'block = '</span>, block)    </div><div class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> range(<span class="number">1</span>, block * <span class="number">2</span> ):</div><div class="line">        <span class="keyword">for</span> star <span class="keyword">in</span> range(<span class="number">1</span>, (block + line) * <span class="number">2</span>): </div><div class="line">            <span class="keyword">print</span> (<span class="string">'*'</span>, end=<span class="string">''</span>)</div><div class="line">        <span class="keyword">print</span> (<span class="string">'  line = '</span>, line, <span class="string">'star = '</span>, star)</div><div class="line">    print()</div></pre></td></tr></table></figure></p>
+<p>Here’s the output of the program: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>======================= RESTART =======================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">How many blocks of stars do you want? 3</div><div class="line">block =  <span class="number">1</span></div><div class="line">* * *   line =  <span class="number">1</span>  star = <span class="number">3</span></div><div class="line">block =  <span class="number">2</span></div><div class="line">* * * * *   line =  <span class="number">1</span>  star = <span class="number">5</span></div><div class="line">* * * * * * *   line =  <span class="number">2</span>  star = <span class="number">7</span></div><div class="line">* * * * * * * * *   line =  <span class="number">3</span>  star = <span class="number">9</span></div><div class="line">block =  <span class="number">3</span></div><div class="line">* * * * * * *   line =  <span class="number">1</span>  star = <span class="number">7</span></div><div class="line">* * * * * * * * *   line =  <span class="number">2</span>  star = <span class="number">9</span></div><div class="line">* * * * * * * * * * *   line =  <span class="number">3</span>  star = <span class="number">11</span></div><div class="line">* * * * * * * * * * * * *   line =  <span class="number">4</span>  star = <span class="number">13</span></div><div class="line">* * * * * * * * * * * * * * *   line =  <span class="number">5</span>  star = <span class="number">15</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Printing the values of variables can help you in lots of situations—not just with loops. It’s one of the most common debugging methods.</p>
+</blockquote>
+<h3 id="using-nested-loops">Using nested loops</h3>
+<p>So what can we do with all these nested loops? Well, one of the things they’re good for is figuring out all the possible permutations and combinations of a series of decisions.</p>
+<p>Permutation is a mathematical term that means a unique way of combining a set of things. Combination means something very similar. The difference is that, with a combination, the order doesn’t matter, but with a permutation, the order does matter.</p>
+<p>If I asked you to pick three numbers from 1 to 20, you could pick<br>
+• 5, 8, 14<br>
+• 2, 12, 20<br>
+and so on. If we tried to make a list of all the permutations of three numbers from 1 to 20, these two would be separate entries:<br>
+• 5, 8, 14<br>
+• 8, 5, 14<br>
+That’s because, with permutations, the order in which they appear matters. If we made a list of all the combinations, all these would count as a single entry:<br>
+• 5, 8, 14<br>
+• 8, 5, 14<br>
+• 8, 14, 5<br>
+That’s because order doesn’t matter for combinations.</p>
+<p>The best way to explain this is with an example. Let’s imagine you’re running a hot dog stand at your school’s spring fair, and you want to make a poster showing how to order all possible combinations of hot dog, bun, ketchup, mustard, and onions by number. So we need to figure out what all the possible combinations are.</p>
+<p>One way to think about this problem is to use something called a decision tree. The next figure shows a decision tree for the hot dog problem. <img src="https://raw.githubusercontent.com/changemyheart/Pictures/master/decision%20tree.png" alt="decision tree"> Each decision point has only two choices, Yes or No. Each different path down the tree describes a different combination of hot dog parts. The path I highlighted says “Yes” for hot dog, “No” for bun, “Yes” for mustard, and “Yes” for ketchup.</p>
+<p>Now we’re going to use nested loops to list all the combinations—all the paths through the decision tree. Because there are five decision points, there are five levels in our decision tree, so there will be five nested loops in our program. (Above figure only shows the first four levels of the decision tree.)</p>
+<p>Type the code like this: <img src="https://github.com/changemyheart/Pictures/blob/master/Hot%20dog%20combinations.png?raw=true" alt="decision tree"> See how the loops are all one inside the other? That’s what nested loops really are—loops inside other loops.<br>
+  ■ The outer (dog) loop runs twice.<br>
+  ■ The bun loop runs twice for each iteration of the dog loop. So it runs 2 x 2 = 4 times.<br>
+  ■ The ketchup loop runs twice for each iteration of the dog loop. So it runs 2 x 2 x 2 = 8 times.<br>
+  ■ And so on.</p>
+<p>The innermost loop (that’s the one farthest in—the onion loop) runs 2 x 2 x 2 x 2 x 2 = 32 times. This covers all the possible combinations. So there are 32 possible combinations.</p>
+<p>Run the program, you should get something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>=========================== RESTART ===========================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">         Dog     Bun     Ketchup Mustard Onions</div><div class="line"><span class="comment"># 1      0       0       0        0        0</span></div><div class="line"><span class="comment"># 2      0       0       0        0        1</span></div><div class="line"><span class="comment"># 3      0       0       0        1        0</span></div><div class="line"><span class="comment"># 4      0       0       0        1        1</span></div><div class="line"><span class="comment"># 5      0       0       1        0        0</span></div><div class="line"><span class="comment"># 6      0       0       1        0        1</span></div><div class="line"><span class="comment"># 7      0       0       1        1        0</span></div><div class="line"><span class="comment"># 8      0       0       1        1        1</span></div><div class="line"><span class="comment"># 9      0       1       0        0        0</span></div><div class="line"><span class="comment"># 10     0       1       0        0        1</span></div><div class="line"><span class="comment"># 11     0       1       0        1        0</span></div><div class="line"><span class="comment"># 12     0       1       0        1        1</span></div><div class="line"><span class="comment"># 13     0       1       1        0        0</span></div><div class="line"><span class="comment"># 14     0       1       1        0        1</span></div><div class="line"><span class="comment"># 15     0       1       1        1        0</span></div><div class="line"><span class="comment"># 16     0       1       1        1        1</span></div><div class="line"><span class="comment"># 17     1       0       0        0        0</span></div><div class="line"><span class="comment"># 18     1       0       0        0        1</span></div><div class="line"><span class="comment"># 19     1       0       0        1        0</span></div><div class="line"><span class="comment"># 20     1       0       0        1        1</span></div><div class="line"><span class="comment"># 21     1       0       1        0        0</span></div><div class="line"><span class="comment"># 22     1       0       1        0        1</span></div><div class="line"><span class="comment"># 23     1       0       1        1        0</span></div><div class="line"><span class="comment"># 24     1       0       1        1        1</span></div><div class="line"><span class="comment"># 25     1       1       0        0        0</span></div><div class="line"><span class="comment"># 26     1       1       0        0        1</span></div><div class="line"><span class="comment"># 27     1       1       0        1        0</span></div><div class="line"><span class="comment"># 28     1       1       0        1        1</span></div><div class="line"><span class="comment"># 29     1       1       1        0        0</span></div><div class="line"><span class="comment"># 30     1       1       1        0        1</span></div><div class="line"><span class="comment"># 31     1       1       1        1        0</span></div><div class="line"><span class="comment"># 32     1       1       1        1        1</span></div></pre></td></tr></table></figure></p>
+<p>The five nested loops run through all possible combinations of dog, bun, ketchup, mustard, and onion.</p>
+<p>We used the tab character to line everything up. That’s the parts. We haven’t talked about print formatting yet, but if you want to know more about it, you can have a peek at chapter 21.</p>
+<p>We used a variable called <code>count</code> to number each combination. So, for example, a hot dog with bun and mustard would be #27. Of course, some of the 32 combinations don’t make sense. (A hot dog with no bun but with mustard and ketchup would be a little messy.) But you know what they say: “The customer is always right!”</p>
+<h4 id="counting-calories">Counting calories</h4>
+<p>Since everyone is concerned about nutrition these days, let’s add a calorie count for each combination on the menu. (You might not care about the calories, but I bet your parents do!) That will let us use some of Python’s math abilities, which we learned before.</p>
+<p>We already know which items are in each combination. All we need now are the calories for each item. Then we can add them all up in the innermost loop.</p>
+<p>Here’s some code that sets how many calories are in each item: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dog_cal = <span class="number">140</span></div><div class="line">bun_cal = <span class="number">120</span></div><div class="line">mus_cal = <span class="number">20</span></div><div class="line">ket_cal = <span class="number">80</span></div><div class="line">onion_cal = <span class="number">40</span></div></pre></td></tr></table></figure></p>
+<p>Now we just need to add them up. We know there’s either 0 or 1 of each item in each menu combination. So we can just multiply the quantity by the calories for every item, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tot_cal = (dog * dog_cal) + (bun * bun_cal) + \</div><div class="line">          (mustard * mus_cal) + (ketchup * ket_cal) + \</div><div class="line">          (onion * onion_cal)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Because the order of operations is multiplication first, then addition, I didn’treally need to put in the parentheses. I just put them in to make it easier to seewhat’s going on.</p>
+</blockquote>
+<h5 id="long-lines-of-code">Long lines of code</h5>
+<p>Did you notice the backslash (<code>\</code>) characters at the end of the lines in the previous code? If youhave a long expression that won’t fit on a single line, you can use the backslash character to tellPython, “This line isn’t done. Treat whatever is on the next line as if it’s part of this line.” Here we used two backslashes to split our long line into three short lines. The backslash is called a linecontinuation character, and several programming languages have them.</p>
+<p>You can also put an extra set of parentheses around the whole expression, and then you can split your expression over multiple lines without using the backslash, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tot_cal = ((dog * dog_cal) + (bun * bun_cal) + </div><div class="line">          (mustard * mus_cal) + (ketchup * ket_cal) + </div><div class="line">          (onion * onion_cal))</div></pre></td></tr></table></figure></p>
+<p>Putting this all together, the new calorie-counter version of the hot dog program is shown down. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">dog_cal = <span class="number">140</span></div><div class="line">bun_cal = <span class="number">120</span></div><div class="line">ket_cal = <span class="number">80</span> </div><div class="line">mus_cal  = <span class="number">20</span></div><div class="line">onion_cal = <span class="number">40</span></div><div class="line"></div><div class="line">print(<span class="string">"\tDog \tBun \tKetchup\tMustard\tOnions\tCalories"</span>)</div><div class="line">count = <span class="number">1</span></div><div class="line"><span class="keyword">for</span> dog <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>]:</div><div class="line">    <span class="keyword">for</span> bun <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>]:</div><div class="line">        <span class="keyword">for</span> ketchup <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>]:</div><div class="line">                <span class="keyword">for</span> mustard <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>]:</div><div class="line">                    <span class="keyword">for</span> onion <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">1</span>]:     </div><div class="line">                        total_cal = (bun * bun_cal)+(dog * dog_cal) + \</div><div class="line">                            (ketchup * ket_cal)+(mustard * mus_cal) + \</div><div class="line">                                (onion * onion_cal)</div><div class="line">                        print(<span class="string">"#"</span>, count, <span class="string">"\t"</span>,)     </div><div class="line">                        print(dog, <span class="string">"\t"</span>, bun, <span class="string">"\t"</span>, ketchup, <span class="string">"\t"</span>, end=<span class="string">''</span>)</div><div class="line">                        print(mustard, <span class="string">"\t"</span>, onion, end=<span class="string">''</span>)</div><div class="line">                        print(<span class="string">"\t"</span>, total_cal)</div><div class="line">                        count = count + <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>The output should look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>=========================== RESTART ===========================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">          Dog      Bun      Ketchup  Mustard  Onions   Calories</div><div class="line"><span class="comment"># 1       0        0        0        0        0        0</span></div><div class="line"><span class="comment"># 2       0        0        0        0        1        40</span></div><div class="line"><span class="comment"># 3       0        0        0        1        0        20</span></div><div class="line"><span class="comment"># 4       0        0        0        1        1        60</span></div><div class="line"><span class="comment"># 5       0        0        1        0        0        80</span></div><div class="line"><span class="comment"># 6       0        0        1        0        1        120</span></div><div class="line"><span class="comment"># 7       0        0        1        1        0        100</span></div><div class="line"><span class="comment"># 8       0        0        1        1        1        140</span></div><div class="line"><span class="comment"># 9       0        1        0        0        0        120</span></div><div class="line"><span class="comment"># 10      0        1        0        0        1        160</span></div><div class="line"><span class="comment"># 11      0        1        0        1        0        140</span></div><div class="line"><span class="comment"># 12      0        1        0        1        1        180</span></div><div class="line"><span class="comment"># 13      0        1        1        0        0        200</span></div><div class="line"><span class="comment"># 14      0        1        1        0        1        240</span></div><div class="line"><span class="comment"># 15      0        1        1        1        0        220</span></div><div class="line"><span class="comment"># 16      0        1        1        1        1        260</span></div><div class="line"><span class="comment"># 17      1        0        0        0        0        140</span></div><div class="line"><span class="comment"># 18      1        0        0        0        1        180</span></div><div class="line"><span class="comment"># 19      1        0        0        1        0        160</span></div><div class="line"><span class="comment"># 20      1        0        0        1        1        200</span></div><div class="line"><span class="comment"># 21      1        0        1        0        0        220</span></div><div class="line"><span class="comment"># 22      1        0        1        0        1        260</span></div><div class="line"><span class="comment"># 23      1        0        1        1        0        240</span></div><div class="line"><span class="comment"># 24      1        0        1        1        1        280</span></div><div class="line"><span class="comment"># 25      1        1        0        0        0        260</span></div><div class="line"><span class="comment"># 26      1        1        0        0        1        300</span></div><div class="line"><span class="comment"># 27      1        1        0        1        0        280</span></div><div class="line"><span class="comment"># 28      1        1        0        1        1        320</span></div><div class="line"><span class="comment"># 29      1        1        1        0        0        340</span></div><div class="line"><span class="comment"># 30      1        1        1        0        1        380</span></div><div class="line"><span class="comment"># 31      1        1        1        1        0        360</span></div><div class="line"><span class="comment"># 32      1        1        1        1        1        400</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>Just imagine how tedious it would be to work out the calories for all these combinations by hand, even if you had a calculator to do the math. It’s way more fun to write a program to figure it all out for you. Looping and a bit of math in Python make it a snap!</p>
+<hr>
+<h2 id="what-did-you-learn">What did you learn?</h2>
+<p>In this chapter, you learned about<br>
+  ■ nested loops.<br>
+  ■ variable loops.<br>
+  ■ permutations and combinations.<br>
+  ■ decision trees.</p>
+<h2 id="test-your-knowledge">Test your knowledge</h2>
+<ol style="list-style-type: decimal">
+<li>How do you make a variable loop in Python?</li>
+<li>How do you make a nested loop in Python?</li>
+<li><p>What’s the total number of stars that will be printed by the following code: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">3</span>):</div><div class="line">        print(<span class="string">'*'</span>, end=<span class="string">''</span>)</div></pre></td></tr></table></figure></p></li>
+<li>What will the output from the code in question #3 look like?</li>
+<li><p>If a decision tree has four levels and two choices per level, how many possible choices (paths through the decision tree) are there?</p></li>
+</ol>
+<h2 id="try-it-out">Try it out</h2>
+<ol style="list-style-type: decimal">
+<li>Remember the countdown-timer program we created in chapter 8? Here it is, to refresh your memory: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">10</span>, <span class="number">0</span>, <span class="number">-1</span>):</div><div class="line">    <span class="keyword">print</span> i</div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line">print(<span class="string">"BLAST OFF!"</span>)</div></pre></td></tr></table></figure></li>
+</ol>
+<p>Modify the program to use a variable loop. The program should ask the user where thecountdown should start, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Countdown timer:  How many </div><div class="line">seconds?  4</div><div class="line"><span class="number">4</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">1</span></div><div class="line">BLAST OFF!</div></pre></td></tr></table></figure></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Take the program you wrote in question #1, and have it print a row of stars beside each number, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Countdown timer:  How many </div><div class="line">seconds?  4</div><div class="line"><span class="number">4</span> * * * *</div><div class="line"><span class="number">3</span> * * *</div><div class="line"><span class="number">2</span> * *</div><div class="line"><span class="number">1</span> *</div><div class="line">BLAST OFF!</div></pre></td></tr></table></figure></li>
+</ol>
+<p>(Hint: You probably need to use a nested loop.)</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python3/" rel="tag"><i class="fa fa-tag"></i> python3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/21/python3-learning-08/" rel="next" title="python3 learning 08">
+                <i class="fa fa-chevron-left"></i> python3 learning 08
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/22/python3-learning-10/" rel="prev" title="python3 learning 10">
+                python3 learning 10 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true"
+              alt="Michael" />
+          
+            <p class="site-author-name" itemprop="name">Michael</p>
+            <p class="site-description motion-element" itemprop="description">Maybe... One day, I'll fly away...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#nested-and-variable-loops"><span class="nav-text">Nested and Variable Loops</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nested-loops"><span class="nav-text">Nested loops</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#variable-loops"><span class="nav-text">Variable loops</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#variable-nested-loops"><span class="nav-text">Variable nested loops</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#even-more-variable-nested-loops"><span class="nav-text">Even more variable nested loops</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#using-nested-loops"><span class="nav-text">Using nested loops</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#counting-calories"><span class="nav-text">Counting calories</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#long-lines-of-code"><span class="nav-text">Long lines of code</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-did-you-learn"><span class="nav-text">What did you learn?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-your-knowledge"><span class="nav-text">Test your knowledge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try-it-out"><span class="nav-text">Try it out</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Marck Script:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Loop the Loop For most people, doing the same thing over and over again is very boring, so why not let the computer do that for us? Computers never get bored, so they’re great at doing repetitive tas">
+<meta name="keywords" content="python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 learning 07">
+<meta property="og:url" content="https://changemyheart.github.io/2017/09/20/python3-learning-07/index.html">
+<meta property="og:site_name" content="Memories">
+<meta property="og:description" content="Loop the Loop For most people, doing the same thing over and over again is very boring, so why not let the computer do that for us? Computers never get bored, so they’re great at doing repetitive tas">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-25T12:18:55.250Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3 learning 07">
+<meta name="twitter:description" content="Loop the Loop For most people, doing the same thing over and over again is very boring, so why not let the computer do that for us? Computers never get bored, so they’re great at doing repetitive tas">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('Please input password','') !== ''){
+        alert('Wrong');
+        history.back();
+      }
+    }
+  })();
+</script>
+  <title>python3 learning 07 | Memories</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Memories</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">love</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://changemyheart.github.io/2017/09/20/python3-learning-07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Memories">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python3 learning 07</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-20T20:42:23+08:00">
+                2017-09-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2017-09-25T20:18:55+08:00">
+                2017-09-25
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="loop-the-loop">Loop the Loop</h2>
+<p>For most people, doing the same thing over and over again is very boring, so why not let the computer do that for us? Computers never get bored, so they’re great at doing repetitive tasks. In this chapter, we’re going to see how to make the computer repeat things.</p>
+<p>Computer programs often repeat the same steps over and over again. This is called looping.<br>
+There are two main kinds of loops:<br>
+  ■ those that repeat a certain number of times—these are called counting loops<br>
+  ■ those that repeat until a certain thing happens—these are called conditional loops<br>
+because they keep going as long as some condition is true</p>
+<h3 id="counting-loops">Counting loops</h3>
+<p>The first kind of loop is called a counting loop. You’ll also hear it called a for loop, because many languages, including Python, use the <code>for</code> keyword to create this kind of loop in a program.</p>
+<p>Let’s try a program that uses a counting loop. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> looper <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]:</div><div class="line">    print(<span class="string">"hello"</span>)</div></pre></td></tr></table></figure></p>
+<p>You should see something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>================ RESTART ================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">hello</div><div class="line">hello</div><div class="line">hello</div><div class="line">hello</div><div class="line">hello</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>Hey, is there an echo in here? The program printed “hello” five times, even though there was only one <code>print</code> statement. How? The first line (<code>for looper in [1, 2, 3, 4, 5]:</code>) translated into plain English means this:</p>
+<ol style="list-style-type: decimal">
+<li>looper will start with the value 1 (so looper = 1).<br>
+</li>
+<li>The loop will do whatever is in the next block of instructions one time for each value in the list. (The list is those numbers in square brackets.)<br>
+</li>
+<li>Each time through the loop, the variable looper is assigned the next value in the list.</li>
+</ol>
+<p>The second line (<code>print (&quot;hello&quot;)</code>) is the block of code that Python will executeeach time around the loop. A <code>for</code> loop needs a block of code to tell the program what to do in each loop. That block (the indented part of the code) is called the body of the loop. (Remember, we talked about indenting and blocks in the last chapter.) &gt;Each time through the loop is called an iteration.</p>
+<p>Let’s try something else. Instead of printing the same thing every time, let’s make it print something different every time through the loop. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> looper <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]:</div><div class="line">    <span class="keyword">print</span> (looper)</div></pre></td></tr></table></figure></p>
+<p>The results should look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>================ RESTART ================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4</span></div><div class="line"><span class="number">5</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>This time, instead of printing “hello” five times, it printed the value of the variable <code>looper</code>. Each time through the loop, <code>looper</code> takes the next value in the list.</p>
+<h4 id="what-are-the-square-brackets-for">What are the square brackets for?</h4>
+<p>You might have noticed that our list of loop values is enclosed in square brackets. The square brackets and the commas between the numbers are the way you make a list in Python. We’ll learn more about lists soon. But for now, just know that a list is a kind of “container” for storing a bunch of things together. In this case, the things are numbers—the values that <code>looper</code> takes as it goes through different iterations of the loop.</p>
+<h3 id="using-a-counting-loop">Using a counting loop</h3>
+<p>Now let’s do something a bit more useful with loops. Let’s print a multiplication table. It only takes a small change to our program. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> looper <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]:</div><div class="line">    print(looper, <span class="string">"times 8 ="</span>, looper * <span class="number">8</span>)</div></pre></td></tr></table></figure></p>
+<p>You should see something like this:</p>
+<p>Now we’re starting to see the power of loops. Without loops, we’d have had to write a program like this one to get the same result: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"1 times 8 ="</span>, <span class="number">1</span> * <span class="number">8</span>)</div><div class="line">print(<span class="string">"2 times 8 ="</span>, <span class="number">2</span> * <span class="number">8</span>)</div><div class="line">print(<span class="string">"3 times 8 ="</span>, <span class="number">3</span> * <span class="number">8</span>)</div><div class="line">print(<span class="string">"4 times 8 ="</span>, <span class="number">4</span> * <span class="number">8</span>)</div><div class="line">print(<span class="string">"5 times 8 ="</span>, <span class="number">5</span> * <span class="number">8</span>)</div></pre></td></tr></table></figure></p>
+<p>To make a longer multiplication table (say, up to 10 or 20), this program would be a lot longer, but our loop program would be almost the same (just with more numbers in the list). Loops make this much easier!</p>
+<h3 id="a-shortcutrange">A shortcut—range()</h3>
+<p>In the previous example, we only looped 5 times: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> looper  <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]:</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>But what if we wanted the loop to run 100 times, or 1000 times? That would be a lot of typing!</p>
+</blockquote>
+<p>Luckily, there’s a shortcut. The <code>range()</code> function lets you just enter the starting and ending values, and it creates all the values in between for you. <code>range()</code> creates a list containing a range of numbers.</p>
+<p>Let’s use the range() function in our multiplication table example.</p>
+<p>You should see something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>================= RESTART =================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line"><span class="number">1</span> times <span class="number">8</span> = <span class="number">8</span></div><div class="line"><span class="number">2</span> times <span class="number">8</span> = <span class="number">16</span></div><div class="line"><span class="number">3</span> times <span class="number">8</span> = <span class="number">24</span></div><div class="line"><span class="number">4</span> times <span class="number">8</span> = <span class="number">32</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>It’s almost the same as the first one . . . except that it missed the last loop! Why?</p>
+</blockquote>
+<p>The answer is that <code>range(1, 5)</code> gives us the list<code>[1, 2, 3, 4]</code>. You can try this in interactive mode: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(range(<span class="number">1</span>, <span class="number">5</span>))</div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div></pre></td></tr></table></figure></p>
+<p>Why not 5?<br>
+Well, that’s just the way the <code>range()</code> function works. It gives you a list of numbers starting at the first number and ending just before the last number. You need to take that into account and adjust the range to get the number of loops you want.</p>
+<p>Following shows our program modified to give us the 8 times table up to 10. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> looper <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>):</div><div class="line">    print(looper, <span class="string">"times 8 ="</span>, looper * <span class="number">8</span>)</div></pre></td></tr></table></figure></p>
+<p>And here’s what we get when we run it: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>================== RESTART ==================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line"><span class="number">1</span> times <span class="number">8</span> = <span class="number">8</span></div><div class="line"><span class="number">2</span> times <span class="number">8</span> = <span class="number">16</span></div><div class="line"><span class="number">3</span> times <span class="number">8</span> = <span class="number">24</span></div><div class="line"><span class="number">4</span> times <span class="number">8</span> = <span class="number">32</span></div><div class="line"><span class="number">5</span> times <span class="number">8</span> = <span class="number">40</span></div><div class="line"><span class="number">6</span> times <span class="number">8</span> = <span class="number">48</span></div><div class="line"><span class="number">7</span> times <span class="number">8</span> = <span class="number">56</span></div><div class="line"><span class="number">8</span> times <span class="number">8</span> = <span class="number">64</span></div><div class="line"><span class="number">9</span> times <span class="number">8</span> = <span class="number">72</span></div><div class="line"><span class="number">10</span> times <span class="number">8</span> = <span class="number">80</span></div></pre></td></tr></table></figure></p>
+<p>In the above program, <code>range(1, 11)</code> gave us a list of numbers from 1 to 10, and the loop did one iteration for each number in the list. Each time through the loop, the variable <code>looper</code> took the next value in the list.</p>
+<p>By the way, we called our loop variable <code>looper</code>, but you can call it anything you want.</p>
+<h3 id="a-matter-of-styleloop-variable-names">A matter of style—loop variable names</h3>
+<p>A loop variable is no different from any other variable. There’s nothing special about it—it’s just a name for a value. It doesn’t matter that we’re using the variable as a loop counter.</p>
+<p>We said before that you should use variable names that describe what the variables do. That’s why I picked the name <code>looper</code> for the previous example. But loop variables are one place where you can sometimes make an exception. That’s because there’s a convention (remember, that means a common practice) in programming to use the letters <code>i</code>, <code>j</code>, <code>k</code>, and so on, for loop variables.</p>
+<blockquote>
+<p>Why i, j, and k for loops?<br>
+That’s because the early programmers were using programs to ﬁgure out math stuff, and math already uses a, b, c, and x, y, z for other things. Also, in one popular programming language, the variables i, j, and k were always integers—you couldn’t make them any other type. Since loop counters are always integers, they usually picked i, j, and k for their loop counters, and it became common practice.</p>
+</blockquote>
+<p>Because lots of people use <code>i</code>, <code>j</code>, and k for loop variables, programmers get used to seeing this in programs. It’s perfectly fine to use other names for loop variables, like we did. But you shouldn’t use <code>i</code>, <code>j</code>, and <code>k</code> for anything other than loop variables.</p>
+<p>If we used this convention, our program would look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">1</span>, <span class="number">5</span>):</div><div class="line">    print(i, <span class="string">"times 8 ="</span>, i * <span class="number">8</span>)</div></pre></td></tr></table></figure></p>
+<p>And it would work exactly the same. (Try it and see!)</p>
+<p>Which names you use for your loop variables is a matter of style. Style is about how your programs look, not about whether they work or not. But if you use the same style as other programmers, your programs will be easier to read, understand, and debug. You’ll also be more used to this style, and it’ll be easier for you to read other people’s programs.</p>
+<h3 id="a-range-shortcut">A <code>range()</code> shortcut</h3>
+<p>You don’t always have to give <code>range()</code> two numbers like we did in above. You can give it just one number: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">1</span>, <span class="number">5</span>):</div><div class="line">    print(i, <span class="string">"times 8 ="</span>, i * <span class="number">8</span>)</div></pre></td></tr></table></figure></p>
+<p>This is the same as writing <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">0</span>, <span class="number">5</span>):</div></pre></td></tr></table></figure></p>
+<p>which gives you this list of numbers: <code>[0, 1, 2, 3, 4]</code>.</p>
+<p>In fact, most programmers start their loops at 0 instead of 1. If you use <code>range(5)</code>, you’ll get 5 iterations of the loop, which is easy to remember. You just have to know that the first time through, <code>i</code> will be equal to 0, not 1, and the last time through, it’ll equal 4, not 5.</p>
+<blockquote>
+<p>So why do most programmers start loops from 0 instead of 1?<br>
+Well, back in the good old days, some people started from 1 and some people started from 0. They had these really geeky arguments about which one was better. In the end, the 0 people won.<br>
+So there you have it. Most people start at 0 today, but you can use whichever you like. Just remember to adjust the upper limit so you get the right number of iterations.</p>
+</blockquote>
+<p>Just for fun, I tried doing a loop with a string like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> letter <span class="keyword">in</span> <span class="string">"Hi there"</span>:</div><div class="line">print(letter)</div></pre></td></tr></table></figure></p>
+<p>A string is like a list of characters. We learned that counting loops use lists for their iterations. That means you can loop through a string. Each character in the string is one iteration through the loop. So if we print the loop variable, which Carter called letter in his example, we’re printing the letters in the string, one at a time. Because each print statement starts a new line, each of the letters prints on its own line.</p>
+<h3 id="counting-by-steps">Counting by steps</h3>
+<p>So far, our counting loops have been counting up by 1 each iteration. What if we want the loop to count in steps of 2? Or 5, or 10? What about counting backwards?</p>
+<p>The <code>range()</code> function can have an extra argument that allows you to change the size of the steps from the default of 1 to a different size.</p>
+<blockquote>
+<p>Arguments are the values that you put inside the parentheses when you use a function like range(). We say that you pass the argument to the function. The term parameter is also used, as in, “pass the parameter”. We’ll learn more about functions, arguments, and parameters soon.</p>
+</blockquote>
+<p>We’re going to try some loops in interactive mode. When you type in the first line, with the colon at the end, IDLE will automatically indent the next line for you, because it knows that a <code>for</code> loop needs a block of code following it. When you complete the block of code, press the Enter (or Return) key twice. Try it: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>, <span class="number">2</span>):</div><div class="line">    print(i)</div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">5</span></div><div class="line"><span class="number">7</span></div><div class="line"><span class="number">9</span></div></pre></td></tr></table></figure></p>
+<p>We added a third parameter, <code>2</code>, to the <code>range()</code> function. Now the loop is counting in steps of 2. Let’s try another one: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">5</span>, <span class="number">26</span>, <span class="number">5</span>):</div><div class="line">    print(i)</div><div class="line">    </div><div class="line"><span class="number">5</span></div><div class="line"><span class="number">10</span></div><div class="line"><span class="number">15</span></div><div class="line"><span class="number">20</span></div><div class="line"><span class="number">25</span></div></pre></td></tr></table></figure></p>
+<p>Now we’re stepping by 5. How about counting backwards? <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>, <span class="number">1</span>, <span class="number">-1</span>):</div><div class="line">    print(i)</div><div class="line">    </div><div class="line"><span class="number">10</span></div><div class="line"><span class="number">9</span></div><div class="line"><span class="number">8</span></div><div class="line"><span class="number">7</span></div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">5</span></div><div class="line"><span class="number">4</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>When the third parameter in the <code>range()</code> function is negative, the loop counts down instead of up. Remember that the loop starts at the first number and goes up to (or down to) but not including the second number, so in our last example we only got down to 2, not 1.</p>
+<p>We can use this to make a countdown timer program. We only need to add a couple more lines. try running it. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">10</span>, <span class="number">0</span>, <span class="number">-1</span>):</div><div class="line">    print(i)</div><div class="line">    time.sleep(<span class="number">1</span>)  </div><div class="line">print(<span class="string">"BLAST OFF!"</span>)</div></pre></td></tr></table></figure></p>
+<p>Don’t worry about the stuff in the program that I haven’t told you about yet, like <code>import</code>, <code>time</code>, and <code>sleep</code>. We’re going to find out all about that in the following chapters. Just try it and see how it works. The important thing here’s the <code>range(10, 0, -1)</code> part, which makes a loop that counts backwards from 10 to 1.</p>
+<h3 id="counting-without-numbers">Counting without numbers</h3>
+<p>In all the previous examples, the loop variable has been a number. In programming terms, we say that the loop iterates over a list of numbers. But the list doesn’t have to be a list of numbers. As we already saw from Carter’s experiment, it can also be a list of characters (a string). It can also be a list of strings, or anything else.</p>
+<p>The best way to see how this works is with an example. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> cool_guy <span class="keyword">in</span> [<span class="string">"Spongebob"</span>, <span class="string">"Spiderman"</span>, <span class="string">"Justin Timberlake"</span>, <span class="string">"My Dad"</span>]:</div><div class="line">    print(cool_guy, <span class="string">"is the coolest guy ever!"</span>)</div></pre></td></tr></table></figure></p>
+<p>Now we’re not looping over a list of numbers, we’re looping over a list of strings. And instead of <code>i</code> for the loop variable, I used <code>cool_guy</code>. The loop variable <code>cool_guy</code> takes a different value in the list each time through. This is still a kind of counting loop, because even though the list isn’t a list of numbers, Python counts how many items are in the list to know how many times to loop. (I won’t show what the output looks like this time—you’ll see it when you run the program.)</p>
+<p>But what if we don’t know ahead of time how many iterations we’ll need? What if there’s no list of values we can use? Don’t touch that dial, because that’s coming up next!</p>
+<h3 id="while-were-on-the-subject-.-.-.">While we’re on the subject . . .</h3>
+<p>We just learned about the first kind of loop, a for loop or counting loop. The second kind of loop is called a while loop or conditional loop.</p>
+<p>The for loop is great if you know ahead of time how many times you want the loop to run. But sometimes you want a loop to run until something happens, and you don’t know how many iterations it’ll be until that thing happens. While loops let you do that.</p>
+<p>In the last chapter, we learned about conditions and testing and the if statement. Instead of counting how many times to run a loop, while loops use a test to decide when to stop a loop. While loops are also called conditional loops. A conditional loop keeps looping while some condition is met.</p>
+<p>Basically, a while loop keeps asking “Am I done yet? . . . Am I done yet? . . . Am I done yet? . . .” until it’s done. It’s done when the condition is no longer true.</p>
+<p>While loops use the Python keyword <code>while</code>. Following shows an example. Type the program in, try it, and see how it works. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span><span class="string">"Type 3 to continue, anything else to quit."</span></div><div class="line">someInput = raw_input()</div><div class="line"><span class="keyword">while</span> someInput == <span class="string">'3'</span>: </div><div class="line">    print(<span class="string">"Thank you for the 3.  Very kind of you."</span>)</div><div class="line">    print(<span class="string">"Type 3 to continue, anything else to quit."</span>)  </div><div class="line">    someInput = raw_input()</div><div class="line">print(<span class="string">"That's not 3, so I'm quitting now."</span>)</div></pre></td></tr></table></figure></p>
+<p>This program keeps asking for input from the user. While the input is equal to 3, the condi-tion is <code>true</code>, and the loop keeps running. That’s why this kind of conditional loop is also called a while loop, and it uses the Python <code>while</code> keyword. When the input is not equal to 3, the condition is <code>false</code>, and the loop stops.</p>
+<h3 id="bailing-out-of-a-loopbreak-and-continue">Bailing out of a loop—break and continue</h3>
+<p>There are times when you want to get out of a loop in the middle, before a <code>for</code> loop is finished counting, or before a <code>while</code> loop has found its end condition. There are two ways to do this: you can jump ahead to the next iteration of the loop with <code>continue</code>, or you can stop looping altogether with <code>break</code>. Let’s look at these more closely.</p>
+<h4 id="jumping-aheadcontinue">Jumping ahead—<code>continue</code></h4>
+<p>If you want to stop executing the current iteration of the loop and skip ahead to the next iteration, the continue statement is what you need. The best way to show this is with an example. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">1</span>, <span class="number">6</span>):</div><div class="line">    print()</div><div class="line">    print(<span class="string">'i ='</span>, i,)</div><div class="line">    print(<span class="string">'Hello, how'</span>,)</div><div class="line">    <span class="keyword">if</span> i == <span class="number">3</span>:</div><div class="line">        <span class="keyword">continue</span></div><div class="line">    print(<span class="string">'are you today?'</span>)</div></pre></td></tr></table></figure></p>
+<p>If we run this program, the output looks like this: <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>================== RESTART ==================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">i = 1 Hello how are you today?</div><div class="line">i = 2 Hello how are you today?</div><div class="line">i = <span class="number">3</span> Hello how</div><div class="line">i = 4 Hello how are you today?</div><div class="line">i = 5 Hello how are you today?</div></pre></td></tr></table></figure></p>
+<p>Notice that, the third time through the loop (when <code>i == 3</code>), the body of the loop didn’t finish—it jumped ahead to the next iteration (<code>i == 4</code>). That was the <code>continue</code> statement at work. It works the same way in <code>while</code> loops.</p>
+<h4 id="bailing-outbreak">Bailing out—<code>break</code></h4>
+<p>What if we want to jump out of the loop completely—never finish counting, or give up waiting for the end condition? The <code>break</code> statement does that.</p>
+<p>Let’s change only line 6 of listing 8.9, replacing continue with break, and rerun the program to see what happens. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>================== RESTART ==================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">i = 1 Hello how are you today?</div><div class="line">i = 2 Hello how are you today?</div><div class="line">i = <span class="number">3</span> Hello how</div></pre></td></tr></table></figure></p>
+<p>This time, the loop didn’t just skip the rest of iteration 3; it stopped altogether. That’s what <code>break</code> does. It works the same way in <code>while</code> loops.</p>
+<p>I should tell you that some people think using <code>break</code> and <code>continue</code> is a bad idea. Personally, I don’t think they’re bad, but I rarely use them. I thought I’d tell you about <code>break</code> and <code>continue</code> just in case you ever need them.</p>
+<hr>
+<h2 id="what-did-you-learn">What did you learn?</h2>
+<p>In this chapter, you learned about<br>
+  ■ <code>for</code> loops (also called counting loops).<br>
+  ■ the <code>range()</code> function—a shortcut for counting loops.<br>
+  ■ different step sizes for <code>range()</code>.<br>
+  ■ <code>while</code> loops (also called conditional loops).<br>
+  ■ skipping to the next iteration with <code>continue</code>.<br>
+  ■ jumping out of a loop with <code>break</code>.</p>
+<h2 id="test-your-knowledge">Test your knowledge</h2>
+<ol style="list-style-type: decimal">
+<li><p>How many times would the following loop run?<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">1</span>, <span class="number">6</span>):</div><div class="line">    print(<span class="string">'Hi, Warren'</span>)</div></pre></td></tr></table></figure></p></li>
+<li><p>How many times would the following loop run? And what would the values of i be for each loop?<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">1</span>, <span class="number">6</span>, <span class="number">2</span>):</div><div class="line">    print(<span class="string">'Hi, Warren'</span>)</div></pre></td></tr></table></figure></p></li>
+<li>What list of numbers would <code>range(1, 8)</code> give you?<br>
+</li>
+<li>What list of numbers would <code>range(8)</code> give you?<br>
+</li>
+<li>What list of numbers would <code>range(2, 9, 2)</code> give you?<br>
+</li>
+<li>What list of numbers would <code>range(10, 0, -2)</code> give you?<br>
+</li>
+<li>What keyword do you use to stop the current iteration of a loop and jump ahead to the next iteration?<br>
+</li>
+<li><p>When does a <code>while</code> loop end?</p></li>
+</ol>
+<h2 id="try-it-out">Try it out</h2>
+<ol style="list-style-type: decimal">
+<li>Write a program to print a multiplication table (a times table). At the start, it should ask the user which table to print. The output should look something like this:</li>
+</ol>
+<blockquote>
+<p>Which multiplication table would you like?<br>
+5<br>
+Here’s your table:<br>
+5 x 1 = 5<br>
+5 x 2 = 10<br>
+5 x 3 = 15<br>
+5 x 4 = 20<br>
+5 x 5 = 25<br>
+5 x 6 = 30<br>
+5 x 7 = 35<br>
+5 x 8 = 40<br>
+5 x 9 = 45<br>
+5 x 10 = 50</p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>You probably used a <code>for</code> loop in your program for question #1. That’s how most people would do it. But just for practice, try doing the same thing with a <code>while</code> loop. Or if you used a <code>while</code> loop in question #1, try it with a <code>for</code> loop.<br>
+</li>
+<li>Add something else to the multiplication table program. After asking which table the user wants, ask her how high the table should go. The output should look like this:</li>
+</ol>
+<blockquote>
+<p>Which multiplication table would you like?<br>
+7<br>
+How high do you want to go?<br>
+12<br>
+Here’s your table:<br>
+7 x 1 = 7<br>
+7 x 2 = 14<br>
+7 x 3 = 21<br>
+7 x 4 = 28<br>
+7 x 5 = 35<br>
+7 x 6 = 42<br>
+7 x 7 = 49<br>
+7 x 8 = 56<br>
+7 x 9 = 63<br>
+7 x 10 = 70<br>
+7 x 11 = 77<br>
+7 x 12 = 84</p>
+</blockquote>
+<p>You can do this with the <code>for</code> loop version of the program, the <code>while</code> loop version, or both.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python3/" rel="tag"><i class="fa fa-tag"></i> python3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/20/python3-learning-06/" rel="next" title="python3 learning 06">
+                <i class="fa fa-chevron-left"></i> python3 learning 06
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/21/python3-learning-08/" rel="prev" title="python3 learning 08">
+                python3 learning 08 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true"
+              alt="Michael" />
+          
+            <p class="site-author-name" itemprop="name">Michael</p>
+            <p class="site-description motion-element" itemprop="description">Maybe... One day, I'll fly away...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#loop-the-loop"><span class="nav-text">Loop the Loop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#counting-loops"><span class="nav-text">Counting loops</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#what-are-the-square-brackets-for"><span class="nav-text">What are the square brackets for?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#using-a-counting-loop"><span class="nav-text">Using a counting loop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-shortcutrange"><span class="nav-text">A shortcut—range()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-matter-of-styleloop-variable-names"><span class="nav-text">A matter of style—loop variable names</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-range-shortcut"><span class="nav-text">A range() shortcut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#counting-by-steps"><span class="nav-text">Counting by steps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#counting-without-numbers"><span class="nav-text">Counting without numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while-were-on-the-subject-.-.-."><span class="nav-text">While we’re on the subject . . .</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bailing-out-of-a-loopbreak-and-continue"><span class="nav-text">Bailing out of a loop—break and continue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jumping-aheadcontinue"><span class="nav-text">Jumping ahead—continue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bailing-outbreak"><span class="nav-text">Bailing out—break</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-did-you-learn"><span class="nav-text">What did you learn?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-your-knowledge"><span class="nav-text">Test your knowledge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try-it-out"><span class="nav-text">Try it out</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

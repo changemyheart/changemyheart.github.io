@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Marck Script:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Collecting Things Together—Lists We’ve seen that Python can store things in its memory and retrieve them, using names. So far, we have stored strings and numbers (both integers and floats). Sometimes">
+<meta name="keywords" content="python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 learning 10">
+<meta property="og:url" content="https://changemyheart.github.io/2017/09/22/python3-learning-10/index.html">
+<meta property="og:site_name" content="Memories">
+<meta property="og:description" content="Collecting Things Together—Lists We’ve seen that Python can store things in its memory and retrieve them, using names. So far, we have stored strings and numbers (both integers and floats). Sometimes">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/classMarks%20table.png?raw=true">
+<meta property="og:updated_time" content="2017-09-25T12:19:46.851Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3 learning 10">
+<meta name="twitter:description" content="Collecting Things Together—Lists We’ve seen that Python can store things in its memory and retrieve them, using names. So far, we have stored strings and numbers (both integers and floats). Sometimes">
+<meta name="twitter:image" content="https://github.com/changemyheart/Pictures/blob/master/classMarks%20table.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('Please input password','') !== ''){
+        alert('Wrong');
+        history.back();
+      }
+    }
+  })();
+</script>
+  <title>python3 learning 10 | Memories</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Memories</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">love</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://changemyheart.github.io/2017/09/22/python3-learning-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Memories">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python3 learning 10</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-22T19:04:51+08:00">
+                2017-09-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2017-09-25T20:19:46+08:00">
+                2017-09-25
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="collecting-things-togetherlists">Collecting Things Together—Lists</h2>
+<p>We’ve seen that Python can store things in its memory and retrieve them, using names. So far, we have stored strings and numbers (both integers and floats). Sometimes it’s useful to store a bunch of things together in a kind of “group” or “collection.” Then you can do things to the whole collection at once and keep track of groups of things more easily. One of the kinds of collections is a list. In this chapter, we’re going to learn about lists—what they are and how to create, modify, and use them.</p>
+<p>Lists are very useful, and they’re used in many, many programs. We’ll use a lot of them in the examples in upcoming chapters when we start doing graphics and game programming, because the many graphical objects in a game are often stored in a list.</p>
+<h3 id="whats-a-list">What’s a list?</h3>
+<p>In Python, you’d write this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">family = [<span class="string">'Mom'</span>, <span class="string">'Dad'</span>, <span class="string">'Junior'</span>, <span class="string">'Baby'</span>]</div></pre></td></tr></table></figure></p>
+<p>or: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">luckyNumbers = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">26</span>, <span class="number">30</span>]</div></pre></td></tr></table></figure></p>
+<p>Both <code>family</code> and <code>luckyNumbers</code> are examples of Python lists, and the individual things inside lists are called items. As you can see, lists in Python aren’t much different from lists you make in everyday life. Lists use square brackets to show where the list starts and ends, and they use commas to separate the items inside.</p>
+<h3 id="creating-a-list">Creating a list</h3>
+<p>Both <code>family</code> and <code>luckyNumbers</code> are variables. We said before that you can assign different kinds of values to variables. We have already used them for numbers and strings, and they can also be assigned a list.</p>
+<p>You create a list like you create any other variable—by assigning something to it, just like we did with <code>luckyNumbers</code>. You can also create an empty list, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newList = []</div></pre></td></tr></table></figure></p>
+<p>There are no items inside the square brackets, so the list is empty. But what good is an empty list? Why would we want to create one?</p>
+<p>Well, quite often, we don’t know ahead of time what’s going to be in the list. We don’t know how many items will be in it, or what those items will be. We just know we’ll be using a list to hold them. Once we have an empty list, the program can add things to it. So how do we do that?</p>
+<h3 id="adding-things-to-a-list">Adding things to a list</h3>
+<p>To add things to a list, you use <code>append()</code>. Try this in interactive mode: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>friends = []             <span class="comment">#Makes a new, empty list</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>friends.append(<span class="string">'David'</span>)  <span class="comment">#Adds an item, "David", to the list</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(friends)</div></pre></td></tr></table></figure></p>
+<p>You’ll get this result: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="string">'David'</span>]</div></pre></td></tr></table></figure></p>
+<p>Try adding another item: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>friends.append(<span class="string">'Mary'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(friends)</div><div class="line">[<span class="string">'David'</span>, <span class="string">'Mary'</span>]</div></pre></td></tr></table></figure></p>
+<p>Remember that you have to create the list (empty or not) before you start adding things to it. It’s like if you are making a cake: you can’t just start pouring ingredients together—you have to get a bowl out first to pour them into. Otherwise you’ll end up with stuff all over the counter!</p>
+<h3 id="whats-the-dot">What’s the dot?</h3>
+<p>Why did we use a dot between <code>friends</code> and <code>append()</code>? Well, that starts getting into a pretty big topic: objects.</p>
+<p>Many things in Python are objects. To do something with an object, you need the object’s name (the variable name), then a dot, and then whatever you want to do to the object. So to append something to the <code>friends</code> list, you’d write this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">friends.append(something)</div></pre></td></tr></table></figure></p>
+<h3 id="lists-can-hold-anything">Lists can hold anything</h3>
+<p>Lists can hold any kind of data that Python can store. That includes numbers, strings, objects, and even other lists. The items in a list don’t have to be the same type or kind of thing. That means a single list can hold both numbers and strings, for example. A list could look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">my_list = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">23.76</span>, <span class="string">'Hello'</span>, myTeacher, <span class="number">7</span>, another_list]</div></pre></td></tr></table></figure></p>
+<p>Let’s make a new list with something simple, like the letters of the alphabet, so it’s easier to see what’s going on as we learn about lists. Type this in interactive mode: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div></pre></td></tr></table></figure></p>
+<h3 id="getting-items-from-a-list">Getting items from a list</h3>
+<p>You can get single items from a list by their index number. The list index starts from 0, so the first item in our list is <code>letters[0]</code>. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters[<span class="number">0</span>])</div><div class="line">a</div></pre></td></tr></table></figure></p>
+<p>Let’s try another one: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters[<span class="number">3</span>])</div><div class="line">d</div></pre></td></tr></table></figure></p>
+<h4 id="why-does-the-index-start-from-0-not-1">Why does the index start from 0, not 1?</h4>
+<p>That’s a question that a lot of programmers, engineers, and computer scientists have argued about since computers were invented. I’m not going to get in the middle of that argument, so let’s just say the answer is “because,” and move on . . .</p>
+<p>Okay, okay! Have a look at “WHAT’S GOING ON IN THERE” to see an explanation of why the index starts at 0 instead of 1.</p>
+<blockquote>
+<p>Remember that computers use binary digits or bits to store everything. Back in the old days, those bits were expensive. Each one had to be hand-picked and carried by donkey from the bit plantation…just kidding.But they were expensive.</p>
+</blockquote>
+<blockquote>
+<p>Binary counting starts at 0. So, to make the most efficient use of the bits and not waste any, things like memory locations and list indices started at 0 as well.</p>
+</blockquote>
+<p>You’ll quickly get used to indices starting at 0. It’s very common in programming.</p>
+<h3 id="slicing-a-list">“Slicing” a list</h3>
+<p>You can also use indices to get more than one item from a list at a time. This is called slicing a list. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> letters[<span class="number">1</span>:<span class="number">4</span>]</div><div class="line">[<span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</div></pre></td></tr></table></figure></p>
+<p>Similar to the <code>range()</code> in our <code>for</code> loops, slicing gets the items starting with the first index, but stops before getting to the second index. That’s why we got back three items, not four, in the previous example. One way to remember this is that the number of items you get back is always the difference between the two index numbers. (4 – 1 = 3, and we got three items back.)</p>
+<p>Here’s one other thing that is important to remember about slicing a list: What you get back when you slice a list is another (usually smaller) list. This smaller list is called a slice of the original list. The original list isn’t changed. The slice is a partial copy of the original.</p>
+<p>Look at the difference here: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters[<span class="number">1</span>])</div><div class="line">b</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters[<span class="number">1</span>:<span class="number">2</span>])</div><div class="line">[<span class="string">'b'</span>]</div></pre></td></tr></table></figure></p>
+<p>In the first case, we got back an item. In the second case, we got back a list containing the item. It’s a subtle difference, but you need to know about it. In the first case, we used a sin-gle index to get one item out of the list. In the second case, we used slice notation to get a one-item slice of the list.</p>
+<p>To really see the difference, try this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(type(letters[<span class="number">1</span>]))</div><div class="line">&lt;type <span class="string">'str'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(type(letters[<span class="number">1</span>:<span class="number">2</span>]))</div><div class="line">&lt;type <span class="string">'list'</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>Displaying the <code>type</code> of each one tells you for certain that in one case you get a single item (a string, in this case), and in the other case you get a list.</p>
+<p>The smaller list you get back when you slice a list is a copy of items from the original list. That means you can change it and the original list won’t be affected.</p>
+<h4 id="slice-shorthand">Slice shorthand</h4>
+<p>There are some shortcuts you can take when using slices. They don’t really save you much typing, but programmers are a lazy bunch, so they use shortcuts a lot. I want you to know what the shortcuts are, so you can recognize them when you see them in other people’s code and understand what’s going on. That’s important, because looking at other people’s code and trying to understand it is a good way to learn a new programming language, or programming in general.</p>
+<p>If the slice you want includes the start of the list, the shortcut is to use a colon followed by the number of items you want, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters[:<span class="number">2</span>])</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>]</div></pre></td></tr></table></figure></p>
+<p>Notice that there is no number before the colon. This will give you everything from the start of the list up to (but not including) the index you specify.</p>
+<p>You can do something similar to get the end of a list: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters[<span class="number">2</span>:]</div><div class="line">[<span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div></pre></td></tr></table></figure></p>
+<p>Using a number followed by a colon gives you everything from the index you specify to the end of the list.</p>
+<p>If you don’t put any numbers in, and just use a colon, you get the whole list: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters[:]</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div></pre></td></tr></table></figure></p>
+<p>Remember that I said that slices make a copy of the original? So <code>letters[:]</code> makes a copy of the whole list. This is handy if you want to make some changes to a list but keep the original unchanged.</p>
+<h3 id="modifying-items">Modifying items</h3>
+<p>You can use the index to change one of the list items: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters[<span class="number">2</span>] = <span class="string">'z'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'z'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div></pre></td></tr></table></figure></p>
+<p>But you can’t use the index to add new items to the list. Right now, there are five items in the list, with indices from 0 to 4. So we could not do something like this:</p>
+<p>It would not work. (Try it if you want.) It’s like trying to change something that isn’t there yet. To add items to a list, you have to do something else, and that’s where we’re going next. But before we do, let’s change our list back to the way it was: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters[<span class="number">2</span>] = <span class="string">'c'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div></pre></td></tr></table></figure></p>
+<h3 id="other-ways-of-adding-to-a-list">Other ways of adding to a list</h3>
+<p>We already saw how to add things to a list using <code>append()</code>. But there are other ways. In fact, there are three methods for adding things to a list: <code>append()</code>, <code>extend()</code>, and <code>insert()</code>.<br>
+  ■ <code>append()</code> adds one item to the end of the list.<br>
+  ■ <code>extend()</code> adds multiple items to the end of the list.<br>
+  ■ <code>insert()</code> adds one item somewhere in the list, not necessarily at the end. You tell it where to add the item.</p>
+<h4 id="adding-to-the-end-append">Adding to the end: <code>append()</code></h4>
+<p>We already saw how <code>append()</code> works. It adds one item to the end of a list: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.append(<span class="string">'n'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'n'</span>]</div></pre></td></tr></table></figure></p>
+<p>Let’s add one more: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.append(<span class="string">'g'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>]</div></pre></td></tr></table></figure></p>
+<p>Notice that the letters are not in order. That’s because append() adds the item to the end of the list. If we want the items in order, we’ll have to sort them. We’ll get to sorting very soon.</p>
+<h4 id="extending-the-list-extend">Extending the list: <code>extend()</code></h4>
+<p><code>extend()</code> adds several items to the end of a list: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.extend([<span class="string">'p'</span>, <span class="string">'q'</span>, <span class="string">'r'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>, <span class="string">'p'</span>, <span class="string">'q'</span>, <span class="string">'r'</span>]</div></pre></td></tr></table></figure></p>
+<p>Notice that what’s inside the round brackets of the <code>extend()</code> method is a list. A list has square brackets, so for <code>extend()</code>, you could have both round and square brackets.</p>
+<p>Everything in the list you give to <code>extend()</code> gets added to the end of the original list.</p>
+<h4 id="inserting-an-item-insert">Inserting an item: <code>insert()</code></h4>
+<p><code>insert()</code> adds a single item somewhere in the list. You tell it at what position in the list you want the item added: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.insert(<span class="number">2</span>, <span class="string">'z'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'z'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'n'</span>, <span class="string">'g'</span>, <span class="string">'p'</span>, <span class="string">'q'</span>, <span class="string">'r'</span>]</div></pre></td></tr></table></figure></p>
+<p>Here, we added the letter z at index 2. Index 2 is the third position in the list (because the indices start at 0). The letter that used to be in the third position, c, got bumped over by one place, to the fourth position. Every other item in the list also got bumped one position.</p>
+<h4 id="the-difference-between-append-and-extend">The difference between <code>append()</code> and <code>extend()</code></h4>
+<p>Sometimes <code>append()</code> and <code>extend()</code> look very similar, but they do different things. Let’s go back to our original list. First, try using <code>extend()</code> to add three items: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.extend([<span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>]</div></pre></td></tr></table></figure></p>
+<p>Now, we’ll try to use <code>append()</code> to do the same thing: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.append([<span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, [<span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>]]</div></pre></td></tr></table></figure></p>
+<p>What happened here? Well, we said before that <code>append()</code> adds one item to a list. How did it add three? It didn’t. It added one item, which happens to be another list containing three items. That’s why we got the extra set of square brackets inside our list. Remember that a list can hold anything, including other lists. That’s what we’ve got.</p>
+<p><code>insert()</code> works the same way as <code>append()</code>, except that you tell it where to put the new item. <code>append()</code> always puts it at the end.</p>
+<h3 id="deleting-from-a-list">Deleting from a list</h3>
+<p>How do we delete or remove things from a list? There are three ways: remove(), del, and <code>pop()</code>.</p>
+<h4 id="deleting-with-remove">Deleting with <code>remove()</code></h4>
+<p><code>remove()</code> deletes the item you choose from the list and throws it away: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.remove(<span class="string">'c'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div></pre></td></tr></table></figure></p>
+<p>You don’t need to know where in the list the item is. You just need to know it’s there somewhere. If you try to remove something that isn’t in the list, you’ll get an error: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.remove(<span class="string">'f'</span>)</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;pyshell#32&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> -toplevel-</div><div class="line">    letters.remove(<span class="string">'f'</span>)</div><div class="line">ValueError: list.remove(x): x <span class="keyword">not</span> <span class="keyword">in</span> list</div></pre></td></tr></table></figure></p>
+<p>So how can you find out if a list contains a certain item? That’s coming right up. First, let’s look at the other ways to delete something from a list.</p>
+<h4 id="deleting-with-del">Deleting with <code>del</code></h4>
+<p><code>del</code> lets you delete an item from the list using its index, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> letters[<span class="number">3</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'e'</span>]</div></pre></td></tr></table></figure></p>
+<p>Here, we deleted the fourth item (index 3), which was the letter d.</p>
+<h4 id="deleting-with-pop">Deleting with pop()</h4>
+<p><code>pop()</code> takes the last item off the list and gives it back to you. That means you can assign it a name, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>lastLetter = letters.pop()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(lastLetter)</div><div class="line">e</div></pre></td></tr></table></figure></p>
+<p>You can also use <code>pop()</code> with an index, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>second = letters.pop(<span class="number">1</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(second)</div><div class="line">b</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line">e</div></pre></td></tr></table></figure></p>
+<p>Here, we popped the second letter (index 1), which was b. The item we popped was assigned to <code>second</code>, and it was also removed from <code>letters</code>.</p>
+<p>With nothing inside the parentheses, <code>pop()</code> gives you the last item and removes it from the list. If you put a number in the parentheses, <code>pop(n)</code> gives you the item at that index and removes it from the list.</p>
+<h3 id="searching-a-list">Searching a list</h3>
+<p>Once we have several items in a list, how do we find them? Two things you’ll often need to do with a list are<br>
+  ■ find out whether an item is in a list or not.<br>
+  ■ find out where an item is in the list (its index).</p>
+<h4 id="the-in-keyword">The <code>in</code> keyword</h4>
+<p>To find out whether something is in a list, you use the <code>in</code> keyword, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="string">'a'</span> <span class="keyword">in</span> letters:</div><div class="line">    print(<span class="string">"found 'a' in letters"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">"didn't find 'a' in letters"</span>)</div></pre></td></tr></table></figure></p>
+<p>The <code>'a' in letters</code> part is a Boolean or logical expression. It’ll return the value <code>True</code> if a is in the list, and <code>False</code> otherwise.</p>
+<p>You can try this in interactive mode: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'a'</span> <span class="keyword">in</span> letters</div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'s'</span> <span class="keyword">in</span> letters</div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure></p>
+<p>This is telling us that the list called <code>letters</code> does have an item a, but it does not have an item s. So a is in the list, and s isn’t in the list. Now you can combine <code>in</code> and <code>remove()</code>, and write something that won’t give you an error, even if the value isn’t in the list: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="string">'a'</span> <span class="keyword">in</span> letters:</div><div class="line">    letters.remove(<span class="string">'a'</span>)</div></pre></td></tr></table></figure></p>
+<p>This code only removes the value from the list if the value is in the list.</p>
+<h4 id="finding-the-index">Finding the index</h4>
+<p>To find where in the list an item is located, you use the <code>index()</code> method, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters.index(<span class="string">'d'</span>))</div><div class="line"><span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>So we know that d has index 3, which means it’s the fourth item in the list.</p>
+<p>Just like <code>remove()</code>, <code>index()</code> will give you an error if the value isn’t found in the list, so it’s a good idea to use it with in, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="string">'d'</span> <span class="keyword">in</span> letters:</div><div class="line">    print(letters.index(<span class="string">'d'</span>))</div></pre></td></tr></table></figure></p>
+<h3 id="looping-through-a-list">Looping through a list</h3>
+<p>When we first talked about loops, we saw that loops iterate through a list of values. We also learned about the <code>range()</code> function and used it as a shortcut for generating lists of num-bers for our loops. You saw that <code>range()</code> gives you a list of numbers.</p>
+<p>But a loop can iterate through any list—it doesn’t have to be a list of numbers. Let’s say we wanted to print our list of letters with one item on each line. We could do something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> letter <span class="keyword">in</span> letters:</div><div class="line">    print(letter)</div><div class="line">    </div><div class="line">a</div><div class="line">b</div><div class="line">c</div><div class="line">d</div><div class="line">e</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>This time, our loop variable is <code>letter</code>. (Before, we used loop variables like <code>looper</code> or <code>i</code>, <code>j</code>, and <code>k</code>.) The loop iterates over (loops through) all the values in the list, and each time through, the current item is stored in the loop variable, <code>letter</code>, and then is displayed.</p>
+<h3 id="sorting-lists">Sorting lists</h3>
+<p>Lists are an ordered type of collection. This means the items in a list have a certain order, and each one has a place, its index. Once you have put items in a list in a certain order, they stay in that order unless you change the list with insert(), append(), remove(), or pop(). But that order might not be the order you want. You might want a list sorted before you use it.</p>
+<p>To sort a list, you use the sort() method. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'d'</span>, <span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'d'</span>, <span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.sort()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div></pre></td></tr></table></figure></p>
+<p><code>sort()</code> automatically sorts strings alphabetically and numbers numerically, from smallest to largest.</p>
+<p>It’s important to know that <code>sort()</code> modifies the list in place. That means it changes the original list you give it. It does not create a new, sorted list. That means you can’t do this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters.sort())</div></pre></td></tr></table></figure></p>
+<p>If you do, you’ll get “None.” You have to do it in two steps, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.sort()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div></pre></td></tr></table></figure></p>
+<h4 id="sorting-in-reverse-order">Sorting in reverse order</h4>
+<p>There are two ways to get a list sorted in reverse order. One is to sort the list the normal way, and then reverse the sorted list, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'d'</span>, <span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.sort()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.reverse()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>]</div></pre></td></tr></table></figure></p>
+<p>Here we saw a new list method called <code>reverse()</code>, which reverses the order of items in a list.</p>
+<p>The other way is to add a parameter to <code>sort()</code> to make it sort in descending order (from largest to smallest). <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters = [<span class="string">'d'</span>, <span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>letters.sort (reverse = <span class="keyword">True</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(letters)</div><div class="line">[<span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>]</div></pre></td></tr></table></figure></p>
+<p>The parameter is called <code>reverse</code>, and it does exactly what you’d expect—it makes the list sort in reverse order.</p>
+<p>Remember that all of the sorting and reversing we just talked about modifies the original list. That means your original order is lost. If you want to preserve the original order and sort a copy of the list, you could use slice notation, which we talked about earlier in this chapter, to make a copy—another list equal to the original: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>original_list = [<span class="string">'Tom'</span>, <span class="string">'James'</span>, <span class="string">'Sarah'</span>, <span class="string">'Fred'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>new_list = original_list[:]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>new_list.sort()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(original_list)</div><div class="line">[<span class="string">'Tom'</span>, <span class="string">'James'</span>, <span class="string">'Sarah'</span>, <span class="string">'Fred'</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(new_list)</div><div class="line">[<span class="string">'Fred'</span>, <span class="string">'James'</span>, <span class="string">'Sarah'</span>, <span class="string">'Tom'</span>]</div></pre></td></tr></table></figure></p>
+<p>We sorted <code>new</code>, but <code>original</code> also got sorted, because <code>new</code> and <code>original</code> are just two different names for the same list. There are not two different lists.</p>
+<p>This means that, if you really want to make a copy of a list, you need to do something different from <code>new = original</code>. The easiest way to do this is to use slice notation, like I did above: <code>new = original[:]</code>. This means “copy everything in the list, from the first item to the last item.”</p>
+<p>There are now two separate lists. We made a copy of the original and called it <code>new</code>. Now if we sort one list, the other one won’t be sorted.</p>
+<h4 id="another-way-to-sortsorted">Another way to sort—<code>sorted()</code></h4>
+<p>There is another way to get a sorted copy of a list without changing the order of the original list. Python has a function called <code>sorted()</code> for that purpose. It works like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>original = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>newer = sorted(original)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(original)</div><div class="line">[<span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(newer)</div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure></p>
+<p>The <code>sorted()</code> function gives you a sorted copy of the original list.</p>
+<h3 id="mutable-and-immutable">Mutable and immutable</h3>
+<p>If you remember back to chapter 2, we said that you couldn’t actually change a number or string, you could only change what number or string a name was assigned to (in other words, move the tag). But lists are one of the types in Python that can be changed. As we just saw, lists can have items appended or deleted, and the items can be sorted or reversed.</p>
+<p>These two different kinds of variables are called mutable and immutable. Mutable just means “able to be changed” or “changeable.” Immutable means “not able to be changed” or “unchangeable.” In Python, numbers and strings are immutable (cannot be changed), and lists are mutable (can be changed).</p>
+<h4 id="tuplean-immutable-list">Tuple—an immutable list</h4>
+<p>There are times when you don’t want a list to be changeable. So, is there an immutable kind of list in Python? The answer is yes. There is a type called a tuple, which is exactly that, an immutable (unchangeable)list. You make one like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">my_tuple = (<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>)</div></pre></td></tr></table></figure></p>
+<p>You use round brackets, instead of the square ones that lists use.</p>
+<p>Because tuples are immutable (unchangeable), you can’t do things like sort them or append or delete items. Once you create a tuple with a set of items, it stays that way.</p>
+<h3 id="lists-of-lists-tables-of-data">Lists of lists: tables of data</h3>
+<p>When thinking about how data is stored in a program, it’s useful to visualize it.</p>
+<p>A variable has a single value. [myTeacher &gt;&gt;&gt; Mr. Wilson]</p>
+<p>A list is like a row of values strung together. [myFriends &gt;&gt;&gt; Kim Curtis Shaun Jenn Karla]</p>
+<p>Sometimes you need a table with rows and columns.</p>
+<p>How can we save a table of data? We already know that we can make a list to hold several items. We could put each student’s marks in a list, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>joeMarks = [<span class="number">55</span>, <span class="number">63</span>, <span class="number">77</span>, <span class="number">81</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>tomMarks = [<span class="number">65</span>, <span class="number">61</span>, <span class="number">67</span>, <span class="number">72</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>bethMarks = [<span class="number">97</span>, <span class="number">95</span>, <span class="number">92</span>, <span class="number">88</span>]</div></pre></td></tr></table></figure></p>
+<p>or we could use a list for each subject, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>mathMarks = [<span class="number">55</span>, <span class="number">65</span>, <span class="number">97</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>scienceMarks = [<span class="number">63</span>, <span class="number">61</span>, <span class="number">95</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>readingMarks = [<span class="number">77</span>, <span class="number">67</span>, <span class="number">92</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>spellingMarks = [<span class="number">81</span>, <span class="number">72</span>, <span class="number">88</span>]</div></pre></td></tr></table></figure></p>
+<p>But we might want to collect all the data together in a single data structure.</p>
+<blockquote>
+<p>A data structure is a way of collecting, storing, or representing the data in a program. Data structures can include variables, lists, and some other things we haven’t talked about yet. The term data structure really refers to the way the data is organized in a program.</p>
+</blockquote>
+<p>To make a single data structure for our class marks, we could do something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>classMarks = [joeMarks, tomMarks, bethMarks]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(classMarks)</div><div class="line">[[<span class="number">55</span>, <span class="number">63</span>, <span class="number">77</span>, <span class="number">81</span>], [<span class="number">65</span>, <span class="number">61</span>, <span class="number">67</span>, <span class="number">72</span>], [<span class="number">97</span>, <span class="number">95</span>, <span class="number">92</span>, <span class="number">88</span>]]</div></pre></td></tr></table></figure></p>
+<p>This gives us a list of items, where each item is itself a list. We have created a list of lists. Each of the items in the <code>classMarks</code> list is itself a list.</p>
+<p>We could also have created <code>classMarks</code> directly, without first creating <code>joeMarks</code>, <code>tomMarks</code>, and <code>bethMarks</code>, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>classMarks = [ [<span class="number">55</span>,<span class="number">63</span>,<span class="number">77</span>,<span class="number">81</span>], [<span class="number">65</span>,<span class="number">61</span>,<span class="number">67</span>,<span class="number">72</span>], [<span class="number">97</span>,<span class="number">95</span>,<span class="number">92</span>,<span class="number">88</span>] ]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(classMarks)</div><div class="line">[[<span class="number">55</span>, <span class="number">63</span>, <span class="number">77</span>, <span class="number">81</span>], [<span class="number">65</span>, <span class="number">61</span>, <span class="number">67</span>, <span class="number">72</span>], [<span class="number">97</span>, <span class="number">95</span>, <span class="number">92</span>, <span class="number">88</span>]]</div></pre></td></tr></table></figure></p>
+<p>Now let’s try displaying our data structure. <code>classMarks</code> has three items, one for each student. So we can just loop through them using <code>in</code>: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> studentMarks <span class="keyword">in</span> classMarks:</div><div class="line">    print(studentMarks)</div><div class="line">    </div><div class="line">[<span class="number">55</span>, <span class="number">63</span>, <span class="number">77</span>, <span class="number">81</span>]</div><div class="line">[<span class="number">65</span>, <span class="number">61</span>, <span class="number">67</span>, <span class="number">72</span>]</div><div class="line">[<span class="number">97</span>, <span class="number">95</span>, <span class="number">92</span>, <span class="number">88</span>]</div></pre></td></tr></table></figure></p>
+<p>Here we looped through the list called classMarks. The loop variable is studentMarks. Each time through the loop, we print one item in the list. That one item is the marks for a single student, which is itself a list. (We created the student lists above.)</p>
+<p>Notice that this looks very similar to the table on the previous page. So we have come up with a data structure to hold all our data in one place.</p>
+<h4 id="getting-a-single-value-from-the-table">Getting a single value from the table</h4>
+<p>How do we get access to values in this table (our list of lists)? We already know that the first student’s marks (<code>joeMarks</code>) are in a list that is the first item in <code>classMarks</code>. Let’s check that: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(classMarks[<span class="number">0</span>])</div><div class="line">[<span class="number">55</span>, <span class="number">63</span>, <span class="number">77</span>, <span class="number">81</span>]</div></pre></td></tr></table></figure></p>
+<p><code>classMarks[0]</code> is a list of Joe’s marks in the four subjects. Now we want a single value from <code>classMarks[0]</code>. How do we do that? We use a second index.</p>
+<p>If we want the third of his marks (his Reading mark), which has index 2, we’d do this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(classMarks[<span class="number">0</span>][<span class="number">2</span>])</div><div class="line"><span class="number">77</span></div></pre></td></tr></table></figure></p>
+<p>This gave us the first item in <code>classMarks</code> (index 0), which was the list of Joe’s marks, and the third item in that list (index 2), which was his Reading mark. When you see a name with two sets of square brackets, like <code>classMarks[0][2]</code>, that is usually referring to a list of lists.</p>
+<p>The <code>classMarks</code> list doesn’t really know about the names Joe, Tom, and Beth, or the subjects Math, Science, Reading, and Spelling. We labeled them that way because we know what we intended to store in the list. But to Python, they’re just numbered places in a list. This is just like the numbered mailboxes at a post office. They don’t have names on them, just numbers. The postmaster keeps track of what belongs where, and you know which box is yours.</p>
+<p>A more accurate way to label the classMarks table would be like this: <img src="https://github.com/changemyheart/Pictures/blob/master/classMarks%20table.png?raw=true" alt="classMarks table"> Now it’s easier to see that the mark 77 is stored in <code>classMarks[0][2]</code>.</p>
+<p>If we were writing a program using <code>classMarks</code> to store our data, we’d have to keep track of which data was stored in which row and column. Just like the postmaster, we’d have the job of keeping track of which slot belongs to which piece of data.</p>
+<hr>
+<h2 id="what-did-you-learn">What did you learn?</h2>
+<p>In this chapter, you learned<br>
+  ■ what lists are.<br>
+  ■ how to add things to a list.<br>
+  ■ how to delete things from a list.<br>
+  ■ how to find out if a list contains a certain value.<br>
+  ■ how to sort a list.<br>
+  ■ how to make a copy of a list.<br>
+  ■ about tuples.<br>
+  ■ about lists of lists.</p>
+<h2 id="test-your-knowledge">Test your knowledge</h2>
+<ol style="list-style-type: decimal">
+<li>What are two ways to add something to a list?</li>
+<li>What are two ways to remove something from a list?</li>
+<li>What are two ways to get a sorted copy of a list, without changing the original list?</li>
+<li>How do you find out whether a certain value is in a list?</li>
+<li>How do you find out the location of a certain value in a list?</li>
+<li>What’s a tuple?</li>
+<li>How do you make a list of lists?</li>
+<li>How do you get a single value from a list of lists?</li>
+</ol>
+<h2 id="try-it-out">Try it out</h2>
+<ol style="list-style-type: decimal">
+<li><p>Write a program to ask the user for five names. The program should store the names in a list, and print them all out at the end. It should look something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Enter <span class="number">5</span> names:</div><div class="line">Tony</div><div class="line">Paul</div><div class="line">Nick</div><div class="line">Michel</div><div class="line">Kevin</div><div class="line">The names are Tony Paul Nick Michel Kevin</div></pre></td></tr></table></figure></p></li>
+<li>Modify the program from question #1 to print both the original list of names and a sorted list.</li>
+<li><p>Modify the program from question #1 to display only the third name the user typed in, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">The third name you entered <span class="keyword">is</span>:  Nick</div></pre></td></tr></table></figure></p></li>
+<li><p>Modify the program from question #1 to let the user replace one of the names. She should be able to choose which name to replace, and then type in the new name. Finally, display the new list like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Enter <span class="number">5</span> names:</div><div class="line">Tony</div><div class="line">Paul</div><div class="line">Nick</div><div class="line">Michel</div><div class="line">Kevin</div><div class="line">The names are Tony Paul Nick Michel Kevin</div><div class="line">Replace one name.  Which one? (1-5): 4</div><div class="line">New name: Peter</div><div class="line">The names are Tony Paul Nick Peter Kevin</div></pre></td></tr></table></figure></p></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python3/" rel="tag"><i class="fa fa-tag"></i> python3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/21/python3-learning-09/" rel="next" title="python3 learning 09">
+                <i class="fa fa-chevron-left"></i> python3 learning 09
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/24/python3-learning-11/" rel="prev" title="python3 learning 11">
+                python3 learning 11 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true"
+              alt="Michael" />
+          
+            <p class="site-author-name" itemprop="name">Michael</p>
+            <p class="site-description motion-element" itemprop="description">Maybe... One day, I'll fly away...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#collecting-things-togetherlists"><span class="nav-text">Collecting Things Together—Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#whats-a-list"><span class="nav-text">What’s a list?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#creating-a-list"><span class="nav-text">Creating a list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adding-things-to-a-list"><span class="nav-text">Adding things to a list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#whats-the-dot"><span class="nav-text">What’s the dot?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lists-can-hold-anything"><span class="nav-text">Lists can hold anything</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getting-items-from-a-list"><span class="nav-text">Getting items from a list</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#why-does-the-index-start-from-0-not-1"><span class="nav-text">Why does the index start from 0, not 1?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slicing-a-list"><span class="nav-text">“Slicing” a list</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#slice-shorthand"><span class="nav-text">Slice shorthand</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modifying-items"><span class="nav-text">Modifying items</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-ways-of-adding-to-a-list"><span class="nav-text">Other ways of adding to a list</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#adding-to-the-end-append"><span class="nav-text">Adding to the end: append()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#extending-the-list-extend"><span class="nav-text">Extending the list: extend()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inserting-an-item-insert"><span class="nav-text">Inserting an item: insert()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-difference-between-append-and-extend"><span class="nav-text">The difference between append() and extend()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deleting-from-a-list"><span class="nav-text">Deleting from a list</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#deleting-with-remove"><span class="nav-text">Deleting with remove()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deleting-with-del"><span class="nav-text">Deleting with del</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deleting-with-pop"><span class="nav-text">Deleting with pop()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#searching-a-list"><span class="nav-text">Searching a list</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#the-in-keyword"><span class="nav-text">The in keyword</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#finding-the-index"><span class="nav-text">Finding the index</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#looping-through-a-list"><span class="nav-text">Looping through a list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sorting-lists"><span class="nav-text">Sorting lists</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sorting-in-reverse-order"><span class="nav-text">Sorting in reverse order</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#another-way-to-sortsorted"><span class="nav-text">Another way to sort—sorted()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mutable-and-immutable"><span class="nav-text">Mutable and immutable</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tuplean-immutable-list"><span class="nav-text">Tuple—an immutable list</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lists-of-lists-tables-of-data"><span class="nav-text">Lists of lists: tables of data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#getting-a-single-value-from-the-table"><span class="nav-text">Getting a single value from the table</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-did-you-learn"><span class="nav-text">What did you learn?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-your-knowledge"><span class="nav-text">Test your knowledge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try-it-out"><span class="nav-text">Try it out</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Marck Script:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Functions Pretty soon, our programs are going to start getting bigger and more complicated. We need some ways to organize them in smaller pieces so they’re easier to write and keep track of. There a">
+<meta name="keywords" content="python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 learning 11">
+<meta property="og:url" content="https://changemyheart.github.io/2017/09/24/python3-learning-11/index.html">
+<meta property="og:site_name" content="Memories">
+<meta property="og:description" content="Functions Pretty soon, our programs are going to start getting bigger and more complicated. We need some ways to organize them in smaller pieces so they’re easier to write and keep track of. There a">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/function%20order.png?raw=true">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/CARTER.png?raw=true">
+<meta property="og:updated_time" content="2017-09-25T12:20:02.395Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3 learning 11">
+<meta name="twitter:description" content="Functions Pretty soon, our programs are going to start getting bigger and more complicated. We need some ways to organize them in smaller pieces so they’re easier to write and keep track of. There a">
+<meta name="twitter:image" content="https://github.com/changemyheart/Pictures/blob/master/function%20order.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('Please input password','') !== ''){
+        alert('Wrong');
+        history.back();
+      }
+    }
+  })();
+</script>
+  <title>python3 learning 11 | Memories</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Memories</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">love</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://changemyheart.github.io/2017/09/24/python3-learning-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Memories">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python3 learning 11</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-24T18:57:44+08:00">
+                2017-09-24
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2017-09-25T20:20:02+08:00">
+                2017-09-25
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="functions">Functions</h2>
+<p>Pretty soon, our programs are going to start getting bigger and more complicated. We need some ways to organize them in smaller pieces so they’re easier to write and keep track of.</p>
+<p>There are three main ways to break programs into smaller parts. Functions are like building blocks of code that you can use over and over again. Objects are a way of describing pieces of your program as self-contained units. Modules are just separate files that contain parts of your program. In this chapter, we’ll learn about functions, and in the next two chapters, we’ll learn about objects and modules. Then we’ll have all the basic tools we need to start using graphics and sounds, and to create games.</p>
+<h3 id="functionsthe-building-blocks">Functions—the building blocks</h3>
+<p>In the simplest of terms, a function is just a chunk of code that does something. It’s a small piece that you can use to build a bigger program. You can put the piece together with other pieces, just like building something with toy blocks.</p>
+<p>You create or define a function with Python’s <code>def</code> keyword. You then use or call the function by using its name. Let’s start with a simple example.</p>
+<h4 id="creating-a-function">Creating a function</h4>
+<p>The code in following defines a function and then uses it. This function prints a mailing address to the screen. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">printMyAddress</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">"Warren Sande"</span>)</div><div class="line">    print(<span class="string">"123 Main Street"</span>)</div><div class="line">    print(<span class="string">"Ottawa, Ontario, Canada"</span>)</div><div class="line">    print(<span class="string">"K2M 2E9"</span>)</div><div class="line">    print()</div><div class="line">    </div><div class="line">printMyAddress()</div></pre></td></tr></table></figure></p>
+<p>In line 1, we define a function, using the <code>def</code> keyword. We give the name of the function fol-lowed by parentheses “<code>()</code>” and then a colon: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">printMyAddress</span><span class="params">()</span>:</span></div></pre></td></tr></table></figure></p>
+<p>I will explain what the parentheses are for soon. The colon tells Python that a block of code is coming next (just like <code>for</code> loops, <code>while</code> loops, and <code>if</code> statements).</p>
+<p>Then, we have the code that makes up the function.</p>
+<p>In the last line, we have the main program: we call the function by giving its name with the parentheses. This is where the program starts running. This one line makes the program run the code in the function that we just defined.</p>
+<p>When the main program calls a function, it’s like the function is helping the main program get its job done.</p>
+<p>The code inside the def block isn’t part of the main program, so when the program runs, it skips over that part and starts with the first line that isn’t inside a def block. The figure on the right shows what happens when you call a function. I added one extra line at the end of the program that prints a message after the function is done. <img src="https://github.com/changemyheart/Pictures/blob/master/function%20order.png?raw=true" alt="Functions order"> These are the steps in the figure above:</p>
+<ol style="list-style-type: decimal">
+<li>Start here. This is the beginning of the main program.</li>
+<li>When we call the function, we jump to the first line of code in the function.</li>
+<li>Execute each line of the function.</li>
+<li>When the function is finished, we continue where we left off in the main program.</li>
+</ol>
+<h3 id="calling-a-function">Calling a function</h3>
+<p>Calling a function means running the code that is inside the function. If we define a function but never call it, that code will never run.</p>
+<p>We call a function by using its name and a set of parentheses. Sometimes there’s something in the parentheses and sometimes not.</p>
+<p>Try running the program above and see what happens. You should see something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>=================== RESTART ===================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">Warren Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>Now, that’s exactly the same output we’d have gotten from a simpler program that looks like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Warren Sande"</span>)</div><div class="line">print(<span class="string">"123 Main Street"</span>)</div><div class="line">print(<span class="string">"Ottawa, Ontario, Canada"</span>)</div><div class="line">print(<span class="string">"K2M 2E9"</span>)</div><div class="line">print()</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>So why did we go to the trouble of making things more complex and using a function?</p>
+<p>The main reason to use functions is that, once you have defined them, you can use them over and over again just by calling them. So if we wanted to print the address five times, we could do this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">printMyAddress()</div><div class="line">printMyAddress()</div><div class="line">printMyAddress()</div><div class="line">printMyAddress()</div><div class="line">printMyAddress()</div></pre></td></tr></table></figure></p>
+<p>And the output would be <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">Warren Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div><div class="line"></div><div class="line">Warren Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div><div class="line"></div><div class="line">Warren Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div><div class="line"></div><div class="line">Warren Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div><div class="line"></div><div class="line">Warren Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div></pre></td></tr></table></figure></p>
+<p>You might say that you could do the same thing with a loop instead of a function.</p>
+<p>In this case, you could do the same thing with a loop. But if you wanted to print the address at different places in a program instead of all at once, a loop wouldn’t work.</p>
+<p>Another reason to use a function is that you can make it behave differently each time it runs. We’re going to see how to do that in the next section.</p>
+<h3 id="passing-arguments-to-a-function">Passing arguments to a function</h3>
+<p>Now it’s time to see what the parentheses are for: arguments!</p>
+<p>In programming, the term argument means a piece of information you give to a function. We say that you pass the argument to the function.</p>
+<p>Imagine that you wanted to be able to use the address-printing function for any member of your family. The address would be the same for everybody, but the name would be different each time. Instead of having the name hard-coded as “Warren Sande” in the function, you can make it a variable. The variable is passed to the function when you call it.</p>
+<p>An example is the easiest way to see how this works. I modified the address-printing function to use one argument for the name. Arguments are named, just like other variables. I called this variable <code>myName</code>.</p>
+<p>When the function runs, the variable <code>myName</code> gets filled in with whatever argument we pass to the function when we call it. We pass the argument to the function by putting it inside the parentheses when we call the function.</p>
+<p>So, the argument myName is assigned the value “Carter Sande”. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">printMyAddress</span><span class="params">(myName)</span>:</span>           <span class="comment"># Passes myName argument to the function</span></div><div class="line">    print(myName)                     <span class="comment"># Prints the name</span></div><div class="line">    print(<span class="string">"123 Main Street"</span>)           </div><div class="line">    print(<span class="string">"Ottawa, Ontario, Canada"</span>)</div><div class="line">    print(<span class="string">"K2M 2E9"</span>)                   </div><div class="line">    print()</div><div class="line"></div><div class="line">printMyAddress(<span class="string">"Carter Sande"</span>)        <span class="comment"># Passes “Carter Sande” as the argument to the function; the variable myName inside the function will have the value “Carter Sande”</span></div></pre></td></tr></table></figure></p>
+<p>If we run the code, we get exactly what you’d expect: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>===================== RESTART =====================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">Carter Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>This looks the same as the output we got from the first program, when we didn’t use arguments. But now, we can make the address print differently every time, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">printMyAddress(<span class="string">"Carter Sande"</span>)</div><div class="line">printMyAddress(<span class="string">"Warren Sande"</span>)</div><div class="line">printMyAddress(<span class="string">"Kyra Sande"</span>)</div><div class="line">printMyAddress(<span class="string">"Patricia Sande"</span>)</div></pre></td></tr></table></figure></p>
+<p>And now, the output is different each time the function is called. The name changes, because we pass the function a different name each time. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>========================== RESTART ==========================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">Carter Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div><div class="line"></div><div class="line">Warren Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div><div class="line"></div><div class="line">Kyra Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div><div class="line"></div><div class="line">Patricia Sande</div><div class="line"><span class="number">123</span> Main Street</div><div class="line">Ottawa, Ontario, Canada</div><div class="line">K2M <span class="number">2E9</span></div></pre></td></tr></table></figure></p>
+<p>Notice that whatever value we passed to the function was used inside the function and was printed as the name part of the address.</p>
+<p>What if I wanted to send letters to everyone on my street? The street numbers would have to be different every time.</p>
+<p>If there’s more than one thing that is different every time the function runs, you need more than one argument. That’s what we’re going to talk about next.</p>
+<h3 id="functions-with-more-than-one-argument">Functions with more than one argument</h3>
+<p>In code above, our function had a single argument. But functions can have more than one argument. In fact, they can have as many as you need. Let’s try an example with two arguments, and I think you’ll get the idea. Then you can keep adding as many arguments as you need for the functions in your programs.</p>
+<blockquote>
+<p>There’s another term you’ll hear when talking about passing things to a function: parameters. Some people say that the terms argument and parameter are interchangeable. So you could say,<br>
+“I passed two parameters to that function,” or<br>
+“I passed two arguments to that function.”<br>
+Some people say that you should use argument when talking about the passing part (when you call the function), and parameter when talking about the receiving part (what is inside the function).<br>
+As long as you use argument or parameter to talk about passing values to functions, programmers will know what you mean.</p>
+</blockquote>
+<p>To send Carter’s letters to everyone on the street, our address-printing function will need two arguments: one for the name, and one for the house number. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">printMyAddress</span><span class="params">(someName, houseNum)</span>:</span></div><div class="line">    print(someName) </div><div class="line">    print(houseNum, end=<span class="string">''</span>)</div><div class="line">    print(<span class="string">"Main Street"</span>)           </div><div class="line">    print(<span class="string">"Ottawa, Ontario, Canada"</span>)          </div><div class="line">    print(<span class="string">"K2M 2E9"</span>)                   </div><div class="line">    print()</div><div class="line"></div><div class="line">printMyAddress(<span class="string">"Carter Sande"</span>, <span class="string">"45"</span>)</div><div class="line">printMyAddress(<span class="string">"Jack Black"</span>, <span class="string">"64"</span>)</div><div class="line">printMyAddress(<span class="string">"Tom Green"</span>, <span class="string">"22"</span>)</div><div class="line">printMyAddress(<span class="string">"Todd White"</span>, <span class="string">"36"</span>)</div></pre></td></tr></table></figure></p>
+<p>When we use multiple arguments (or parameters), we separate them with a comma, just like items in a list, which brings us to our next topic. . . .</p>
+<h4 id="how-many-is-too-many">How many is too many?</h4>
+<p>I said before that you can pass as many arguments as you want to a function. That is true, but if your function has more than five or six arguments, it might be time to think of doing things another way. One thing you can do is collect all the arguments in a list and then pass the list to the function. That way, you’re passing a single variable (the list variable), which just happens to contain a bunch of values. It might make your code easier to read.</p>
+<h3 id="functions-that-return-a-value">Functions that return a value</h3>
+<p>So far, our functions have just been doing stuff for us. But a very useful thing about functions is that they can also send you something back.</p>
+<p>We have seen that you can send information (arguments) to functions, but functions can also send information back to the caller. The value that comes back from a function is called the result or return value.</p>
+<h4 id="returning-a-value">Returning a value</h4>
+<p>The way you make a function return a value is to use the Python <code>return</code> keyword inside the function. Here’s an example: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculateTax</span><span class="params">(price, tax_rate)</span>:</span></div><div class="line">    taxTotal = price + (price * tax_rate)</div><div class="line">    <span class="keyword">return</span> taxTotal</div></pre></td></tr></table></figure></p>
+<p>This will send the value <code>taxTotal</code> back out to the part of the program that called the function.</p>
+<p>But when it is sent back, where does it go? Returned values go back to whatever code called the function. Here’s an example: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">totalPrice = calculateTax(<span class="number">7.99</span>, <span class="number">0.06</span>)</div></pre></td></tr></table></figure></p>
+<p>The <code>calculateTax</code> function will return the value 8.4694, and that value will be assigned to <code>totalPrice</code>.</p>
+<p>You can use a function to return values anywhere you’d use an expression. You can assign the return value to a variable (as we just did), use it in another expression, or printit, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print(calculateTax(<span class="number">7.99</span>, <span class="number">0.06</span>))</div><div class="line"><span class="number">8.4694</span></div><div class="line">total = calculateTax(<span class="number">7.99</span>, <span class="number">0.06</span>) + calculateTax(<span class="number">6.59</span>, <span class="number">0.08</span>)</div></pre></td></tr></table></figure></p>
+<p>You can also do nothing with the returned value, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">calculateTax(<span class="number">7.49</span>, <span class="number">0.07</span>)</div></pre></td></tr></table></figure></p>
+<p>In the last example, the function ran and calculated the total with tax, but we didn’t use the result.</p>
+<p>Let’s make a program with a function that returns a value. In following, the <code>calculateTax()</code> function returns a value. You give it the price before tax and the tax rate, and it returns the price after tax. We’ll assign this value to a variable. So instead of just using the function’s name like we did before, we need a variable, an equal sign (=), and then the function’s name. The variable will be assigned the result that the <code>calculateTax()</code> function gives back. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculateTax</span><span class="params">(price, tax_rate)</span>:</span></div><div class="line">    total = price + (price * tax_rate)</div><div class="line">    <span class="keyword">return</span> total   <span class="comment"># Sends result back to the main program</span></div><div class="line"></div><div class="line">my_price = float(raw_input (<span class="string">"Enter a price: "</span>))</div><div class="line"></div><div class="line">totalPrice = calculateTax(my_price, <span class="number">0.06</span>) <span class="comment"># Calls function and stores the result in totalPrice</span></div><div class="line">print(<span class="string">"price = "</span>, my_price, <span class="string">" Total price = "</span>, totalPrice)</div></pre></td></tr></table></figure></p>
+<p>Try typing in, saving, and running the program above. Notice that the tax rate is fixed as 0.06 (which equals 6 percent tax) in the code. If the program had to handle different tax rates, you could have the user enter the tax rate as well as the price.</p>
+<h3 id="variable-scope">Variable scope</h3>
+<p>You might have noticed that we have variables outside the function, like <code>totalPrice</code>, as well as variables inside the function, like <code>total</code>. These are just two names for the same thing. It’s just like back in chapter 2, when we had <code>YourTeacher = MyTeacher</code>.</p>
+<p>In our <code>calculateTax</code> example, <code>totalPrice</code> and <code>total</code> are two tags attached to the same thing. With functions, the names inside the function are only created when the function runs. They don’t even exist before the function runs or after it has finished running. Python has something called memory management that does this automatically. Python creates new names to use inside the function when it runs, and then deletes them when the function is finished. That last part is important: when the function is done running, any names inside it cease to exist.</p>
+<p>While the function is running, the names outside the function are sort of on hold—they’re not being used. Only the names inside the function are being used. The part of a program where a variable is used (or available to be used) is called its scope.</p>
+<h4 id="local-variables">Local variables</h4>
+<p>In last program, the variables <code>price</code> and <code>total</code> were only used within the function. We say that <code>price</code>, <code>total</code>, and <code>tax_rate</code> are in the scope of the <code>calculateTax()</code> function. Another term that is used is local. The <code>price</code>, <code>total</code>, and <code>tax_rate</code> variables are local variables in the <code>calculateTax()</code> function.</p>
+<p>One way to see what this means is to add a line to the program above that tries to <code>print</code> the value of price somewhere outside the function. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculateTax</span><span class="params">(price, tax_rate)</span>:</span></div><div class="line">    total = price + (price * tax_rate)</div><div class="line">    <span class="keyword">return</span> total</div><div class="line">    <span class="comment"># Defines a function to calculate tax and return the total</span></div><div class="line"></div><div class="line">my_price = float(input (<span class="string">"Enter a price: "</span>))\</div><div class="line"></div><div class="line">totalPrice = calculateTax(my_price, <span class="number">0.06</span>) <span class="comment"># Calls the function and stores and prints the result</span></div><div class="line">print(<span class="string">"price = "</span>, my_price, <span class="string">" Total price = "</span>, totalPrice)</div><div class="line">print(price)   <span class="comment"># Tries to print price</span></div></pre></td></tr></table></figure></p>
+<p>If you run this, you’ll get an error that looks like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"C:/.../Listing_13-5.py"</span>, line <span class="number">11</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">    <span class="keyword">print</span> price</div><div class="line">NameError: name <span class="string">'price'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</div></pre></td></tr></table></figure></p>
+<p>The last line of the error message tells the story: when we’re not inside the <code>calculateTax()</code> function, the variable <code>price</code> is not defined. It only exists while the function is running. When we tried to print the value of <code>price</code> from outside the function (when the function was not running), we got an error.</p>
+<h4 id="global-variables">Global variables</h4>
+<p>In contrast to the local variable <code>price</code>, the variables <code>my_price</code> and <code>totalPrice</code> in last program are defined outside the function, in the main part of the program. We use the term global for a variable that has a wider scope. In this case, wider means the main part of the program, not what’s inside the function. If we expanded the program in listing 13.5, we could use the variables <code>my_price</code> and <code>totalPrice</code> in another place in the program, and they would still</p>
+<p>have the values we gave them earlier. They would still be in scope. Because we can use them anywhere in the program, we say they’re global variables.</p>
+<p>When we were outside the function and tried to print a variable that was inside the function, we got an error. The variable didn’t exist; it was out of scope. What do you think will happen if we do the opposite: try to print a global variable from inside the function?</p>
+<p>Following program tries to print the variable <code>my_price</code> from inside the <code>calculateTax()</code> function. Try it and see what happens. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculateTax</span><span class="params">(price, tax_rate)</span>:</span></div><div class="line">    total = price + (price * tax_rate)</div><div class="line">    print(my_price)   <span class="comment"># Tries to print my_price</span></div><div class="line">    <span class="keyword">return</span> total</div><div class="line"></div><div class="line">my_price = float(input (<span class="string">"Enter a price: "</span>))</div><div class="line"></div><div class="line">totalPrice = calculateTax(my_price, <span class="number">0.06</span>) </div><div class="line">print(<span class="string">"price = "</span>, my_price, <span class="string">" Total price = "</span>, totalPrice)</div></pre></td></tr></table></figure></p>
+<p>Did it work? Yes! But why?</p>
+<p>When we started talking about variable scope, I told you that Python uses memory management to automatically create local variables when a function runs. The memory manager does some other things, too. In a function, if you use a variable name that has been defined in the main program, Python will let you use the global variable as long as you don’t try to change it.</p>
+<p>So you can do this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(my_price)</div></pre></td></tr></table></figure></p>
+<p>or this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">your_price = my_price</div></pre></td></tr></table></figure></p>
+<p>because neither of these changes <code>my_price</code>.</p>
+<p>If any part of the function tries to change the variable, Python creates a new local variable instead. So if you do this, <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">my_price = my_price + <span class="number">10</span></div></pre></td></tr></table></figure></p>
+<p>then <code>my_price</code> is a new local variable that Python creates when the function runs.</p>
+<p>In the example above, the value that was printed was the global variable my_price, because the function didn’t change it. The program in listing 13.7 shows you that, if you do try to change the global variable inside the function, you get a new, local variable instead. Try running it and see. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculateTax</span><span class="params">(price, tax_rate)</span>:</span></div><div class="line">    total = price + (price * tax_rate)  </div><div class="line">    my_price = <span class="number">10000</span>       <span class="comment"># Modifies my_price inside the function  </span></div><div class="line">    print(<span class="string">"my_price (inside function) = "</span>, my_price)  <span class="comment"># Prints the local version of my_price [First my_price]</span></div><div class="line">    <span class="keyword">return</span> total</div><div class="line"></div><div class="line">my_price = float(input(<span class="string">"Enter a price: "</span>))</div><div class="line"></div><div class="line">totalPrice = calculateTax(my_price, <span class="number">0.06</span>)</div><div class="line">print(<span class="string">"price = "</span>, my_price, <span class="string">" Total price = "</span>, totalPrice)</div><div class="line">print(<span class="string">"my_price (outside function) = "</span>, my_price) <span class="comment"># Prints the global version of my_price [Second my_price]</span></div><div class="line"></div><div class="line"><span class="comment"># The [First my_price] is a different chunk of memory than the [Second my_price]</span></div></pre></td></tr></table></figure></p>
+<p>If you run the code above, the output will look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>========================== RESTART ==========================</div><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line">Enter a price: <span class="number">7.99</span></div><div class="line">my_price (inside function) =  <span class="number">10000</span>  </div><div class="line">price =  <span class="number">7.99</span>  Total price =  <span class="number">8.4694</span></div><div class="line">my_price (outside function) =  <span class="number">7.99</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>As you can see, there are now two different variables called <code>my_price</code>, with different values. One is the local variable inside the <code>calculateTax()</code> function that we set to 10,000. The other is the global variable we defined in the main program to capture the user’s input, which was 7.99.</p>
+<h3 id="forcing-a-global">Forcing a global</h3>
+<p>In the last section, we saw that, if you try to change the value of a global variable from inside a function, Python creates a new local variable instead. This is meant to prevent functions from accidentally changing global variables.</p>
+<p>However, there are times when you want to change a global variable from inside a function. So how do you do it?</p>
+<p>Python has a keyword, global, that lets you do that. You use it like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculateTax</span><span class="params">(price, tax_rate)</span>:</span></div><div class="line">    <span class="keyword">global</span> my_price</div></pre></td></tr></table></figure></p>
+<p>If you use the <code>global</code> keyword, Python won’t make a new local variable called <code>my_price</code>. It will use the global variable <code>my_price</code>. If there’s no global variable called <code>my_price</code>, it will cre-ate one.</p>
+<h3 id="a-bit-of-advice-on-naming-variables">A bit of advice on naming variables</h3>
+<p>We saw in the previous sections that you can use the same names for global variables and local variables. Python will automatically create new local variables when it needs to, or you can prevent that with the <code>global</code> keyword. However, I strongly recommend that you don’t reuse names.</p>
+<p>As you might have noticed from some of the examples, it can be difficult to know whether the variable is the local version or the global version. It makes the code more confusing, because you have different variables with the same name. And wherever there’s confusion, bugs love to creep in.</p>
+<p>So for now, I recommend you use different names for local variables and global variables. That way, there’s no confusion, and you’ll keep the bugs at bay.</p>
+<hr>
+<h2 id="what-did-you-learn">What did you learn?</h2>
+<p>In this chapter, you learned<br>
+  ■ what a function is.<br>
+  ■ what arguments (or parameters) are.<br>
+  ■ how to pass an argument to a function.<br>
+  ■ how to pass multiple arguments to a function.<br>
+  ■ how to make a function return a value to the caller.<br>
+  ■ what variable scope is, and what local and global variables are.<br>
+  ■ how to use global variables in a function.</p>
+<h2 id="test-your-knowledge">Test your knowledge</h2>
+<ol style="list-style-type: decimal">
+<li>What keyword do you use to create a function?</li>
+<li>How do you call a function?</li>
+<li>How do you pass information (arguments) to a function?</li>
+<li>What’s the maximum number of arguments a function can have?</li>
+<li>How do you get information back from a function?</li>
+<li>What happens to local variables in a function after the function is finished running?</li>
+</ol>
+<h2 id="try-it-out">Try it out</h2>
+<ol style="list-style-type: decimal">
+<li>Write a function to print your name in big letters, like this:</li>
+</ol>
+<div class="figure">
+<img src="https://github.com/changemyheart/Pictures/blob/master/CARTER.png?raw=true">
+
+</div>
+<p>Write a program that calls the function a number of times.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Make a function that will allow you to print any name, address, street, city, state or province, zip or postal code, and country in the world. (Hint: It needs seven arguments. You can pass them as individual arguments or as a list.)</li>
+<li>Try using the example from listing 13.7, but making my_price global so you can see the difference in the resulting output.</li>
+<li>Write a function to calculate the total value of some change—quarters, dimes, nickels, and pennies (just like in the last “Try it out” question from chapter 5). The function should return the total value of the coins. Then write a program that calls the function. The output should look like this when it runs:</li>
+</ol>
+<blockquote>
+<p>quarters: 3<br>
+dimes: 6<br>
+nickels: 7<br>
+pennies: 2<br>
+total is $1.72</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python3/" rel="tag"><i class="fa fa-tag"></i> python3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/22/python3-learning-10/" rel="next" title="python3 learning 10">
+                <i class="fa fa-chevron-left"></i> python3 learning 10
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/25/The-American-Accent-Course-50-Rules-You-Must-Know/" rel="prev" title="《The American Accent Course 50 Rules You Must Know》">
+                《The American Accent Course 50 Rules You Must Know》 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true"
+              alt="Michael" />
+          
+            <p class="site-author-name" itemprop="name">Michael</p>
+            <p class="site-description motion-element" itemprop="description">Maybe... One day, I'll fly away...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#functions"><span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#functionsthe-building-blocks"><span class="nav-text">Functions—the building blocks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#creating-a-function"><span class="nav-text">Creating a function</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#calling-a-function"><span class="nav-text">Calling a function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#passing-arguments-to-a-function"><span class="nav-text">Passing arguments to a function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#functions-with-more-than-one-argument"><span class="nav-text">Functions with more than one argument</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#how-many-is-too-many"><span class="nav-text">How many is too many?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#functions-that-return-a-value"><span class="nav-text">Functions that return a value</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#returning-a-value"><span class="nav-text">Returning a value</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#variable-scope"><span class="nav-text">Variable scope</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#local-variables"><span class="nav-text">Local variables</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#global-variables"><span class="nav-text">Global variables</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forcing-a-global"><span class="nav-text">Forcing a global</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-bit-of-advice-on-naming-variables"><span class="nav-text">A bit of advice on naming variables</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-did-you-learn"><span class="nav-text">What did you learn?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-your-knowledge"><span class="nav-text">Test your knowledge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try-it-out"><span class="nav-text">Try it out</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

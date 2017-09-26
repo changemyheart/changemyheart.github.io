@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Marck Script:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Basic Math The four basic operations We already saw Python do a little math in chapter 1: addition, using the plus (+) sign, and multiplication, using the asterisk (*) sign. Python uses the hyphen">
+<meta name="keywords" content="python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 learning 03">
+<meta property="og:url" content="https://changemyheart.github.io/2017/09/18/python3-learning-03/index.html">
+<meta property="og:site_name" content="Memories">
+<meta property="og:description" content="Basic Math The four basic operations We already saw Python do a little math in chapter 1: addition, using the plus (+) sign, and multiplication, using the asterisk (*) sign. Python uses the hyphen">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/uppercase.png?raw=true">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/lowercase.png?raw=true">
+<meta property="og:updated_time" content="2017-09-25T12:17:09.563Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3 learning 03">
+<meta name="twitter:description" content="Basic Math The four basic operations We already saw Python do a little math in chapter 1: addition, using the plus (+) sign, and multiplication, using the asterisk (*) sign. Python uses the hyphen">
+<meta name="twitter:image" content="https://github.com/changemyheart/Pictures/blob/master/uppercase.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('Please input password','') !== ''){
+        alert('Wrong');
+        history.back();
+      }
+    }
+  })();
+</script>
+  <title>python3 learning 03 | Memories</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Memories</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">love</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://changemyheart.github.io/2017/09/18/python3-learning-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Memories">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python3 learning 03</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-18T20:20:43+08:00">
+                2017-09-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2017-09-25T20:17:09+08:00">
+                2017-09-25
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="basic-math">Basic Math</h2>
+<h3 id="the-four-basic-operations">The four basic operations</h3>
+<p>We already saw Python do a little math in chapter 1: addition, using the plus (<code>+</code>) sign, and multiplication, using the asterisk (<code>*</code>) sign.</p>
+<p>Python uses the hyphen (-) (which is also called the minus sign) for subtraction, as you would expect: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="number">8</span> – <span class="number">5</span></div><div class="line"><span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>Because computer keyboards don’t have a division (÷) symbol, all programs use the forward slash (<code>/</code>) for division. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="number">6</span>/<span class="number">2</span></div><div class="line"><span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>Integers are the numbers you can easily count, like 1, 2, 3, as well as 0 and the negative numbers, like –1, –2, –3.</p>
+<p>Decimal numbers (also called real numbers) are the numbers with a decimal point and some digits after it, like 1.25, 0.3752, and –101.2.</p>
+<p>In computer programming, decimal numbers are also called floating-point numbers, or sometimes floats for short (or float for just one of them). This is because the decimal point “floats” around. You can have the number 0.00123456 or 12345.6 in a float.</p>
+<p>If you enter either of the two numbers as a decimal number, Python knows you want the answer as a decimal number. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="number">3.0</span> / <span class="number">2</span></div><div class="line"><span class="number">1.5</span></div></pre></td></tr></table></figure></p>
+<h3 id="operators">Operators</h3>
+<blockquote>
+<p>The <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code> symbols are called operators. That’s because they “operate on,” or work with, the numbers we put around them. The <code>=</code> sign is also an operator, and it is called the assignment operator, because we use it to assign a value to a variable.</p>
+</blockquote>
+<h4 id="order-of-operations">Order of operations</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="number">2</span> + <span class="number">3</span> * <span class="number">4</span></div><div class="line"><span class="number">14</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>The order that Python uses is the same one you learned (or will learn) in math class. Exponents come first, then multiplication and division, and then addition and subtraction.</p>
+</blockquote>
+<p>If you want to change the order of operations and make something go first, you just put parentheses (round brackets) around it, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> (<span class="number">2</span> + <span class="number">3</span>) * <span class="number">4</span></div><div class="line"><span class="number">20</span></div></pre></td></tr></table></figure></p>
+<h3 id="two-more-operators">Two more operators</h3>
+<h4 id="exponentiationraising-to-a-power">Exponentiation—raising to a power</h4>
+<p>If you wanted to multiply 3 by itself 5 times, you could write <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="number">3</span> * <span class="number">3</span> * <span class="number">3</span> * <span class="number">3</span> * <span class="number">3</span></div><div class="line"><span class="number">243</span></div></pre></td></tr></table></figure></p>
+<p>But this is the same as 3 5 , or “three exponent five,” or “three to the power of five.” Python uses a double star (asterisk) for exponents or raising a number to a power. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="number">3</span> ** <span class="number">5</span></div><div class="line"><span class="number">243</span></div></pre></td></tr></table></figure></p>
+<p>One reason for using an exponent instead of just multiplying several times is that it is easier to type. But a more important reason is that with ** you can have exponents that are not integers, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="number">3</span> ** <span class="number">5.5</span></div><div class="line"><span class="number">420.888346239</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>There is no easy way to do that using just multiplication.</p>
+</blockquote>
+<h4 id="modulusgetting-the-remainder">Modulus—getting the remainder</h4>
+<p>Python has a special operator for calculating the remainder for integer division. It is called the modulus operator, and the symbol is the percent symbol (<code>%</code>). You use it like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="number">7</span> % <span class="number">2</span></div><div class="line"><span class="number">1</span></div></pre></td></tr></table></figure></p>
+<h4 id="increment-and-decrement">Increment and decrement</h4>
+<p>Remember the example from the last chapter: <code>score = score + 1</code>? We said that was called incrementing. A similar thing is <code>score = score - 1</code>, which is called decrementing. These are done so often in programming that they have their own operators: <code>+=</code> (increment) and <code>-=</code> (decrement). <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>number = <span class="number">7</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>number += <span class="number">1</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> (number)</div><div class="line"><span class="number">8</span></div></pre></td></tr></table></figure></p>
+<p>or: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>number = <span class="number">7</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>number -= <span class="number">1</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> (number)</div><div class="line"><span class="number">6</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>The first one adds one to the number. (It changes from 7 to 8.) The second one subtracts one from the number. (It changes from 7 to 6.)</p>
+</blockquote>
+<h3 id="really-big-and-really-small">Really big and really small</h3>
+<p>Try this in interactive mode: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="number">9938712345656.34</span> * <span class="number">4823459023067.456</span></div><div class="line"><span class="number">4.79389717413e+025</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>(It doesn’t matter exactly what numbers you type in—any big numbers with decimals will do.)</p>
+</blockquote>
+<p>The e is one way of displaying really big or really small numbers on a computer. It’s called E-notation. When we’re working with really big (or really small) numbers, showing all the digits and decimal places can be kind of a pain. These kinds of numbers show up a lot in math and science.</p>
+<p>For example, if an astronomy program was displaying the number of kilometers from Earth to the star Alpha Centauri, it could show 38000000000000000 or 38,000,000,000,000,000 or 38 000 000 000 000 000. (That’s 38 quintillion kilometers!) But either way, you would get tired of counting all those zeros.</p>
+<p>Another way to display this number is to use scientific notation, which uses powers of 10 along with decimal numbers. In scientific notation, the distance to Alpha Centauri would be written like this: 3.8 x 10 16 . (See how the 16 is raised above the line, and is smaller?) This reads as “three point eight times ten to the power of sixteen” or “three point eight times ten to the sixteenth.” What it means is you take 3.8 and move the decimal point sixteen places to the right, adding zeros as needed.</p>
+<p><img src="https://github.com/changemyheart/Pictures/blob/master/uppercase.png?raw=true" alt="uppercase"> Scientific notation is great if you can write the 16 as an exponent, raised above the line and smaller, like we did here. If you are working with pencil and paper, or a program that supports superscripts, then you can use scientific notation. &gt;Superscript means a character or characters that are raised above the rest of the text, like this: 10^13 . The 13 here is the superscript. Usually, superscripts are also smaller than the main text.</p>
+<h4 id="e-notation">E-notation</h4>
+<p>In E-notation, our number would be 3.8E16 or 3.8e16. This reads as “three point eight exponent sixteen” or “three point eight e sixteen” for short. It is assumed that the exponent is a power of 10. That’s the same as writing 3.8x10^16</p>
+<p>For very small numbers, like 0.0000000000001752, a negative exponent is used. The scien-tific notation would be 1.752x10 -13 , and the E-notation would be 1.752e-13. A negative exponent means to move the decimal place to the left instead of the right. <img src="https://github.com/changemyheart/Pictures/blob/master/lowercase.png?raw=true" alt="lowercase"> You can use E-notation to enter very big and very small numbers (or any number, for that matter) into Python. Later we will see how to make Python print numbers using E-notation.</p>
+<p>Try entering some numbers in E-notation: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">2.5e6</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">1.2e7</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> (a + b)</div><div class="line"><span class="number">14500000.0</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>Although we entered the numbers in E-notation, the answer came out as a regular decimal number. That’s because Python won’t display numbers in E-notation unless you specifically tell it to, or the numbers are really big or really small (lots of zeros).<br>
+Try this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>c = <span class="number">2.6e75</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d = <span class="number">1.2e74</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> c + d</div><div class="line"><span class="number">2.72e+075</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>This time, Python displayed the answer in E-notation automatically, because it wouldn’t make sense to display a number with 73 zeros!</p>
+</blockquote>
+<h4 id="exponents-vs.e-notation">Exponents vs. E-notation</h4>
+<p>Don’t get confused between raising a number to a power (also called exponentiation) and E-notation.</p>
+<ul>
+<li>3**5 means 3^5 , or “three to the fifth power” or 3 * 3 * 3 * 3 * 3, which is equal to 243.<br>
+</li>
+<li>3e5 means 3 * 10^5 or “three times ten to the fifth power,” or 3 * 10 * 10 * 10 * 10 *10, which is equal to 300,000.</li>
+</ul>
+<p>Raising to a power means you are raising the number itself to that power. E-notation means you are multiplying by a power of 10.</p>
+<p>Some people would read both 3e5 and 3**5 as “three exponent five,” but they are two different things. It doesn’t matter so much how you say it, as long as you understand what each one means.</p>
+<hr>
+<h2 id="what-did-you-learn">What did you learn?</h2>
+<ul>
+<li>how to do basic math operations in Python.</li>
+<li>about integers and floats.</li>
+<li>about exponentiation (raising numbers to a power).</li>
+<li>how to calculate the modulus (the remainder).</li>
+<li>all about E-notation.</li>
+</ul>
+<h2 id="test-your-knowledge">Test your knowledge</h2>
+<ol style="list-style-type: decimal">
+<li>What symbol does Python use for multiplication?</li>
+<li>What answer would Python give for 8 / 3?</li>
+<li>How would you get the remainder for 8 / 3?</li>
+<li>How would you get the decimal answer for 8 / 3?</li>
+<li>What’s another way of calculating 6 * 6 * 6 * 6 in Python?</li>
+<li>How would you write 17,000,000 in E-notation?</li>
+<li>What would 4.56e-5 look like in regular notation (not E-notation)?</li>
+</ol>
+<h2 id="try-it-out">Try it out</h2>
+<ol style="list-style-type: decimal">
+<li>Solve the following problems either using interactive mode or by writing a small program:
+<ol style="list-style-type: lower-alpha">
+<li>Three people ate dinner at a restaurant and want to split the bill. The total is $35.27,and they want to leave a 15 percent tip. How much should each person pay?</li>
+<li>Calculate the area and perimeter of a rectangular room, 12.5 meters by 16.7 meters.<br>
+</li>
+</ol></li>
+<li>Write a program to convert temperatures from Fahrenheit to Celsius. The formula for that is: C = 5 / 9 * (F - 32). (Hint: Watch out for the integer-division gotcha!)<br>
+</li>
+<li>Do you know how to figure out how long it will take to get somewhere in a car? The formula (in words) is “travel time equals distance divided by speed.” Make a program to calculate the time it will take to drive 200 km at 80 km per hour and display the answer.</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python3/" rel="tag"><i class="fa fa-tag"></i> python3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/17/python3-learning-02/" rel="next" title="python3 learning 02">
+                <i class="fa fa-chevron-left"></i> python3 learning 02
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/19/American-Accent-Video-Training-Program/" rel="prev" title="《American Accent Video Training Program》">
+                《American Accent Video Training Program》 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true"
+              alt="Michael" />
+          
+            <p class="site-author-name" itemprop="name">Michael</p>
+            <p class="site-description motion-element" itemprop="description">Maybe... One day, I'll fly away...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-math"><span class="nav-text">Basic Math</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#the-four-basic-operations"><span class="nav-text">The four basic operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#operators"><span class="nav-text">Operators</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#order-of-operations"><span class="nav-text">Order of operations</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#two-more-operators"><span class="nav-text">Two more operators</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#exponentiationraising-to-a-power"><span class="nav-text">Exponentiation—raising to a power</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#modulusgetting-the-remainder"><span class="nav-text">Modulus—getting the remainder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#increment-and-decrement"><span class="nav-text">Increment and decrement</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#really-big-and-really-small"><span class="nav-text">Really big and really small</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#e-notation"><span class="nav-text">E-notation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exponents-vs.e-notation"><span class="nav-text">Exponents vs. E-notation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-did-you-learn"><span class="nav-text">What did you learn?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-your-knowledge"><span class="nav-text">Test your knowledge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try-it-out"><span class="nav-text">Try it out</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

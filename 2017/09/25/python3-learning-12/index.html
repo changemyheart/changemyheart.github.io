@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Marck Script:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Objects In the last few chapters, we’ve been looking at different ways of organizing data and programs and collecting things together. We have seen that lists are a way to collect variables (data) to">
+<meta name="keywords" content="python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 learning 12">
+<meta property="og:url" content="https://changemyheart.github.io/2017/09/25/python3-learning-12/index.html">
+<meta property="og:site_name" content="Memories">
+<meta property="og:description" content="Objects In the last few chapters, we’ve been looking at different ways of organizing data and programs and collecting things together. We have seen that lists are a way to collect variables (data) to">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/what's%20object.png?raw=true">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/family.png?raw=true">
+<meta property="og:updated_time" content="2017-09-25T12:16:37.059Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3 learning 12">
+<meta name="twitter:description" content="Objects In the last few chapters, we’ve been looking at different ways of organizing data and programs and collecting things together. We have seen that lists are a way to collect variables (data) to">
+<meta name="twitter:image" content="https://github.com/changemyheart/Pictures/blob/master/what's%20object.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('Please input password','') !== ''){
+        alert('Wrong');
+        history.back();
+      }
+    }
+  })();
+</script>
+  <title>python3 learning 12 | Memories</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Memories</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">love</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://changemyheart.github.io/2017/09/25/python3-learning-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Memories">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python3 learning 12</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T18:33:39+08:00">
+                2017-09-25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2017-09-25T20:16:37+08:00">
+                2017-09-25
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="objects">Objects</h2>
+<p>In the last few chapters, we’ve been looking at different ways of organizing data and programs and collecting things together. We have seen that lists are a way to collect variables (data) together, and functions are a way to collect some code together into a unit that you can use over and over again.</p>
+<p>Objects take the idea of collecting things together one step further. Objects are a way to collect functions and data together. This is a very useful idea in programming, and it’s used in many, many programs. In fact, if you look under the hood in Python, almost everything is an object. In programming terms, we say Python is object oriented. That means that it’s possible (in fact, quite easy) to use objects in Python. It isn’t necessary to create your own objects, but it makes many things easier.</p>
+<p>In this chapter, we’ll learn what objects are and how to create and use them. In later chapters, when we start doing graphics, we’ll be using objects a lot.</p>
+<h3 id="objects-in-the-real-world">Objects in the real world</h3>
+<p>What’s an object? If we were not talking about programming, and I asked you that question, we might have a conversation like this:<br>
+<img src="https://github.com/changemyheart/Pictures/blob/master/what&#39;s%20object.png?raw=true"> That’s a good start at defining what an object is in Python, too. Take a ball, for example. You can do things to a ball, like pick it up, throw it, kick it, or inflate it (for some balls). We call these actions. You can also describe a ball by telling me its color, size, and weight. These are attributes of a ball.</p>
+<blockquote>
+<p>You can describe an object by describing its characteristics or attributes. One of the attributes of a ball is its shape. Most balls have a round shape. Other examples of attributes are color, size, weight, and cost. Another word for attributes is properties.</p>
+</blockquote>
+<p>Real objects in the real world have<br>
+  ■ things that you can do to them (actions).<br>
+  ■ things that describe them (attributes or properties).</p>
+<p>In programming, we have the same kind of thing.</p>
+<h3 id="objects-in-python">Objects in Python</h3>
+<p>In Python, the characteristics, or “things you know” about an object, are also called attributes, so that should be easy to remember. In Python, the actions, or “things you can do” to an object, are called methods.</p>
+<p>If you were to make a Python version or model of a ball, the ball would be an object and it would have attributes and methods.</p>
+<p>The ball’s attributes would look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ball.color</div><div class="line">ball.size</div><div class="line">ball.weight</div></pre></td></tr></table></figure></p>
+<p>Those are all things you can describe about the ball.</p>
+<p>The ball’s methods would look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ball.kick()</div><div class="line">ball.throw()</div><div class="line">ball.inflate()</div></pre></td></tr></table></figure></p>
+<p>Those are all things you can do to the ball.</p>
+<h4 id="what-are-attributes">What are attributes?</h4>
+<p>Attributes are all things you know (or can find out) about the ball. The ball’s attributes are chunks of information—numbers, strings, and so on. Sound familiar? Yes, they’re variables. They’re just variables that are included inside the object. You can display them: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(ball.size)</div></pre></td></tr></table></figure></p>
+<p>You can assign values to them: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ball.color = <span class="string">'green'</span></div></pre></td></tr></table></figure></p>
+<p>You can assign them to regular, non-object variables: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myColor = ball.color</div></pre></td></tr></table></figure></p>
+<p>You can also assign them to attributes in other objects: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myBall.color = yourBall.color</div></pre></td></tr></table></figure></p>
+<h4 id="what-are-methods">What are methods?</h4>
+<p>Methods are things you can do with an object. They’re chunks of code that you can call to do something. Sound familiar? Yes, methods are just functions that are included inside the object.</p>
+<p>You can do all the things with methods that you can do with any other function, including passing arguments and returning values.</p>
+<h3 id="object-attributes-methods">Object = attributes + methods</h3>
+<p>So objects are a way of collecting together attributes and methods (things you know, and things you can do) for a thing. Attributes are information, and methods are actions.</p>
+<h3 id="whats-the-dot">What’s the dot?</h3>
+<p>In our previous ball examples, you probably noticed the dot between the name of the object and the name of the attribute or method. That’s just the Python notation for using the attributes and methods of an object: <code>object.attribute</code> or <code>object.method()</code>. Simple as that. It’s called dot notation, and it’s used in many programming languages.</p>
+<p>Now we have the big picture about objects. Let’s start making some!</p>
+<h3 id="creating-objects">Creating objects</h3>
+<p>There are two steps to creating an object in Python.</p>
+<p>The first step is to define what the object will look like and act like—its attributes and methods. But creating this description doesn’t actually create an object. It’s kind of like the blueprints for a house. The blueprints tell you exactly what the house will look like, but a blueprint isn’t a house. You can’t live in a blueprint. You can just use it to build an actual house. In fact, you can use the blueprint to make many houses.</p>
+<p>In Python the description or blueprint of an object is called a class.</p>
+<p>The second step is to use the class to make an actual object. The object is called an instance of that class.</p>
+<p>Let’s look at an example of making a class and an instance. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ball</span>:</span>    <span class="comment"># This tells Python we’re making a class</span></div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bounce</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.direction == <span class="string">"down"</span>:</div><div class="line">            self.direction = <span class="string">"up"</span></div><div class="line">    <span class="comment"># This is a method</span></div></pre></td></tr></table></figure></p>
+<p>In above, we have a class definition for a ball with one method: <code>bounce()</code>. But what about attributes? Well, attributes don’t really belong to the class, they belong to each instance. That’s because each instance can have different attributes.</p>
+<p>There are a couple of ways we can set the instance attributes. We’ll see both ways in the following sections.</p>
+<h4 id="creating-an-instance-of-an-object">Creating an instance of an object</h4>
+<p>As we mentioned before, a class definition isn’t an object. It’s just the blueprints. Now let’s build a house.</p>
+<p>If we want to create an instance of a Ball, we do it like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>myBall = Ball()</div></pre></td></tr></table></figure></p>
+<p>Our ball does not have any attributes yet, so let’s give it some: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>myBall.direction = <span class="string">"down"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>myBall.color = <span class="string">"green"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>myBall.size = <span class="string">"small"</span></div></pre></td></tr></table></figure></p>
+<p>This is one of the ways to define attributes for the object. We’ll see the other way in the next section.</p>
+<p>Now, let’s try out one of the methods. Here’s how we’d use the <code>bounce()</code> method: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>myBall.bounce()</div></pre></td></tr></table></figure></p>
+<p>Let’s put this all together into a program, with some print statements to see what’s going on. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ball</span>:</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bounce</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.direction == <span class="string">"down"</span>:</div><div class="line">            self.direction = <span class="string">"up"</span></div><div class="line"><span class="comment"># Here’s our class, same as before</span></div><div class="line"></div><div class="line">myBall = Ball() <span class="comment"># Makes an instance of our class</span></div><div class="line"></div><div class="line">myBall.direction = <span class="string">"down"</span></div><div class="line">myBall.color = <span class="string">"red"</span></div><div class="line">myBall.size = <span class="string">"small"</span></div><div class="line"><span class="comment"># Sets some attributes</span></div><div class="line">           </div><div class="line">print(<span class="string">"I just created a ball."</span>) </div><div class="line">print(<span class="string">"My ball is"</span>, myBall.size)</div><div class="line">print(<span class="string">"My ball is"</span>, myBall.color)</div><div class="line">print(<span class="string">"My ball's direction is"</span>, myBall.direction)</div><div class="line">print(<span class="string">"Now I'm going to bounce the ball"</span>)</div><div class="line"><span class="comment"># Prints the object’s attributes</span></div><div class="line">print()</div><div class="line"></div><div class="line">myBall.bounce() <span class="comment"># Uses a method</span></div><div class="line">print(<span class="string">"Now the ball's direction is"</span>, myBall.direction)</div></pre></td></tr></table></figure></p>
+<p>If we run the program above, we should see this: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; ========================== RESTART ==========================</div><div class="line">&gt;&gt;&gt; </div><div class="line">I just created a ball. </div><div class="line">My ball is small</div><div class="line">My ball is red</div><div class="line">My ball&apos;s direction is down</div><div class="line">Now I&apos;m going to bounce the ball # Now we bounce() the ball</div><div class="line">Now the ball&apos;s direction is up   # It changed direction, from down to up</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>Notice that after we called the <code>bounce()</code> method, the ball’s <code>direction</code> changed from <code>down</code> to <code>up</code>, which is exactly what the code in the <code>bounce()</code> method is supposed to do.</p>
+<h4 id="initializing-an-object">Initializing an object</h4>
+<p>When we created our ball object, it didn’t have anything filled in for the size, color, or direction. We had to fill those in after we created the object. But there’s a way to set the properties of an object when it’s being created. This is called initializing the object.</p>
+<blockquote>
+<p>Initializing means “getting something ready at the start.” When we initialize something in software, we make it ready to use by getting it into the state or condition that we want.</p>
+</blockquote>
+<p>When you create the class definition, you can define a special method called <code>__init__()</code> that will run whenever a new instance of the class is created. You can pass arguments to the <code>__init__()</code> method to create the instance with its properties set however you want. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ball</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, color, size, direction)</span>:</span></div><div class="line">        self.color = color</div><div class="line">        self.size = size</div><div class="line">        self.direction = direction</div><div class="line">    <span class="comment"># Here’s the __init__() method</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bounce</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">if</span> self.direction == <span class="string">"down"</span>:</div><div class="line">            self.direction = <span class="string">"up"</span></div><div class="line">myBall = Ball(<span class="string">"red"</span>, <span class="string">"small"</span>, <span class="string">"down"</span>) <span class="comment"># Attributes are passed in as arguments to __init__()</span></div><div class="line">print(<span class="string">"I just created a ball."</span>)</div><div class="line">print(<span class="string">"My ball is"</span>, myBall.size)</div><div class="line">print(<span class="string">"My ball is"</span>, myBall.color)</div><div class="line">print(<span class="string">"My ball's direction is "</span>, myBall.direction)</div><div class="line">print(<span class="string">"Now I'm going to bounce the ball"</span>)</div><div class="line">print()</div><div class="line">myBall.bounce()</div><div class="line">print(<span class="string">"Now the ball's direction is"</span>, myBall.direction)</div></pre></td></tr></table></figure></p>
+<p>If you say <code>print(myBall)</code>, you get something weird like this:<br>
+<code>&lt;__main__.Ball instance at 0x00BB83A0&gt;</code></p>
+<p>To change that, put in a method called <code>__str__()</code>.</p>
+<p>Make it return what you want printed. Then, every time you use <code>print(myBall)</code>, it’ll say what you want.</p>
+<p>It’s one of the“magic” <code>__xxxx__()</code> class methods in Python!</p>
+<h4 id="a-magic-method-__str__">A “magic” method: <code>__str__()</code></h4>
+<p>Objects in Python have some “magic” methods. They’re not really magic, of course! They’re just some methods that Python includes automatically when youcreate any class. Python programmers usually call them special methods.</p>
+<p>We already saw the <code>__init__()</code> method that initializes an object when it’s created. Every object has an <code>__init__()</code> method built in. If you don’t put one in your class definition, the built-in one takes over, and all it does is create the object.</p>
+<p>Another special method is <code>__str__()</code>, which tells Python what to display when you <code>print</code> an object. By default, Python tells you<br>
+  ■ where the instance is defined (in Carter’s case <code>__main__</code>, which is the main part of the program).<br>
+  ■ the class name (<code>Ball</code>).<br>
+  ■ the memory location where the instance is being stored (that’s the <code>0x00BB83A0</code> part).</p>
+<p>But if you want print to display something different for your object, you can define your own <code>__str__()</code>, which will override the built-in one. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ball</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, color, size, direction)</span>:</span>    </div><div class="line">        self.color = color                         </div><div class="line">        self.size = size                           </div><div class="line">        self.direction = direction</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">        msg = <span class="string">"Hi, I'm a "</span> + self.size + <span class="string">" "</span> + self.color + <span class="string">" ball!"</span>  </div><div class="line">        <span class="keyword">return</span> msg</div><div class="line">    <span class="comment"># Here’s the __str__() method</span></div><div class="line"></div><div class="line">myBall = Ball(<span class="string">"red"</span>, <span class="string">"small"</span>, <span class="string">"down"</span>)              </div><div class="line">print(myBall)</div></pre></td></tr></table></figure></p>
+<p>Now, if we run the program above, here’s what we get: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; ================= RESTART =================</div><div class="line">&gt;&gt;&gt; </div><div class="line">Hi, I&apos;m a small red ball!</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>That looks a lot more friendly than <code>&lt;__main__.Ball instance at 0x00BB83A0&gt;</code>, don’t you think?</p>
+<h4 id="whats-self">What’s “self”?</h4>
+<p>You might have noticed that the term “self” shows up in a few places in the class attributes and method definitions, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bounce</span><span class="params">(self)</span>:</span></div></pre></td></tr></table></figure></p>
+<p>What does <code>self</code> mean? Well, remember that we said you could use blueprints to build more than one house? You can also use a class to create more than one instance of an object, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cartersBall = Ball(<span class="string">"red"</span>, <span class="string">"small"</span>, <span class="string">"down"</span>) </div><div class="line">warrensBall = Ball(<span class="string">"green"</span>, <span class="string">"medium"</span>, <span class="string">"up"</span>)</div><div class="line"><span class="comment"># Creating two instances of the Ball class</span></div></pre></td></tr></table></figure></p>
+<p>When we call a method for one of these instances, like this, <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">warrensBall.bounce()</div></pre></td></tr></table></figure></p>
+<p>the method has to know which instance called it. Is it <code>cartersBall</code> that needs to bounce, or <code>warrensBall</code>? The <code>self</code> argument is what tells the method which object called it. It’s called the instance reference.</p>
+<p>But wait a minute! When we called the method, there was no argument in the parentheses of <code>warrensBall.bounce()</code>, but there’s a <code>self</code> argument in the method. Where did the <code>self</code> argument come from, if we didn’t pass anything? That’s another little bit of “magic” that Python does with objects. When you call a class method, the information about which instance called—the instance reference—is automatically passed to the method.</p>
+<p>It’s like writing this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Ball.bounce(warrensBall)</div></pre></td></tr></table></figure></p>
+<p>In this case, we told the <code>bounce()</code> method which ball to bounce. In fact, this code will work too, because that is exactly what Python does behind the scenes when you write <code>warrensBall.bounce()</code>.</p>
+<blockquote>
+<p>By the way, the name <code>self</code> has no special meaning in Python. That’s just the name everybody uses for the instance reference. It’s another one of those conventions that make your code easier to read. You could name the instance variable whatever you want, but I strongly suggest you follow the convention and use <code>self</code>—it’ll make things much less confusing.</p>
+</blockquote>
+<h3 id="an-example-classhotdog">An example class—HotDog</h3>
+<p>For this example, we’ll assume that hot dogs always have a bun. (It’s too messy otherwise.) We’ll give our hot dog some attributes and some methods.</p>
+<p>These are the attributes:<br>
+  ■ <code>cooked_level</code>—A number that lets us know how long the hot dog has been cooked. We’ll use 0–3 for raw, over 3 for medium, over 5 for well-done, and anything over 8 will be charcoal! Our hot dogs will start out raw.<br>
+  ■ <code>cooked_string</code>—A string describing how well-done the hot dog is.<br>
+  ■ <code>condiments</code>—A list of what’s on the hot dog, like ketchup, mustard, and so on.</p>
+<p>These are the methods:<br>
+  ■ <code>cook()</code>—Cooks the hot dog for some period of time. This will make the hot dog more well-done.<br>
+  ■ <code>add_condiment()</code>—Adds condiments to the hot dog.<br>
+  ■ <code>__init__()</code>—Creates our instance and sets the default properties.<br>
+  ■ <code>__str__()</code>—Makes the print look nicer.</p>
+<p>First, we need to define the class. Let’s start with the <code>__init__()</code> method, which will set the default attributes for a hot dog: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HotDog</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.cooked_level = <span class="number">0</span></div><div class="line">        self.cooked_string = <span class="string">"Raw"</span></div><div class="line">        self.condiments = []</div></pre></td></tr></table></figure></p>
+<p>We start with a raw hot dog and no condiments.</p>
+<p>Now, let’s make a method to cook our hot dog: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cook</span><span class="params">(self, time)</span>:</span></div><div class="line">      self.cooked_level = self.cooked_level + time <span class="comment"># Increases the cooked level by the amount of time</span></div><div class="line">      <span class="keyword">if</span> self.cooked_level &gt; <span class="number">8</span>:</div><div class="line">          self.cooked_string = <span class="string">"Charcoal"</span></div><div class="line">      <span class="keyword">elif</span> self.cooked_level &gt; <span class="number">5</span>:</div><div class="line">          self.cooked_string = <span class="string">"Well-done"</span></div><div class="line">      <span class="keyword">elif</span> self.cooked_level &gt; <span class="number">3</span>:</div><div class="line">          self.cooked_string = <span class="string">"Medium"</span></div><div class="line">      <span class="keyword">else</span>:</div><div class="line">          self.cooked_string = <span class="string">"Raw"</span></div><div class="line">      <span class="comment"># Sets the strings for the different cooked levels</span></div></pre></td></tr></table></figure></p>
+<p>Before we go any further, let’s test this part. First, we need to create an instance of a hot dog, and we’ll check the attributes, too. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">myDog = HotDog()</div><div class="line">print(myDog.cooked_level)</div><div class="line">print(myDog.cooked_string)</div><div class="line">print(myDog.condiments)</div></pre></td></tr></table></figure></p>
+<p>Let’s put this together into a program and run it. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HotDog</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.cooked_level = <span class="number">0</span></div><div class="line">        self.cooked_string = <span class="string">"Raw"</span></div><div class="line">        self.condiments = []</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cook</span><span class="params">(self, time)</span>:</span></div><div class="line">        self.cooked_level = self.cooked_level + time</div><div class="line">        <span class="keyword">if</span> self.cooked_level &gt; <span class="number">8</span>:                     </div><div class="line">            self.cooked_string = <span class="string">"Charcoal"</span>             </div><div class="line">        <span class="keyword">elif</span> self.cooked_level &gt; <span class="number">5</span>:                     </div><div class="line">            self.cooked_string = <span class="string">"Well-done"</span>            </div><div class="line">        <span class="keyword">elif</span> self.cooked_level &gt; <span class="number">3</span>:                     </div><div class="line">            self.cooked_string = <span class="string">"Medium"</span>               </div><div class="line">        <span class="keyword">else</span>:                                           </div><div class="line">            self.cooked_string = <span class="string">"Raw"</span>                  </div><div class="line">myDog = HotDog()</div><div class="line">print(myDog.cooked_level)</div><div class="line">print(myDog.cooked_string)</div><div class="line">print(myDog.condiments)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Another convention in Python is that the name of a class always starts with an uppercase (capital) letter. So far we have seen <code>Ball</code> and <code>HotDog</code>, so we have been following the convention.</p>
+</blockquote>
+<p>Now, run the code above and see what you get. It should look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line"><span class="number">0</span>   <span class="comment"># The cooked_level</span></div><div class="line">Raw <span class="comment"># The cooked_string</span></div><div class="line">[]  <span class="comment"># The condiments</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>We see that the attributes are <code>cooked_level = 0</code>, <code>cooked_string = &quot;Raw&quot;</code>, and <code>condiments</code> is empty.</p>
+<p>Now, let’s test the <code>cook()</code> method. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Now I'm going to cook the hot dog"</span>)    </div><div class="line">myDog.cook(<span class="number">4</span>) <span class="comment"># Cooks the hot dog for 4 minutes</span></div><div class="line">print(myDog.cooked_level)</div><div class="line">print(myDog.cooked_string)</div><div class="line"><span class="comment"># Checks the new cooked attributes</span></div></pre></td></tr></table></figure></p>
+<p>Run the program again. Now, the output should look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span></div><div class="line"><span class="number">0</span></div><div class="line">Raw</div><div class="line">[]</div><div class="line">Now I<span class="string">'m going to cook the hot dog</span></div><div class="line"><span class="string">4</span></div><div class="line"><span class="string">Medium</span></div><div class="line"><span class="string">&gt;&gt;&gt;</span></div></pre></td></tr></table></figure></p>
+<p>So our <code>cook()</code> method seems to work. The <code>cooked_level</code> went from <code>0</code> to <code>4</code>, and the string updated too (from <code>Raw</code> to <code>Medium</code>).</p>
+<p>Let’s try adding some condiments. We need a new method for that. We could also add our <code>__str__()</code> function so it’ll be easier to print the object. Edit the program so it looks like following program. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HotDog</span>:</span>  </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.cooked_level = <span class="number">0</span></div><div class="line">        self.cooked_string = <span class="string">"Raw"</span></div><div class="line">        self.condiments = []</div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">        msg = <span class="string">"hot dog"</span></div><div class="line">        <span class="keyword">if</span> len(self.condiments) &gt; <span class="number">0</span>: </div><div class="line">            msg = msg + <span class="string">" with "</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> self.condiments:</div><div class="line">            msg = msg+i+<span class="string">", "</span></div><div class="line">        msg = msg.strip(<span class="string">", "</span>)</div><div class="line">        msg = self.cooked_string + <span class="string">" "</span> + msg + <span class="string">"."</span></div><div class="line">        <span class="keyword">return</span> msg</div><div class="line">    <span class="comment"># Defines the new __str__() method</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cook</span><span class="params">(self, time)</span>:</span></div><div class="line">        self.cooked_level=self.cooked_level+time</div><div class="line">        <span class="keyword">if</span> self.cooked_level &gt; <span class="number">8</span>:</div><div class="line">            self.cooked_string = <span class="string">"Charcoal"</span></div><div class="line">        <span class="keyword">elif</span> self.cooked_level &gt; <span class="number">5</span>:</div><div class="line">            self.cooked_string = <span class="string">"Well-done"</span></div><div class="line">        <span class="keyword">elif</span> self.cooked_level &gt; <span class="number">3</span>:</div><div class="line">            self.cooked_string = <span class="string">"Medium"</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            self.cooked_string = <span class="string">"Raw"</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addCondiment</span><span class="params">(self, condiment)</span>:</span> </div><div class="line">        self.condiments.append(condiment)</div><div class="line">    <span class="comment"># Defines the new add_condiments() method</span></div><div class="line"></div><div class="line">myDog = HotDog()  <span class="comment"># Creates the instance</span></div><div class="line">print(myDog)</div><div class="line">print(<span class="string">"Cooking hot dog for 4 minutes..."</span>)</div><div class="line">myDog.cook(<span class="number">4</span>)</div><div class="line">print(myDog)</div><div class="line">print(<span class="string">"Cooking hot dog for 3 more minutes..."</span>)</div><div class="line">myDog.cook(<span class="number">3</span>)</div><div class="line">print(myDog)</div><div class="line">print(<span class="string">"What happens if I cook it for 10 more minutes?"</span>)</div><div class="line">myDog.cook(<span class="number">10</span>)</div><div class="line">print(myDog)</div><div class="line">print(<span class="string">"Now, I'm going to add some stuff on my hot dog"</span>)</div><div class="line">myDog.addCondiment(<span class="string">"ketchup"</span>)</div><div class="line">myDog.addCondiment(<span class="string">"mustard"</span>)</div><div class="line">print(myDog)</div><div class="line"><span class="comment"># Tests to see if everything is working</span></div></pre></td></tr></table></figure></p>
+<p>Run the program and see what you get. It should look like this: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; ================================ RESTART ================================</div><div class="line">&gt;&gt;&gt; </div><div class="line">Raw hot dog.</div><div class="line">Cooking hot dog for 4 minutes...</div><div class="line">Medium hot dog.</div><div class="line">Cooking hot dog for 3 more minutes...</div><div class="line">Well-done hot dog.</div><div class="line">What happens if I cook it for 10 more minutes?</div><div class="line">Charcoal hot dog.</div><div class="line">Now, I&apos;m going to add some stuff on my hot dog</div><div class="line">Charcoal hot dog with ketchup, mustard.</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>The first part of the program creates the class. The second part tests the methods to cook our virtual hot dog and add some condiments. But judging by that last couple of lines, I think we cooked it too much. What a waste of ketchup and mustard!</p>
+<h3 id="hiding-the-data">Hiding the data</h3>
+<p>You might have realized that there are two ways we can view or change the data (attributes) inside an object. We can either access them directly, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myDog.cooked_level = <span class="number">5</span></div></pre></td></tr></table></figure></p>
+<p>or we can use a method that modifies the attribute, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myDog.cook(<span class="number">5</span>)</div></pre></td></tr></table></figure></p>
+<p>If the hot dog started out raw (<code>cooked_level = 0</code>), these would both do the same thing. They’d set the <code>cooked_level</code> to 5. So why did we bother making a method to do this? Why not just do it directly?</p>
+<p>I can think of at least two reasons:<br>
+  ■ If we were accessing the attributes directly, then cooking the hot dog would require at least 2 parts: changing the cooked_level and changing the cooked_string. With a method, we just make one method call, and it does everything we need.<br>
+  ■ If we were accessing the attributes directly, we could do something like this:<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cooked_level = cooked_level - <span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>That would make the hot dog less cooked than it was before. But you can’t uncook ahot dog! So that doesn’t make sense. Using a method, we can make sure that the <code>cooked_level</code> only increases and never decreases.</p>
+<blockquote>
+<p>In programming terms, restricting the access to an object’s data so you can only get it or change it by using methods is called data hiding. Python doesn’t have any way to enforce data hiding, but you can write code that follows this rule if you want to.</p>
+</blockquote>
+<p>So far, we have seen that objects have attributes and methods. We have seen how to create objects and how to initialize them with a special method called <code>__init__()</code>. We have also seen another special method called <code>__str__()</code> that makes our objects print more nicely.</p>
+<h3 id="polymorphism-and-inheritance">Polymorphism and inheritance</h3>
+<p>Next, we’re going to look at the two aspects of objects that are probably the most important: polymorphism and inheritance. Those are two big long words, but they make objects very useful. I’ll clearly explain what they mean in the next sections.</p>
+<h4 id="polymorphismsame-method-different-behavior">Polymorphism—same method, different behavior</h4>
+<p>Very simply, polymorphism means that you can have two (or more) methods with the same name for different classes. These methods can behave differently, depending on which class they’re applied to.</p>
+<p>For example, let’s say you were making a program to practice geometry, and you needed to calculate the area of different shapes, like triangles and squares. You might create two classes, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Triangle</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, width, height)</span>:</span></div><div class="line">        self.width = width</div><div class="line">        self.height = height</div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getArea</span><span class="params">(self)</span>:</span></div><div class="line">        area = self.width * self.height / <span class="number">2.0</span></div><div class="line">        <span class="keyword">return</span> area</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, size)</span>:</span></div><div class="line">        self.size = size</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getArea</span><span class="params">(self)</span>:</span></div><div class="line">        area = self.size * self.size </div><div class="line">        <span class="keyword">return</span> area</div></pre></td></tr></table></figure></p>
+<p>Both the <code>Triangle</code> class and the <code>Square</code> class have a method called <code>getArea()</code>. So if we had an instance of each class, like this, <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>myTriangle = Triangle(<span class="number">4</span>, <span class="number">5</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>mySquare = Square(<span class="number">7</span>)</div></pre></td></tr></table></figure></p>
+<p>then we could calculate the area of either one using <code>getArea()</code>: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>myTriangle.getArea()</div><div class="line"><span class="number">10.0</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>mySquare.getArea()</div><div class="line"><span class="number">49</span></div></pre></td></tr></table></figure></p>
+<p>We used the method name <code>getArea()</code> for both shapes, but the method did something different for each shape. This is an example of polymorphism.</p>
+<h4 id="inheritancelearning-from-your-parents">Inheritance—learning from your parents</h4>
+<p>In the real (nonprogramming) world, people can inherit things from their parents or other relatives. You can inherit traits like red hair, or you can inherit stuff like money or property.</p>
+<p>In object-oriented programming, classes can inherit attributes and methods from other classes. This allows you to have whole “families” of classes that share common attributes and methods. That way, you don’t have to start from scratch every time you want to add a member to the family. <img src="https://github.com/changemyheart/Pictures/blob/master/family.png?raw=true"> A class that inherits attributes or methods from another class is called a derived class or subclass. An example will help explain this.</p>
+<p>Imagine we’re making a game where the player can pick up various things along the way, like food, money, or clothing. We could make a class called <code>GameObject</code>. The <code>GameObject</code> class would have attributes like <code>name</code> (for example, “coin”, “apple”, or “hat”) and methods like <code>pickUp()</code> (which would add the coin to the player’s collection of objects). All game objects would have these common methods and attributes.</p>
+<p>Then, we could make a subclass for coins. The <code>Coin</code> class would be derived from <code>GameObject</code>. It would inherit the attributes and methods of <code>GameObject</code>, so the <code>Coin</code> class would automatically have a <code>name</code> attribute and a <code>pickUp()</code> method. The <code>Coin</code> class would also need a <code>value</code> attribute (how much the coin is worth) and a <code>spend()</code> method (so you could use the coin to buy something).</p>
+<p>Let’s see what the code might look like for these classes. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">GameObject</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></div><div class="line">        self.name = name</div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pickUp</span><span class="params">(self, player)</span>:</span></div><div class="line">        <span class="comment"># put code here to add the object</span></div><div class="line">        <span class="comment"># to the player's collection</span></div><div class="line">    <span class="comment"># Defines GameObject class</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Coin</span><span class="params">(GameObject)</span>:</span> <span class="comment"># Coin is a subclass of GameObject</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></div><div class="line">        GameObject.__init__(self) <span class="comment"># In __init__(), inherit GameObject’s init and add stuff to it</span></div><div class="line">        self.value = value</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">spend</span><span class="params">(self, buyer, seller)</span>:</span></div><div class="line">        <span class="comment"># put code here to remove the coin</span></div><div class="line">        <span class="comment"># from the buyer's money and</span></div><div class="line">        <span class="comment"># add it to the seller's money</span></div><div class="line">    <span class="comment"># A new spend() method for the Coin class</span></div></pre></td></tr></table></figure></p>
+<h3 id="thinking-ahead">Thinking ahead</h3>
+<p>In the last example, we didn’t put any real code in the methods, just some comments explaining what the methods would do. It’s a way of planning or thinking ahead for what you’ll add later. The actual code would depend on how the game worked. Programmers often do this as a way to organize their thoughts when they’re writing more complex code. The “empty” functions or methods are called code stubs.</p>
+<p>If you tried to run the previous example, you’d get an error, because a function definition can’t be empty.</p>
+<p>The Python <code>pass</code> keyword is used as a placeholder when you want to make a code stub. So the code should really look like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Game_object</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></div><div class="line">        self.name = name</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pickUp</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">pass</span></div><div class="line">        <span class="comment"># put code here to add the object </span></div><div class="line">        <span class="comment"># to the player's collection</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Coin</span><span class="params">(Game_object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></div><div class="line">        Game_object.__init__(self)</div><div class="line">        self.value = value</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">spend</span><span class="params">(self, buyer, seller)</span>:</span></div><div class="line">        <span class="keyword">pass</span></div><div class="line">        <span class="comment"># put code here to remove the coin </span></div><div class="line">        <span class="comment"># from the buyer's money and  </span></div><div class="line">        <span class="comment"># add it to the seller's money</span></div></pre></td></tr></table></figure></p>
+<p>I’m not going to give more detailed examples using objects, polymorphism, and inheritance in this chapter. We’ll see many examples of objects and how they’re used as we go through the rest of this book. You’ll get a much better understanding of how to use objects when we use them in real programs, like games.</p>
+<hr>
+<h2 id="what-did-you-learn">What did you learn?</h2>
+<p>In this chapter, you learned about<br>
+  ■ what objects are.<br>
+  ■ attributes and methods.<br>
+  ■ what a class is.<br>
+  ■ creating an instance of a class.<br>
+  ■ special methods: <code>__init__()</code> and <code>__str__()</code>.<br>
+  ■ polymorphism.<br>
+  ■ inheritance.<br>
+  ■ code stubs.</p>
+<h2 id="test-your-knowledge">Test your knowledge</h2>
+<ol style="list-style-type: decimal">
+<li>What keywords do you use to define a new object type?</li>
+<li>What are attributes?</li>
+<li>What are methods?</li>
+<li>What’s the difference between a class and an instance?</li>
+<li>What name is usually used for the instance reference in a method?</li>
+<li>What’s polymorphism?</li>
+<li>What’s inheritance?</li>
+</ol>
+<h2 id="try-it-out">Try it out</h2>
+<ol style="list-style-type: decimal">
+<li>Make a class definition for a <code>BankAccount</code>. It should have attributes for its name (a string), account number (a string or integer), and balance (a float). It should have methods to display the balance, make deposits, and make withdrawals.</li>
+<li>Make a class called <code>InterestAccount</code> that earns interest. It should be a subclass of <code>BankAccount</code> (so it inherits the attributes and methods). It should also have an attribute for interest rate, and a method to add interest. To keep things simple, assume that the <code>addInterest()</code> method will be called once each year to calculate the interest and update the balance.</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python3/" rel="tag"><i class="fa fa-tag"></i> python3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/25/The-American-Accent-Course-50-Rules-You-Must-Know/" rel="next" title="《The American Accent Course 50 Rules You Must Know》">
+                <i class="fa fa-chevron-left"></i> 《The American Accent Course 50 Rules You Must Know》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/26/利用Github分支备份Hexo博客源文件/" rel="prev" title="利用Github分支备份Hexo博客源文件">
+                利用Github分支备份Hexo博客源文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true"
+              alt="Michael" />
+          
+            <p class="site-author-name" itemprop="name">Michael</p>
+            <p class="site-description motion-element" itemprop="description">Maybe... One day, I'll fly away...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#objects"><span class="nav-text">Objects</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#objects-in-the-real-world"><span class="nav-text">Objects in the real world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#objects-in-python"><span class="nav-text">Objects in Python</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#what-are-attributes"><span class="nav-text">What are attributes?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#what-are-methods"><span class="nav-text">What are methods?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#object-attributes-methods"><span class="nav-text">Object = attributes + methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#whats-the-dot"><span class="nav-text">What’s the dot?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#creating-objects"><span class="nav-text">Creating objects</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#creating-an-instance-of-an-object"><span class="nav-text">Creating an instance of an object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#initializing-an-object"><span class="nav-text">Initializing an object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#a-magic-method-__str__"><span class="nav-text">A “magic” method: __str__()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#whats-self"><span class="nav-text">What’s “self”?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#an-example-classhotdog"><span class="nav-text">An example class—HotDog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hiding-the-data"><span class="nav-text">Hiding the data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#polymorphism-and-inheritance"><span class="nav-text">Polymorphism and inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#polymorphismsame-method-different-behavior"><span class="nav-text">Polymorphism—same method, different behavior</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inheritancelearning-from-your-parents"><span class="nav-text">Inheritance—learning from your parents</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thinking-ahead"><span class="nav-text">Thinking ahead</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-did-you-learn"><span class="nav-text">What did you learn?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-your-knowledge"><span class="nav-text">Test your knowledge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try-it-out"><span class="nav-text">Try it out</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

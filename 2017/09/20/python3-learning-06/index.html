@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Marck Script:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Decisions If a program did the same thing every time, it would be a little boring and not very useful. Programs need to be able to make decisions on what to do. We’re going to add some different deci">
+<meta name="keywords" content="python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 learning 06">
+<meta property="og:url" content="https://changemyheart.github.io/2017/09/20/python3-learning-06/index.html">
+<meta property="og:site_name" content="Memories">
+<meta property="og:description" content="Decisions If a program did the same thing every time, it would be a little boring and not very useful. Programs need to be able to make decisions on what to do. We’re going to add some different deci">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-25T12:18:36.799Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3 learning 06">
+<meta name="twitter:description" content="Decisions If a program did the same thing every time, it would be a little boring and not very useful. Programs need to be able to make decisions on what to do. We’re going to add some different deci">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('Please input password','') !== ''){
+        alert('Wrong');
+        history.back();
+      }
+    }
+  })();
+</script>
+  <title>python3 learning 06 | Memories</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Memories</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">love</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://changemyheart.github.io/2017/09/20/python3-learning-06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Memories">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python3 learning 06</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-20T19:28:01+08:00">
+                2017-09-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2017-09-25T20:18:36+08:00">
+                2017-09-25
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="decisions">Decisions</h2>
+<p>If a program did the same thing every time, it would be a little boring and not very useful. Programs need to be able to make decisions on what to do. We’re going to add some different decision-making techniques to our processing repertoire.</p>
+<h3 id="testing">Testing</h3>
+<p>Programs need to be able to do different things based on their input. Here are a few examples:<br>
+  ■ If Tim got the right answer, add 1 point to his score.<br>
+  ■ If Jane hit the alien, make an explosion sound.<br>
+  ■ If the file isn’t there, display an error message.</p>
+<p>To make decisions, programs check (do a test) to see if a certain condition is true or not. In the first example above, the condition is “got the right answer.”</p>
+<p>Python has only a few ways to test something, and there are only two possible answers for each test: true or false.</p>
+<p>Here are some questions Python can ask to test something:<br>
+  ■ Are two things equal?<br>
+  ■ Is one thing less than another?<br>
+  ■ Is one thing greater than another?</p>
+<p>But wait a minute, “got the right answer” isn’t one of the tests we can do, at least not directly. That means we need to describe the test in a way Python can understand.</p>
+<blockquote>
+<p>Doing tests and making decisions based on the results is called branching. The program decides which way to go, or which branch to follow, based on the result of the test.</p>
+</blockquote>
+<p>Python uses the keyword <code>if</code> to test conditions, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> timsAnswer == correctAnswer:</div><div class="line">    <span class="keyword">print</span> <span class="string">"You got it right!"</span>  <span class="comment">#These lines form a “block” of code because they’re </span></div><div class="line">    score = score + <span class="number">1</span>          <span class="comment">#indented from the lines above and below</span></div><div class="line"><span class="keyword">print</span> <span class="string">"Thanks for playing."</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>A block of code is one or more lines of code that are grouped together. They’re all related to a particular part of the program (like an <code>if</code> statement). In Python, blocks of code are formed by indenting the lines of code in the block.</p>
+</blockquote>
+<p>The colon at the end of the <code>if</code> line tells Python that a block of instructions is coming next. The block includes every line that is indented from the <code>if</code> line, up until the next line that is not indented. &gt;Indenting means that a line of code is pushed over to the right a bit. Instead of starting at the far left, it has some spaces at the beginning, so it starts a few characters away from the left side.</p>
+<p>If the condition is true, everything in the following block will be done. In the previous short example, the second and third lines make up the block of statements for the <code>if</code> in the first line.</p>
+<h3 id="indenting">Indenting</h3>
+<p>In some languages, indenting is just a matter of style—you can indent however you like (or not at all). But in Python, indenting is a necessary part of how you write the code. Indenting tells Python where blocks of code start and where they end.</p>
+<p>Some statements in Python, like the <code>if</code> statement, need a block of code to tell them what to do. In the case of the <code>if</code> statement, the block tells Python what to do if the condition is true.</p>
+<p>It doesn’t matter how far you indent the block, as long as the whole block is indented the same amount. A convention in Python is to use four spaces to indent blocks of code. It would be a good idea to follow this style in your programs. &gt;A convention just means lots of people do it that way.</p>
+<h3 id="am-i-seeing-double">Am I seeing double?</h3>
+<p>Are there actually two equal signs in that if statement (<code>if timsAnswer == correctAnswer</code>)? Yes, there are, and here’s why.</p>
+<p>People say, “Five plus four is equal to nine,” and they ask, “Is five plus four equal to nine?” One is a statement; the other is a question.</p>
+<p>In Python we have the same kinds of things—statements and questions. A statement might assign a value to a variable. A question might check if a variable is equal to a certain value. One means you’re setting something (assigning it or making it equal). The other means you’re checking or testing something (is it equal, yes or no?). So Python uses two different symbols.</p>
+<p>We already saw the equal sign (<code>=</code>) used for setting or assigning values to variables. Here are a few more examples: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">correctAnswer = <span class="number">5</span> + <span class="number">3</span></div><div class="line">temperature = <span class="number">35</span></div><div class="line">name = <span class="string">"Bill"</span></div></pre></td></tr></table></figure></p>
+<p>For testing whether two things are equal, Python uses a double equal sign (<code>==</code>), like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> myAnswer == correctAnswer:</div><div class="line"><span class="keyword">if</span> temperature == <span class="number">40</span>:</div><div class="line"><span class="keyword">if</span> name == <span class="string">"Fred"</span>:</div></pre></td></tr></table></figure></p>
+<p>Testing or checking is also called comparing. The double equal sign is called a comparison operator. Remember, we talked about operators before. An operator is a special symbol that operates on the values around it. In this case, the operation is to test whether the values are equal.</p>
+<h3 id="other-kinds-of-tests">Other kinds of tests</h3>
+<p>Lucky for us, the other comparison operators are easier to remember: less than (<code>&lt;</code>), greater than (<code>&gt;</code>), and not equal to (<code>!=</code>). (You can also use <code>&lt;&gt;</code> for not equal to, but most people use <code>!=</code>.) You can also combine <code>&gt;</code> or <code>&lt;</code> with <code>=</code> to make greater than or equal to (<code>&gt;=</code>) and less than or equal to (<code>&lt;=</code>). You might have seen some of these in math class.</p>
+<p>You can also “chain” two greater-than and less-than operators together to make an in-between test, like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="number">8</span> &lt; age &lt; <span class="number">12</span>:</div></pre></td></tr></table></figure></p>
+<p>This will check if the variable <code>age</code> has a value between, but not including, 8 and 12. This would be true if <code>age</code> was equal to 9, 10, or 11 (or 8.1 or 11.6, and so on). If we wanted to include the ages 8 and 12, we’d do this instead: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="number">8</span> &lt;= age &lt;= <span class="number">12</span>:</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Comparison operators are also called relational operators (because they test the relation between the two sides: equal or not equal, greater than or less than). A comparison is also called a conditional test or logical test. In programming, logical refers to something where the answer is either true or false.</p>
+</blockquote>
+<h3 id="what-happens-if-the-test-is-false">What happens if the test is false?</h3>
+<p>We’ve seen how to make Python do something if the result of a test is true. But what does it do if the test is false? In Python, there are three possibilities:<br>
+  ■ Do another test. If the first test comes out false, you can get Python to test something else with the keyword <code>elif</code>, (which is short for “else if”) like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> answer &gt;= <span class="number">10</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You got at least 10!"</span>)</div><div class="line"><span class="keyword">elif</span> answer &gt;= <span class="number">5</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You got at least 5!"</span>)</div><div class="line"><span class="keyword">elif</span> answer &gt;= <span class="number">3</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You got at least 3!"</span>)</div></pre></td></tr></table></figure></p>
+<p>  You can have as many elif statements as you want after the if.<br>
+  ■ Do something else if all the other tests come out false. You do this with the else keyword. This always goes at the end, after you’ve done the if and any elif statements: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> answer &gt;= <span class="number">10</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You got at least 10!"</span>)</div><div class="line"><span class="keyword">elif</span> answer &gt;= <span class="number">5</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You got at least 5!"</span>)</div><div class="line"><span class="keyword">elif</span> answer &gt;= <span class="number">3</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You got at least 3!"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You got less than 3."</span>)</div></pre></td></tr></table></figure></p>
+<p>  ■ Move on. If you don’t put anything else after the <code>if</code> block, the program will continue on to the next line of code (if there is one) or it’ll end (if there is no more code).</p>
+<p>Try making a program with the code above by adding a line at the beginning to input a number: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">answer = float(raw_input (<span class="string">"Enter a number from 1 to 15"</span>))</div></pre></td></tr></table></figure></p>
+<h3 id="testing-for-more-than-one-condition">Testing for more than one condition</h3>
+<p>What if we want to test for more than one thing? Let’s say you made a game that was for eight-year-olds and up, and you want to make sure the player is in at least third grade. There are two conditions to meet. Here is one way you could test for both conditions: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">age = float(raw_input(<span class="string">"Enter your age: "</span>))</div><div class="line">grade = int(raw_input(<span class="string">"Enter your grade: "</span>))</div><div class="line"><span class="keyword">if</span> age &gt;= <span class="number">8</span>:</div><div class="line">    <span class="keyword">if</span> grade &gt;= <span class="number">3</span>:</div><div class="line">        <span class="keyword">print</span> (<span class="string">"You can play this game."</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"Sorry, you can’t play the game."</span>)</div></pre></td></tr></table></figure></p>
+<p>Notice that the first <code>print</code> line is indented eight spaces, not just four spaces. That’s because each <code>if</code> needs its own block, so each one has its own indenting.</p>
+<h4 id="using-and">Using “and”</h4>
+<p>That last example will work fine. But there is a shorter way to do the same thing. You can combine conditions like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">age = float(input(<span class="string">"Enter your age: "</span>))</div><div class="line">grade = int(input(<span class="string">"Enter your grade: "</span>))</div><div class="line"><span class="keyword">if</span> age &gt;= <span class="number">8</span> <span class="keyword">and</span> grade &gt;= <span class="number">3</span>:         </div><div class="line">    <span class="keyword">print</span> <span class="string">"You can play this game."</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">"Sorry, you can’t play the game."</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>We combined the two conditions using the <code>and</code> keyword. The <code>and</code> means that both of the conditions have to be true for the following block to execute.</p>
+</blockquote>
+<p>You can put more than two conditions together with <code>and</code>: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">age = float(input(<span class="string">"Enter your age: "</span>))</div><div class="line">grade = int(input(<span class="string">"Enter your grade: "</span>))</div><div class="line">color = input(<span class="string">"Enter your favorite color: "</span>)</div><div class="line"><span class="keyword">if</span> age &gt;= <span class="number">8</span> <span class="keyword">and</span> grade &gt;= <span class="number">3</span> <span class="keyword">and</span> color == <span class="string">"green"</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You are allowed to play this game."</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"Sorry, you can’t play the game."</span>)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>If there are more than two conditions, all the conditions have to be true for the <code>if</code> statement to be true.</p>
+</blockquote>
+<p>There are other ways of combining conditions too.</p>
+<h4 id="using-or">Using “or”</h4>
+<p>The <code>or</code> keyword is also used to put conditions together. If you use <code>or</code>, the block is executed if any of the conditions are true. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">color = input(<span class="string">"Enter your favorite color: "</span>)</div><div class="line"><span class="keyword">if</span> color == <span class="string">"red"</span> <span class="keyword">or</span> color == <span class="string">"blue"</span> <span class="keyword">or</span> color == <span class="string">"green"</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You are allowed to play this game."</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"Sorry, you can’t play the game."</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="using-not">Using “not”</h4>
+<p>You can also flip around a comparison to mean the opposite, using <code>not</code>. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">age = float(input(<span class="string">"Enter your age: "</span>))</div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> (age &lt; <span class="number">8</span>):</div><div class="line">    <span class="keyword">print</span> (<span class="string">"You are allowed to play this game."</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"Sorry, you can’t play the game."</span>)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>This line <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> (age &lt; <span class="number">8</span>):</div></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>means the same as this one: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> age &gt;= <span class="number">8</span>:</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>In both cases, the block executes if the age is 8 or higher, and it doesn’t if the age is lower than 8.</p>
+<p>we saw math operators like <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code> before. In this chapter, we saw the comparison operators <code>&lt;</code>, <code>&gt;</code>, <code>==</code>, and so on. The and, or, and not keywords are also operators. They’re called logical operators. They’re used to modify comparisons by combining two or more of them (<code>and</code>, <code>or</code>) or reversing them (<code>not</code>).</p>
+<h3 id="following-table-lists-all-the-operators-weve-talked-about-so-far.">Following table lists all the operators we’ve talked about so far.</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Operator</th>
+<th align="center">Name</th>
+<th align="center">What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">=</td>
+<td align="center">Assignment</td>
+<td align="center">Assigns a value to a name (variable).</td>
+</tr>
+<tr class="even">
+<td align="left">+</td>
+<td align="center">Addition</td>
+<td align="center">Adds two numbers together. This can also be used to concatenate strings.</td>
+</tr>
+<tr class="odd">
+<td align="left">-</td>
+<td align="center">Subtraction</td>
+<td align="center">Subtracts two numbers.</td>
+</tr>
+<tr class="even">
+<td align="left">+=</td>
+<td align="center">Increment</td>
+<td align="center">Adds one to a number.</td>
+</tr>
+<tr class="odd">
+<td align="left">-=</td>
+<td align="center">Decrement</td>
+<td align="center">Subtracts one from a number.</td>
+</tr>
+<tr class="even">
+<td align="left">*</td>
+<td align="center">Multiplication</td>
+<td align="center">Multiplies two numbers together.</td>
+</tr>
+<tr class="odd">
+<td align="left">/</td>
+<td align="center">Division</td>
+<td align="center">Divides two numbers. If both numbers are integers, the result will be just the integer quotient, with no remainder.</td>
+</tr>
+<tr class="even">
+<td align="left">%</td>
+<td align="center">Modulus</td>
+<td align="center">Gets the remainder (or modulus) for integer division of two numbers.</td>
+</tr>
+<tr class="odd">
+<td align="left">**</td>
+<td align="center">Exponentiation</td>
+<td align="center">Raises a number to a power. Both the number and the power can be integers or floats.</td>
+</tr>
+<tr class="even">
+<td align="left">==</td>
+<td align="center">Equality</td>
+<td align="center">Checks whether two things are equal.</td>
+</tr>
+<tr class="odd">
+<td align="left">&lt;</td>
+<td align="center">Less than</td>
+<td align="center">Checks whether the first number is less than the second number.</td>
+</tr>
+<tr class="even">
+<td align="left">&gt;</td>
+<td align="center">Greater than</td>
+<td align="center">Checks whether the first number is greater than the second num-ber.</td>
+</tr>
+<tr class="odd">
+<td align="left">&lt;=</td>
+<td align="center">Less than or equal to</td>
+<td align="center">Checks whether the first number is less than or equal to the second number.</td>
+</tr>
+<tr class="even">
+<td align="left">&gt;=</td>
+<td align="center">Greater than or equal to</td>
+<td align="center">Checks whether the first number is greater than or equal to the second number.</td>
+</tr>
+<tr class="odd">
+<td align="left">!= &lt;&gt;</td>
+<td align="center">Not equal to</td>
+<td align="center">Checks whether two things are not equal. (Either operator can be used.)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="what-did-you-learn">What did you learn?</h2>
+<p>In this chapter, you learned about<br>
+  ■ comparison tests and the relational operators.<br>
+  ■ indenting and blocks of code.<br>
+  ■ combining tests using and and or.<br>
+  ■ reversing a test using not.</p>
+<h2 id="test-your-knowledge">Test your knowledge</h2>
+<ol style="list-style-type: decimal">
+<li><p>What will the output be when this program is run: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">my_number = <span class="number">7</span></div><div class="line"><span class="keyword">if</span> my_number &lt; <span class="number">20</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">'Under 20'</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> (<span class="string">'20 or over'</span>)</div></pre></td></tr></table></figure></p></li>
+<li>From the program in the first question, what will the output be if you change <code>my_number</code> to <code>25</code>?<br>
+</li>
+<li>What kind of <code>if</code> statement would you use to check if a number was greater than 30 but less than or equal to 40?<br>
+</li>
+<li><p>What kind of <code>if</code> statement would you use to check if the user entered the letter “Q” in either uppercase or lowercase?</p></li>
+</ol>
+<h2 id="try-it-out">Try it out</h2>
+<ol style="list-style-type: decimal">
+<li>A store is having a sale. They’re giving 10 percent off purchases of $10 or lower, and 20 percent off purchases of greater than $10. Write a program that asks the purchase price and displays the discount (10% or 20%) and the final price.<br>
+</li>
+<li>A soccer team is looking for girls from ages 10 to 12 to play on their team. Write a program to ask the user’s age and if male or female (using “m” or “f”). Display a message indicating whether the person is eligible to play on the team.Bonus: Make the program so that it doesn’t ask for the age unless the user is a girl.<br>
+</li>
+<li>You’re on a long car trip and arrive at a gas station. It’s 200 km to the next station. Write a program to figure out if you need to buy gas here, or if you can wait for the next station.<br>
+The program should ask these questions:<br>
+  ■ How big is your tank, in liters?<br>
+  ■ How full is your tank (in percent—for example, half full = 50)?<br>
+  ■ How many km per liter does your car get?<br>
+  The output should look something like this:</li>
+</ol>
+<blockquote>
+<p>  Size of tank: 60<br>
+  percent full: 40<br>
+  km per liter: 10<br>
+  You can go another 240 km<br>
+  The next gas station is 200 km away<br>
+  You can wait for the next station.</p>
+</blockquote>
+<p>or:</p>
+<blockquote>
+<p>  Size of tank: 60<br>
+  percent full: 30<br>
+  km per liter: 8<br>
+  You can go another 144 km<br>
+  The next gas station is 200 km away<br>
+  Get gas now!</p>
+</blockquote>
+<p>Bonus: Include a 5 liter buffer in your program, in case the fuel gauge isn’t accurate.<br>
+4. Make a program where the user has to enter a secret password to use the program. You’ll know the password, of course (because it’ll be in your code). But your friends will either have to ask you, guess the password, or learn enough Python to look at the code and figure it out!<br>
+The program can be anything you want, including one you have already written, or just a simple one that displays a message like “You’re in!” when he enters the right password.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python3/" rel="tag"><i class="fa fa-tag"></i> python3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/20/MWOL-Pronunciation-Guide/" rel="next" title="MWOL Pronunciation Guide">
+                <i class="fa fa-chevron-left"></i> MWOL Pronunciation Guide
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/20/python3-learning-07/" rel="prev" title="python3 learning 07">
+                python3 learning 07 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true"
+              alt="Michael" />
+          
+            <p class="site-author-name" itemprop="name">Michael</p>
+            <p class="site-description motion-element" itemprop="description">Maybe... One day, I'll fly away...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#decisions"><span class="nav-text">Decisions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#testing"><span class="nav-text">Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indenting"><span class="nav-text">Indenting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#am-i-seeing-double"><span class="nav-text">Am I seeing double?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-kinds-of-tests"><span class="nav-text">Other kinds of tests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#what-happens-if-the-test-is-false"><span class="nav-text">What happens if the test is false?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#testing-for-more-than-one-condition"><span class="nav-text">Testing for more than one condition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#using-and"><span class="nav-text">Using “and”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#using-or"><span class="nav-text">Using “or”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#using-not"><span class="nav-text">Using “not”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#following-table-lists-all-the-operators-weve-talked-about-so-far."><span class="nav-text">Following table lists all the operators we’ve talked about so far.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-did-you-learn"><span class="nav-text">What did you learn?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-your-knowledge"><span class="nav-text">Test your knowledge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try-it-out"><span class="nav-text">Try it out</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
