@@ -1,11 +1,15 @@
 ---
-title: 利用Github分支备份Hexo博客源文件
+title: Use Github branches to back-up blog source files of Hexo(Editing)
 date: 2017-09-26 21:07:05
 tags: ["Github", "Hexo"]
 ---
+
+
 ### 场景
 
-Hexo 部署博客很方便，我的这个博客也是用 Hexo 部署在 GitHub Pages 上的，有得人可能在多台电脑上写博客，这个时候需要把博客的源文件备份在一个地方，这样只需把博客源文件复制下来就可以在另一个地方写博客并部署到 GitHub Pages上了
+Hexo 部署博客很方便，我的这个博客也是用 Hexo 部署在 GitHub Pages 上的，有得人可能在多台电脑上写博客，这个时候需要把博客的源文件备份在一个地方，这样只需把博客源文件复制下来就可以在另一个地方写博客并部署到 GitHub Pages上了  
+<!-- more -->
+It is convenient use Hexo to depoly blog. this blog was depolyed Github Pages by Hexo, too. Perhaps someone write blog use many different computer, so they need to back-up blog source fine in the one place. that is it, only need to clone blog source to other computer, and then, write and depoly in that computer.  
 
 本篇介绍的就是利用博客的 repo 分支（ `master` 分支的必须用来存放你博客网站文件）托管 Hexo 源文件和配置达到备份的目的，下面开始正题
 

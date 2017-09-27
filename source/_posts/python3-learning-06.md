@@ -5,6 +5,7 @@ tags: python3
 ---
 ## Decisions
 If a program did the same thing every time, it would be a little boring and not very useful. Programs need to be able to make decisions on what to do. We’re going to add some different decision-making techniques to our processing repertoire.
+<!-- more -->
 
 ### Testing
 Programs need to be able to do different things based on their input. Here are a few examples:   

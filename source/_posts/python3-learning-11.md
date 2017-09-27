@@ -5,6 +5,7 @@ tags: python3
 ---
 ## Functions
 Pretty soon, our programs are going to start getting bigger and more complicated. We need some ways to organize them in smaller pieces so they’re easier to write and keep track of. 
+<!-- more -->
 
 There are three main ways to break programs into smaller parts. Functions are like building blocks of code that you can use over and over again. Objects are a way of describing pieces of your program as self-contained units. Modules are just separate files that contain parts of your program. In this chapter, we’ll learn about functions, and in the next two chapters, we’ll learn about objects and modules. Then we’ll have all the basic tools we need to start using graphics and sounds, and to create games.
 

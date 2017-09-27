@@ -5,6 +5,7 @@ tags: python3
 ---
 ## Collecting Things Together—Lists
 We’ve seen that Python can store things in its memory and retrieve them, using names. So far, we have stored strings and numbers (both integers and floats). Sometimes it’s useful to store a bunch of things together in a kind of “group” or “collection.” Then you can do things to the whole collection at once and keep track of groups of things more easily. One of the kinds of collections is a list. In this chapter, we’re going to learn about lists—what they are and how to create, modify, and use them. 
+<!-- more -->
 
 Lists are very useful, and they’re used in many, many programs. We’ll use a lot of them in the examples in upcoming chapters when we start doing graphics and game programming, because the many graphical objects in a game are often stored in a list.
 

@@ -5,6 +5,7 @@ tags: python3
 ---
 ## Loop the Loop
 For most people, doing the same thing over and over again is very boring, so why not let the computer do that for us? Computers never get bored, so they’re great at doing repetitive tasks. In this chapter, we’re going to see how to make the computer repeat things.
+<!-- more -->
 
 Computer programs often repeat the same steps over and over again. This is called looping.   
 There are two main kinds of loops:  

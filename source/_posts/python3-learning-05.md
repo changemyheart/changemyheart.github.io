@@ -5,6 +5,7 @@ tags: python3
 ---
 ## Input
 What if you want to have the user enter any temperature she wants when the program runs? We said before that a program has three components: input, processing, and output. Our first program had only output. The temperature-conversion program had some processing (converting the temperature) and some output, but no input. It’s time to add the third ingredient to our programs: input. Input means getting something, some kind of information, into a program while it is running. 
+<!-- more -->
 
 That way we can write programs that interact with the user, which will make things a lot more interesting.
 

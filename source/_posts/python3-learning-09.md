@@ -6,6 +6,8 @@ tags: python3
 ## Nested and Variable Loops
 We already saw that, within the body of a loop (which is a block of code), we can put other things that have their own blocks. If you look at the number-guessing program, you’ll see this:
 ![While loop blocks](https://github.com/changemyheart/Pictures/blob/master/nested%20loop.png?raw=true)
+<!-- more -->
+
 The outer, light gray block is a `while` loop block, and the dark gray blocks are `if` and `elif` blocks within that `while` loop block. 
 
 You can also put a loop within another loop. These loops are called nested loops.

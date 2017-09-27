@@ -5,6 +5,7 @@ tags: python3
 ---
 ## Types of Data
 We have seen that there are at least three different types of things we can assign to a variable (to keep in the computer’s memory): integers, floating-point numbers, and strings. There are other types of data in Python, which we will learn about later, but for now these three will do. In this chapter, we’re going to learn how you can tell what type something is. We will also see how to make one type from another.  
+<!-- more -->
 
 ### Changing types
 Quite often we need to convert data from one type to another. For instance, when we want to print a number, it needs to be converted to text in order for the text to appear on the screen. Python’s print command can do that for us, but sometimes we need to convert without printing, or to convert from strings to numbers (which print can’t do). This is called type conversion. So how does it work?

@@ -5,6 +5,7 @@ tags: python3
 ---
 ## Just for You—Comments
 Up until now, everything we have typed into our programs (and in interactive mode) has been instructions to the computer. But it’s a very good idea to include some notes to yourself in your programs, describing what the program does and how it works. This will help you (or someone else) look at your program later and figure out what you did. 
+<!-- more -->
 
 In a computer program, these notes are called comments.
 

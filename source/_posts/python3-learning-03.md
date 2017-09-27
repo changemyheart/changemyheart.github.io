@@ -4,6 +4,7 @@ date: 2017-09-18 20:20:43
 tags: python3
 ---
 ## Basic Math
+<!-- more -->
 
 ### The four basic operations
 We already saw Python do a little math in chapter 1: addition, using the plus (`+`) sign, and multiplication, using the asterisk (`*`) sign.

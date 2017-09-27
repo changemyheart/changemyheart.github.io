@@ -5,6 +5,7 @@ tags: python3
 ---
 ## Objects
 In the last few chapters, we’ve been looking at different ways of organizing data and programs and collecting things together. We have seen that lists are a way to collect variables (data) together, and functions are a way to collect some code together into a unit that you can use over and over again. 
+<!-- more -->
 
 Objects take the idea of collecting things together one step further. Objects are a way to collect functions and data together. This is a very useful idea in programming, and it’s used in many, many programs. In fact, if you look under the hood in Python, almost everything is an object. In programming terms, we say Python is object oriented. That means that it’s possible (in fact, quite easy) to use objects in Python. It isn’t necessary to create your own objects, but it makes many things easier. 
 

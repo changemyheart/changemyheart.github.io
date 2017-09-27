@@ -4,6 +4,7 @@ date: 2017-09-16 20:28:51
 tags: python3
 ---
 ## lean python3 from now on.
+<!-- more -->
 
 In programming, `print` often means to display text on the screen, instead of printing it on a piece of paper using your printer.
 ```python

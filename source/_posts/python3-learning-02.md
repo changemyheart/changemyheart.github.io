@@ -3,7 +3,9 @@ title: python3 learning 02
 date: 2017-09-17 20:23:42
 tags: python3
 ---
-## Names   
+## Names 
+<!-- more -->
+  
 ```python
 >>>Teacher = "Mr. Morton"
 >>>print (Teacher)
