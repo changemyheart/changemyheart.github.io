@@ -559,8 +559,8 @@ code {
 code {
   padding: 2px 4px;
   word-wrap: break-word;
-  color: #eee;
-  background: #555;
+  color: #00379c;
+  background: rgba(63,152,173,0.54);
   border-radius: $code-border-radius;
   font-size: 15px;
 }
@@ -1115,7 +1115,7 @@ pre .javascript .function {
   z-index: 1050;
   padding: 0 6px;
   width: initial;
-  background: #222;
+  background: transprant;
   font-size: 12px;
   opacity: 1;
   color: #fff;
@@ -1915,7 +1915,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #50ff67;
+  background: #f68540;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3001,7 +3001,6 @@ body {
 }
 .post-time {
   color: #636;
-  text-align: center;
   font-size: 10px;
 }
 .post-title-link:hover {
@@ -3033,4 +3032,40 @@ header.header {
 }
 .highlight table {
   text-align: right;
+}
+code {
+  border-radius: 5px;
+}
+.highlight {
+  border-radius: 3px;
+}
+.posts-expand .post-tags a {
+  background: transparent;
+  color: #0a7d7d;
+}
+.posts-expand .post-tags a:hover {
+  background: transparent;
+}
+.pagination .page-number.current {
+  background: transparent;
+  color: #b200c7;
+}
+.sidebar-toggle {
+  background: none;
+}
+.sidebar-toggle-line {
+  background: #c9c;
+}
+.back-to-top {
+  color: #c9c;
+}
+.page-post-detail .sidebar-toggle-line {
+  background: #c9c;
+}
+.sidebar {
+  background-color: #222;
+  box-shadow: none;
+}
+.icon-connection:before {
+  content: "\e91b";
 }

@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Marck Script:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Modules This is the last chapter that talks about ways of collecting things together. We have already learned about lists, functions, and objects. In this chapter, we’ll learn about modules. In the n">
+<meta name="keywords" content="python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3 learning 13">
+<meta property="og:url" content="https://changemyheart.github.io/2017/09/27/python3-learning-13/index.html">
+<meta property="og:site_name" content="Memories">
+<meta property="og:description" content="Modules This is the last chapter that talks about ways of collecting things together. We have already learned about lists, functions, and objects. In this chapter, we’ll learn about modules. In the n">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193838.png?raw=true">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193856.png?raw=true">
+<meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193911.png?raw=true">
+<meta property="og:updated_time" content="2017-09-27T12:51:35.389Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python3 learning 13">
+<meta name="twitter:description" content="Modules This is the last chapter that talks about ways of collecting things together. We have already learned about lists, functions, and objects. In this chapter, we’ll learn about modules. In the n">
+<meta name="twitter:image" content="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193838.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+<script>
+  (function(){
+    if(''){
+      if (prompt('Please input password','') !== ''){
+        alert('Wrong');
+        history.back();
+      }
+    }
+  })();
+</script>
+  <title>python3 learning 13 | Memories</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Memories</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">love</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://changemyheart.github.io/2017/09/27/python3-learning-13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Memories">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python3 learning 13</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-27T19:23:01+08:00">
+                2017-09-27
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2017-09-27T20:51:35+08:00">
+                2017-09-27
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="modules">Modules</h2>
+<p>This is the last chapter that talks about ways of collecting things together. We have already learned about lists, functions, and objects. In this chapter, we’ll learn about modules. In the next chapter, we’ll use a module called Pygame to start drawing some graphics. <a id="more"></a></p>
+<h3 id="whats-a-module">What’s a module?</h3>
+<p>A module is a piece or part of something. We say something is modular if it comes in pieces or you can easily separate it into pieces. LEGO blocks might be the perfect example of something modular. You can take a bunch of different pieces and build many different things with them.</p>
+<p>In Python, modules are smaller pieces of a bigger program. Each module, or piece, is a separate file on your hard drive. You can take a big program and split it up into more than one module, or file. Or you can go the other way—start with one small module and keep adding pieces to make a big program.</p>
+<h3 id="why-use-modules">Why use modules?</h3>
+<p>So why go to all the trouble of splitting our program up into smaller pieces, when we’re going to need them all to make the program work? Why not just leave everything in one big file?</p>
+<p>There are a few reasons:<br>
+  ■ It makes the files smaller, which makes it easier to find things in your code.<br>
+  ■ Once you create a module, you can use it in lots of programs. That saves you from starting all over again next time you need the same functions.<br>
+  ■ You don’t always need to use all the modules together. Being modular means that you can use different combinations of the parts to do different jobs, just as you can make many different things out of the same set of LEGO blocks.</p>
+<h3 id="buckets-of-blocks">Buckets of blocks</h3>
+<p>In the chapter about functions, we said that functions are like building blocks. You can think of a module as a bucket of building blocks. You can have as few or as many blocks in a bucket as you want, and you can have many different buckets. Maybe you have one bucket for all the square blocks, one for the flat pieces, and one for all the odd-shaped blocks. That’s usually how programmers use modules—they collect similar kinds of functions together in a module. Or they might collect all the functions they need for a project together in a module, just as you would gather all the blocks you need for a castle together in one bucket.</p>
+<h3 id="how-do-we-create-modules">How do we create modules?</h3>
+<p>Let’s create a module. A module is just a Python file, like the one in following code, and save it as <strong>my_module.py</strong>. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># this is the file "my_module.py"</span></div><div class="line"><span class="comment"># we're going to use it in another program</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">c_to_f</span><span class="params">(celsius)</span>:</span></div><div class="line">    fahrenheit = celsius * <span class="number">9.0</span> / <span class="number">5</span> + <span class="number">32</span></div><div class="line">    <span class="keyword">return</span> fahrenheit</div></pre></td></tr></table></figure></p>
+<p>That’s it! You have just created a module! Your module has one function in it, the <code>c_to_f()</code> function, which converts a temperature from Celsius to Fahrenheit.</p>
+<p>Next, we’ll use <strong>my_module.py</strong> in another program.</p>
+<h3 id="how-do-we-use-modules">How do we use modules?</h3>
+<p>In order to use something that is in a module, we first have to tell Python which modules we want to use. The Python keyword that lets you include other modules in your program is <code>import</code>. You use it like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> my_module</div></pre></td></tr></table></figure></p>
+<p>Let’s write a program that uses the module we just wrote. We’re going to use the <code>c_to_f()</code> function to do a temperature conversion.</p>
+<p>We already saw how to use a function and pass parameters (or arguments) to it. The only difference here is that the function will be in a separate file from our main program, so we’ll have to use <code>import</code>. The program in listing 15.2 uses the module we just wrote, <strong>my_module.py</strong>.<br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> my_module <span class="comment"># my_module contains the c_to_f() function</span></div><div class="line"></div><div class="line">celsius = float(input (<span class="string">"Enter a temperature in Celsius: "</span>))</div><div class="line">fahrenheit = c_to_f(celsius)</div><div class="line">print(<span class="string">"That's "</span>, fahrenheit, <span class="string">" degrees Fahrenheit"</span>)</div></pre></td></tr></table></figure></p>
+<p>Create a new IDLE editor window, and type in this program. Save it as <strong>modular.py</strong>, and then run it to see what happens. You will need to save it in the same folder (or directory) as <strong>my_module.py</strong>.</p>
+<p>Did it work? You should have seen something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>============================ RESTART ============================</div><div class="line">&gt;&gt;&gt;</div><div class="line">Enter a temperature <span class="keyword">in</span> Celsius: <span class="number">34</span></div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"C:/local_documents/Warren/PythonBook/Sample programs/modular.py"</span>, </div><div class="line">line <span class="number">3</span>, <span class="keyword">in</span> -toplevel-</div><div class="line">    fahrenheit = c_to_f(celsius)</div><div class="line">NameError: name <span class="string">'c_to_f'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</div></pre></td></tr></table></figure></p>
+<p>It didn’t work! What happened? The error message says that the function <code>c_to_f()</code> isn’t defined. But we know it’s defined in <code>my_module</code>, and we did import that module.</p>
+<p>The answer is that we have to be more specific in telling Python about functions that are defined in other modules. One way to fix the problem is to change the line <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fahrenheit = c_to_f(celsius)</div></pre></td></tr></table></figure></p>
+<p>to <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fahrenheit = my_module.c_to_f(celsius)</div></pre></td></tr></table></figure></p>
+<p>Now we’re specifically telling Python that the <code>c_to_f()</code> function is in the <code>my_module</code> module. Try the program with this change and see if it works.</p>
+<h3 id="namespaces">Namespaces</h3>
+<p>You can also import certain features from a module like <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> time <span class="keyword">import</span> sleep</div></pre></td></tr></table></figure></p>
+<p>or <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> pygame <span class="keyword">import</span> display</div></pre></td></tr></table></figure></p>
+<p>You see? You can use from to import certain parts of a module. This is a bit of a complicated topic, but it’s something you need to know about, so now is a good time to talk about it.</p>
+<h4 id="whats-a-namespace">What’s a namespace?</h4>
+<p>Imagine that you’re in Mr. Morton’s class at school, and there’s someone named Shawn in your class. Now imagine that, in another class in your school taught by Mrs. Wheeler, there’s another Shawn. If you’re in your own class and you say, “Shawn has a new backpack,” everyone in your class will know (or at least they’ll assume) that you mean the Shawn in your class. If you meant the other one, you’d say, “Shawn in Mrs. Wheeler’s class,” or “the other Shawn,” or something like that.</p>
+<p>In your class, there’s only one Shawn, so when you say “Shawn,” your classmates know which person you’re talking about. To put this in another way, in the space of your class, there’s only one name “Shawn.” Your class is your namespace, and in that namespace, there’s only one Shawn, so there’s no confusion. <img src="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193838.png?raw=true"> Now, if the principal has to call Shawn to the office over the public address system, she can’t just say, “Would Shawn please come to the office.” If she did that, both Shawns would show up at the office. For the principal using the public address system, the namespace is the whole school. That means everyone in the school is listening for the name, not just one class. So she has to be more specific about which Shawn she means. She would have to say something like, “Would Shawn from Mr. Morton’s class please come to the office.” <img src="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193856.png?raw=true"> The other way the principal could get the correct Shawn is to go to the doorway of your class and say, “Shawn, would you please come with me.” There would be only one Shawn listening, and she would get the right one. In that case, the namespace would be just one classroom, not the whole school. <img src="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193911.png?raw=true"> In general terms, programmers refer to smaller namespaces (like your classroom) as local namespaces and larger ones (like the whole school) as global namespaces.</p>
+<h4 id="importing-namespaces">Importing namespaces</h4>
+<p>Let’s assume that there’s nobody in your school, John Young School, named Fred. If the principal goes on the public address system and asks for Fred, she won’t get anyone. Now imagine that another school down the road, Stephen Leacock School, is having some repairs done, so one of their classes moves into a portable at your school. In that class, there’s a student named Fred. But that portable isn’t connected to the public address system yet. If the principal calls for Fred, she won’t get anybody. But if she connects the new portable to the public address system and then calls for Fred, she will get the Fred from Stephen Leacock School.</p>
+<p>Connecting the portable from the other school is like importing a module in Python. When you import a module, you have access to all the names in that module: all the variables, all the functions, and all the objects.</p>
+<p>Importing a module means the same thing as importing a namespace. When you import the module, you import the namespace.</p>
+<p>There are two ways to import a namespace (or module). You can do it like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> StephenLeacock</div></pre></td></tr></table></figure></p>
+<p>If you do it that way, <code>StephenLeacock</code> is still a separate namespace. You have access to the namespace, but you have to specify which namespace you want before you use it. So the principal would have to do something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">call_to_office(StephenLeacock.Fred)</div></pre></td></tr></table></figure></p>
+<p>She would still have to give the namespace (<code>StephenLeacock</code>) as well as the name (<code>Fred</code>) if she wanted to reach Fred. That’s what we did a few pages ago with our temperature-con-version program.</p>
+<p>To make it work, we wrote this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fahrenheit = my_module.c_to_f(celsius)</div></pre></td></tr></table></figure></p>
+<p>We specified the namespace (<code>my_module</code>) as well as the name of the function (<code>c_to_f</code>).</p>
+<p>The other way to import a namespace is like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> StephenLeacock <span class="keyword">import</span> Fred</div></pre></td></tr></table></figure></p>
+<p>If the principal does it that way, the name <code>Fred</code> from <code>StephenLeacock</code> gets included in her namespace, and she can reach Fred like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">call_to_office(Fred)</div></pre></td></tr></table></figure></p>
+<p>Because <code>Fred</code> is now in her namespace, she doesn’t have to go to the <code>StephenLeacock</code> namespace to get <code>Fred</code>.</p>
+<p>In this example, the principal only imported one name, <code>Fred</code>, from <code>StephenLeacock</code> into her local namespace. If she wanted to import everyone, she could do this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> StephenLeacock <span class="keyword">import</span> *</div></pre></td></tr></table></figure></p>
+<p>Here, the star (<code>*</code>) means all. But she has to be careful. If there are any students with the same names from Stephen Leacock School as there are from John Young School, there will be confusion.</p>
+<h4 id="whew">Whew!</h4>
+<p>At this point, the whole namespace thing might still be a little fuzzy. Don’t worry! It’ll become clearer as we do examples in later chapters. Whenever we need to import modules, I’ll explain exactly what we’re doing.</p>
+<h3 id="standard-modules">Standard modules</h3>
+<p>Now that we know how to create and use modules, do we always have to write our own modules? No! That’s one of the great things about Python.</p>
+<p>Python comes with a bunch of standard modules to let you do things like find files, tell the time (or count time), or generate random numbers, among other things. Sometimes, people say Python has “batteries included,” and that’s what they’re talking about—all of Python’s standard modules. This is known as the Python Standard Library.</p>
+<p>Why do these things have to be in separate modules? Well, they don’t have to be, but the people who designed Python decided that it would be more efficient. Otherwise, every Python program would have to include every possible function. This way, you just include the ones you need.</p>
+<p>Of course, some things (like <code>for</code>, and <code>if-else</code>) are basic commands in Python, so you don’t need a separate module for them—they’re in the main part of Python.</p>
+<p>If Python doesn’t have a module for something you want to do (like make a graphical game), there are other add-on modules that you can download, usually for free! We have included several of these with this book, and they were installed if you used the install program on the book’s web site. If not, you can always install them separately.</p>
+<p>Let’s look at a couple of the standard modules.</p>
+<h4 id="time">Time</h4>
+<p>The <code>time</code> module lets you get information from your computer’s clock, like the date and the time. It also lets you add delays to your programs. (Sometimes the computer does things too quickly, and you have to slow it down.)</p>
+<p>The <code>sleep()</code> function in the <code>time</code> module is used to add a delay—that is, to make the program wait and do nothing for a while. It’s like putting your program to sleep, which is why the function is called <code>sleep()</code>. You tell it how many seconds you want it to sleep.</p>
+<p>The program in following demonstrates how the <code>sleep()</code> function works. Try typing, saving, and running it, and see what happens. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line">print(<span class="string">"How"</span>, end=<span class="string">''</span>)</div><div class="line">time.sleep(<span class="number">2</span>)</div><div class="line">print(<span class="string">"are"</span>, end=<span class="string">''</span>)</div><div class="line">time.sleep(<span class="number">2</span>)</div><div class="line">print(<span class="string">"you"</span>, end=<span class="string">''</span>)</div><div class="line">time.sleep(<span class="number">2</span>)</div><div class="line">print(<span class="string">"today?"</span>)</div></pre></td></tr></table></figure></p>
+<p>Notice that, when we called the <code>sleep()</code> function, we had to put <code>time</code>. in front of it. That’s because, even though we <code>import</code>ed <code>time</code>, we didn’t make it part of the main program’s namespace. So every time we want to use the <code>sleep()</code> function, we have to call <code>time.sleep()</code>.</p>
+<p>If we tried something like this, <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line">sleep(<span class="number">5</span>)</div></pre></td></tr></table></figure></p>
+<p>it wouldn’t work, because <code>sleep</code> isn’t in our namespace. We’d get an error message like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NameError: name <span class="string">'sleep'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</div></pre></td></tr></table></figure></p>
+<p>But if you import it like this, <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</div></pre></td></tr></table></figure></p>
+<p>that tells Python, “Look for the variable (or function or object) named <code>sleep</code> in the <code>time</code> module, and include it in my namespace.” Now, we could use the <code>sleep</code> function without putting <code>time</code>. in front of it: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</div><div class="line">print(<span class="string">'Hello, talk to you again in 5 seconds...'</span>)</div><div class="line">sleep(<span class="number">5</span>)</div><div class="line">print(<span class="string">'Hi again'</span>)</div></pre></td></tr></table></figure></p>
+<p>If we want the convenience of importing names into the local namespace (so we don’t have to specify the module name every time), but we don’t know which names in the module we’ll need, we can use the star (<code>*</code>) to import all names into our namespace: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> *</div></pre></td></tr></table></figure></p>
+<p>The <code>*</code> means all, so this imports all the available names from the module. We have to be careful with this one. If we create a name in our program that is the same as one in the <code>time</code> module, there will be a conflict. Importing with <code>*</code> isn’t the best way to do it. It’s better to only import the parts that you need.</p>
+<p>Remember the countdown program we made? Now you know what the line <code>time.sleep(1)</code> in that program was doing.</p>
+<h4 id="random-numbers">Random numbers</h4>
+<p>The <code>random</code> module is used for generating random numbers. This is very useful in games and simulations.</p>
+<p>Let’s try using the random module in interactive mode: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> random</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(random.randint(<span class="number">0</span>, <span class="number">100</span>))</div><div class="line"><span class="number">4</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(random.randint(<span class="number">0</span>, <span class="number">100</span>))</div><div class="line"><span class="number">72</span></div></pre></td></tr></table></figure></p>
+<p>Each time you use <code>random.randint()</code>, you get a new, random integer. Because we passed the arguments 0 and 100 to it, the integer will be between 0 and 100. We used <code>random.randint()</code> in the number-guessing program in chapter 1 to create the secret number.</p>
+<p>If you want a random decimal number, use <code>random.random()</code>. You don’t have to put anything between the brackets, because <code>random.random()</code> always gives you a number between 0 and 1. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(random.random())</div><div class="line"><span class="number">0.270985467261</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(random.random())</div><div class="line"><span class="number">0.569236541309</span></div></pre></td></tr></table></figure></p>
+<p>If you want a random number between, say, 0 and 10, you can just multiply the result by 10. <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(random.random() * <span class="number">10</span>)</div><div class="line"><span class="number">3.61204895736</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(random.random() * <span class="number">10</span>)</div><div class="line"><span class="number">8.10985427783</span></div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="what-did-you-learn">What did you learn?</h2>
+<p>In this chapter, you learned<br>
+  ■ what a module is.<br>
+  ■ how to create a module.<br>
+  ■ how to use a module in another program.<br>
+  ■ what namespaces are.<br>
+  ■ what’s meant by local and global namespaces and variables.<br>
+  ■ how to bring names from other modules into your namespace.</p>
+<p>and you also saw a couple of examples of Python’s standard modules.</p>
+<h2 id="test-your-knowledge">Test your knowledge</h2>
+<ol style="list-style-type: decimal">
+<li>What are some of the advantages of using modules?<br>
+</li>
+<li>How do you create a module?<br>
+</li>
+<li>What Python keyword do you use when you want to use a module?<br>
+</li>
+<li>Importing a module is the same as importing a __________.<br>
+</li>
+<li>What are two ways to import the <code>time</code> module so that you have access to all the names (that is, all the variables, functions, and objects) in that module?</li>
+</ol>
+<h2 id="try-it-out">Try it out</h2>
+<ol style="list-style-type: decimal">
+<li>Write a module that has the “print your name in big letters” function from the “Try it out” section in chapter 13. Then write a program that imports the module and calls the function.</li>
+<li>Modify the code in listing 15.2 so that you bring <code>c_to_f()</code> into the main program’s namespace. That is, change it so you can write <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fahrenheit = c_to_f(celsius)</div></pre></td></tr></table></figure></li>
+</ol>
+<p>instead of <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fahrenheit = my_module.c_to_f(celsius)</div></pre></td></tr></table></figure></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Write a short program to generate a list of five random integer numbers from 1 to 20, and print them out.</li>
+<li>Write a short program that prints out a random decimal number every 3 seconds for 30 seconds.</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python3/" rel="tag"><i class="fa fa-tag"></i> python3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/27/American-Accent-Training-Grammar/" rel="next" title="《American Accent Training Grammar》">
+                <i class="fa fa-chevron-left"></i> 《American Accent Training Grammar》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://github.com/changemyheart/Pictures/blob/master/alone.png?raw=true"
+              alt="Michael" />
+          
+            <p class="site-author-name" itemprop="name">Michael</p>
+            <p class="site-description motion-element" itemprop="description">Maybe... One day, I'll fly away...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#modules"><span class="nav-text">Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#whats-a-module"><span class="nav-text">What’s a module?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-use-modules"><span class="nav-text">Why use modules?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#buckets-of-blocks"><span class="nav-text">Buckets of blocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-do-we-create-modules"><span class="nav-text">How do we create modules?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-do-we-use-modules"><span class="nav-text">How do we use modules?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#namespaces"><span class="nav-text">Namespaces</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#whats-a-namespace"><span class="nav-text">What’s a namespace?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#importing-namespaces"><span class="nav-text">Importing namespaces</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#whew"><span class="nav-text">Whew!</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#standard-modules"><span class="nav-text">Standard modules</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#time"><span class="nav-text">Time</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#random-numbers"><span class="nav-text">Random numbers</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#what-did-you-learn"><span class="nav-text">What did you learn?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-your-knowledge"><span class="nav-text">Test your knowledge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try-it-out"><span class="nav-text">Try it out</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
