@@ -124,7 +124,7 @@
 <meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193838.png?raw=true">
 <meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193856.png?raw=true">
 <meta property="og:image" content="https://github.com/changemyheart/Pictures/blob/master/2017-09-27_193911.png?raw=true">
-<meta property="og:updated_time" content="2017-09-27T12:51:35.389Z">
+<meta property="og:updated_time" content="2017-09-27T23:58:43.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3 learning 13">
 <meta name="twitter:description" content="Modules This is the last chapter that talks about ways of collecting things together. We have already learned about lists, functions, and objects. In this chapter, we’ll learn about modules. In the n">
@@ -379,8 +379,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2017-09-27T20:51:35+08:00">
-                2017-09-27
+              <time title="Post modified" itemprop="dateModified" datetime="2017-09-28T07:58:43+08:00">
+                2017-09-28
               </time>
             
           </span>
@@ -388,6 +388,18 @@
           
 
           
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/27/python3-learning-13/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/09/27/python3-learning-13/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
             
           
 
@@ -433,7 +445,7 @@
 <h3 id="how-do-we-use-modules">How do we use modules?</h3>
 <p>In order to use something that is in a module, we first have to tell Python which modules we want to use. The Python keyword that lets you include other modules in your program is <code>import</code>. You use it like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> my_module</div></pre></td></tr></table></figure></p>
 <p>Let’s write a program that uses the module we just wrote. We’re going to use the <code>c_to_f()</code> function to do a temperature conversion.</p>
-<p>We already saw how to use a function and pass parameters (or arguments) to it. The only difference here is that the function will be in a separate file from our main program, so we’ll have to use <code>import</code>. The program in listing 15.2 uses the module we just wrote, <strong>my_module.py</strong>.<br>
+<p>We already saw how to use a function and pass parameters (or arguments) to it. The only difference here is that the function will be in a separate file from our main program, so we’ll have to use <code>import</code>. The program in following uses the module we just wrote, <strong>my_module.py</strong>.<br>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> my_module <span class="comment"># my_module contains the c_to_f() function</span></div><div class="line"></div><div class="line">celsius = float(input (<span class="string">"Enter a temperature in Celsius: "</span>))</div><div class="line">fahrenheit = c_to_f(celsius)</div><div class="line">print(<span class="string">"That's "</span>, fahrenheit, <span class="string">" degrees Fahrenheit"</span>)</div></pre></td></tr></table></figure></p>
 <p>Create a new IDLE editor window, and type in this program. Save it as <strong>modular.py</strong>, and then run it to see what happens. You will need to save it in the same folder (or directory) as <strong>my_module.py</strong>.</p>
 <p>Did it work? You should have seen something like this: <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>============================ RESTART ============================</div><div class="line">&gt;&gt;&gt;</div><div class="line">Enter a temperature <span class="keyword">in</span> Celsius: <span class="number">34</span></div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"C:/local_documents/Warren/PythonBook/Sample programs/modular.py"</span>, </div><div class="line">line <span class="number">3</span>, <span class="keyword">in</span> -toplevel-</div><div class="line">    fahrenheit = c_to_f(celsius)</div><div class="line">NameError: name <span class="string">'c_to_f'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</div></pre></td></tr></table></figure></p>
@@ -588,6 +600,8 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
     
   </div>
 
@@ -842,17 +856,31 @@
 
 	
 
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 95999, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 95999, xid: "2017/09/27/python3-learning-13/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/95999/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
 
 
 
 
-  
-
-
-
-
-
-  
 
 
 
