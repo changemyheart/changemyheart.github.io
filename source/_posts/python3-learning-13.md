@@ -43,7 +43,7 @@ import my_module
 ```
 Let’s write a program that uses the module we just wrote. We’re going to use the `c_to_f()` function to do a temperature conversion.
 
-We already saw how to use a function and pass parameters (or arguments) to it. The only difference here is that the function will be in a separate file from our main program, so we’ll have to use `import`. The program in listing 15.2 uses the module we just wrote, **my_module.py**.  
+We already saw how to use a function and pass parameters (or arguments) to it. The only difference here is that the function will be in a separate file from our main program, so we’ll have to use `import`. The program in following uses the module we just wrote, **my_module.py**.  
 ```python
 import my_module # my_module contains the c_to_f() function
 
