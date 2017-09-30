@@ -9,7 +9,7 @@ A little boy.
 
 Hey English, I want to know you more.
 
-<center>**I MADE a covenant with mine eyes; how then should I look upon a maid?**  
+<center><font color="green">**I MADE a covenant with mine eyes; how then should I look upon a maid?**  </font>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;From Job 31:1</center>
 
 Job did it, why can't I do it?  
